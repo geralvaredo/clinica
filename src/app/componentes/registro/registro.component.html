@@ -1,0 +1,19 @@
+<div class="general">
+  <div class="formLogin">
+    <p matLine class="etiqueta">Registro</p>
+    <mat-form-field class="componentes">
+      <mat-label>Ingrese un Usuario nuevo</mat-label>
+      <input matInput placeholder="usuario@email.com" [(ngModel)]="usuario._email" type="text"
+             id="user" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="componentes">
+      <mat-label>Ingrese su Contraseña</mat-label>
+      <input matInput type="password" [(ngModel)]="usuario._pass" id="pass" required>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button class="botonLogin" (click)="onRegister()">Registrarse</button>
+    <br>
+    <a routerLink="">Tienes una cuenta ? ingrese aqui</a>
+  </div>
+</div>
