@@ -19,7 +19,7 @@ export class AuthService {
 
   async login(usuario: Usuario): Promise<firebase.User> {
     try {
-      const {user} = await this.afAuth.signInWithEmailAndPassword(usuario.email, usuario.password);
+      const {user} = await this.afAuth.signInWithEmailAndPassword(usuario.email, usuario.pass);
       return user;
     } catch (error) {
       console.log(this.errorLogin, error);
@@ -28,7 +28,7 @@ export class AuthService {
 
   async register(usuario: Usuario): Promise<firebase.User> {
     try {
-      const {user} = await this.afAuth.createUserWithEmailAndPassword(usuario.email, usuario.password);
+      const {user} = await this.afAuth.createUserWithEmailAndPassword(usuario.email, usuario.pass);
       await this.verificationEmailFirebase();
       return user;
     } catch (error) {

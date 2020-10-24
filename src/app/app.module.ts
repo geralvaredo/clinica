@@ -19,14 +19,23 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {environment} from '../environments/environment.prod';
 import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
-import { PeliculaAltaComponent } from './componentes/pelicula-alta/pelicula-alta.component';
-import { ActorAltaComponent } from './componentes/actor-alta/actor-alta.component';
-import { ActorListadoComponent } from './componentes/actor-listado/actor-listado.component';
-import { PeliculaListadoComponent } from './componentes/pelicula-listado/pelicula-listado.component';
-import { TablaPeliculaComponent } from './componentes/tabla-pelicula/tabla-pelicula.component';
-import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
-import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
-import { TablaActorComponent } from './componentes/tabla-actor/tabla-actor.component';
+import { AltaPacProfAdminComponent } from './componentes/alta-pac-prof-admin/alta-pac-prof-admin.component';
+import { AltaHorariosComponent } from './componentes/alta-horarios/alta-horarios.component';
+import { AltaEspecialidadComponent } from './componentes/alta-especialidad/alta-especialidad.component';
+import { AltaHistoriaClinicaComponent } from './componentes/alta-historia-clinica/alta-historia-clinica.component';
+import { AltaEncuestaComponent } from './componentes/alta-encuesta/alta-encuesta.component';
+import { AltaTurnoComponent } from './componentes/alta-turno/alta-turno.component';
+import { BtnBorrarComponent } from './componentes/btn-borrar/btn-borrar.component';
+import { BtnModificarComponent } from './componentes/btn-modificar/btn-modificar.component';
+import { BtnDetalleComponent } from './componentes/btn-detalle/btn-detalle.component';
+import { DetalleTurnoComponent } from './componentes/detalle-turno/detalle-turno.component';
+import { DetalleHorarioComponent } from './componentes/detalle-horario/detalle-horario.component';
+import { DetalleEncuestaComponent } from './componentes/detalle-encuesta/detalle-encuesta.component';
+import { DetalleHistoriaClinicaComponent } from './componentes/detalle-historia-clinica/detalle-historia-clinica.component';
+import { AtencionPacienteComponent } from './componentes/atencion-paciente/atencion-paciente.component';
+import { VerificacionEspecialidadComponent } from './componentes/verificacion-especialidad/verificacion-especialidad.component';
+import { VerificacionDeCorreoComponent } from './componentes/verificacion-de-correo/verificacion-de-correo.component';
+
 
 @NgModule({
   declarations: [
@@ -35,14 +44,22 @@ import { TablaActorComponent } from './componentes/tabla-actor/tabla-actor.compo
     LoginComponent,
     RegistroComponent,
     BusquedaComponent,
-    PeliculaAltaComponent,
-    ActorAltaComponent,
-    ActorListadoComponent,
-    PeliculaListadoComponent,
-    TablaPeliculaComponent,
-    DetallePeliculaComponent,
-    BienvenidoComponent,
-    TablaActorComponent
+    AltaPacProfAdminComponent,
+    AltaHorariosComponent,
+    AltaEspecialidadComponent,
+    AltaHistoriaClinicaComponent,
+    AltaEncuestaComponent,
+    AltaTurnoComponent,
+    BtnBorrarComponent,
+    BtnModificarComponent,
+    BtnDetalleComponent,
+    DetalleTurnoComponent,
+    DetalleHorarioComponent,
+    DetalleEncuestaComponent,
+    DetalleHistoriaClinicaComponent,
+    AtencionPacienteComponent,
+    VerificacionEspecialidadComponent,
+    VerificacionDeCorreoComponent
   ],
   imports: [
     BrowserModule,

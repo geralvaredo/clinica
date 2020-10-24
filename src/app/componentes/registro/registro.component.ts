@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./registro.component.scss']
 })
 export class RegistroComponent implements OnInit {
+
   isRegistered = 'bienvenido';
   registerError = 'error';
   usuario = new Usuario();
@@ -32,6 +33,4 @@ export class RegistroComponent implements OnInit {
       console.log('ErrorOnRegister', error);
     }
   }
-
-
 }

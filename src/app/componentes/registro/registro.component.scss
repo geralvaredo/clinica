@@ -1,5 +1,6 @@
 .formLogin{
-  width: 40%;
+  width: 140vh;
+  height: 100vh;
   padding-left: 390px;
   display: flex;
   flex-direction: column;
@@ -17,7 +18,7 @@
   background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
   background-color:#eae0c2;
   border-radius:15px;
-  border:2px solid #333029;
+  border:2px solid white;
   display:inline-block;
   cursor:pointer;
   color:#505739;
@@ -33,7 +34,7 @@
 .general {
   display: flex;
   height: 100%;
-  background-color: #EC9910;
+  background-color: #0882C4;
 }
 
 
@@ -52,5 +53,8 @@
 
 .boton{
   width: 100%;
+}
 
+a{
+  color: white;
 }

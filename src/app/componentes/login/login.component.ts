@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   usuario = new Usuario();
   isLogin = 'bienvenido';
-  notLogin = 'login';
+  notLogin = 'error';
   errorLogin = 'ErrorOnlogin->';
 
   constructor(private auth: AuthService) {
@@ -34,6 +34,11 @@ export class LoginComponent implements OnInit {
       console.log(this.errorLogin, error);
     }
 
+  }
+
+  admin(): void{
+    this.usuario.email = 'admin@admin.com';
+    this.usuario.pass = 'admin123' ;
   }
 
 }
