@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerificacionDeCorreoComponent implements OnInit {
 
+  digitos: number;
   constructor() { }
 
   ngOnInit(): void {
+     this.token();
+  }
+
+  token(): void{
+     this.digitos = Math.floor( Math.random() * 9999 );
   }
 
 }

@@ -34,7 +34,8 @@
 
 .general {
   display: flex;
-  background-color: #0882C4;
+  background-color: #177445;
+  width: 230vh;
 }
 
 
@@ -44,9 +45,7 @@
 
 
 .etiqueta{
-  color: white;
-  font-size: medium;
-
+  font-size: 5vh;
 }
 
 .boton{
@@ -54,6 +53,8 @@
 
 }
 
-a{
-  color: white;
+
+  a , p{
+  color : white;
+  font: oblique bold 120% cursive;
 }

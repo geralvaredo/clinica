@@ -1,0 +1,17 @@
+.cabecera{
+  display: flex;
+  background-color: #177445;
+  margin-left: -3vh;
+  margin-right: -3vh;
+}
+
+
+.sesion{
+  cursor: pointer;
+  color: white;
+}
+
+.sesion:hover{
+  background-color: #059797;
+  border-radius: 5px;
+}

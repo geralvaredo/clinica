@@ -27,6 +27,7 @@
     "@angular/router": "~10.0.14",
     "express": "^4.17.1",
     "firebase": "^7.22.0",
+    "ng-recaptcha": "^6.0.2",
     "path": "^0.12.7",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

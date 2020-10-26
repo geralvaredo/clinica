@@ -26,6 +26,14 @@ export class AuthService {
     }
   }
 
+  getStorage(): any{
+    return sessionStorage.getItem('usuario');
+  }
+
+  guardarEnStorage(user): void {
+    sessionStorage.setItem('usuario', JSON.stringify(user));
+  }
+
   async register(usuario: Usuario): Promise<firebase.User> {
     try {
       const {user} = await this.afAuth.createUserWithEmailAndPassword(usuario.email, usuario.pass);
@@ -35,6 +43,7 @@ export class AuthService {
       console.log(this.errorRegisterFireBase, error);
     }
   }
+
 
 
   async verificationEmailFirebase(): Promise<void> {
@@ -48,8 +57,9 @@ export class AuthService {
 
   async logOut(): Promise<void> {
     await this.afAuth.signOut().then(res => {
-      this.redirect(this.paginaLogin);
-      return res;
+       sessionStorage.clear();
+       this.redirect(this.paginaLogin);
+       return res;
     }).catch(error => {
       console.log(error);
       this.redirect(this.logOutError);

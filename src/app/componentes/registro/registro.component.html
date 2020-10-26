@@ -1,19 +1,177 @@
-<div class="general">
-  <div class="formLogin">
-    <p matLine class="etiqueta">Registro</p>
-    <mat-form-field class="componentes">
-      <mat-label>Ingrese un Usuario nuevo</mat-label>
-      <input matInput placeholder="usuario@email.com" [(ngModel)]="usuario.email" type="text"
-             id="user" required>
-    </mat-form-field>
-    <br>
-    <mat-form-field class="componentes">
-      <mat-label>Ingrese su Contraseña</mat-label>
-      <input matInput type="password" [(ngModel)]="usuario.pass" id="pass" required>
-    </mat-form-field>
-    <br>
-    <button mat-raised-button class="botonLogin" (click)="onRegister()">Registrarse</button>
-    <br>
-    <a routerLink="">Tienes una cuenta ? ingrese aqui</a>
+
+
+ <div class="perfil bordeBlanco">
+
+     <label class="etiquetaPerfil">Seleccione un Perfil</label>
+     <br>
+     <select class="custom-select col-md-3" id="selectPerfil" [(ngModel)]="tipoPerfil" (change)="onChange($event.target)" [ngModelOptions]="{standalone: true}">
+       <option value="Paciente">Paciente</option>
+       <option value="Profesional">Profesional</option>
+       <option value="Administrador">Administrador</option>
+     </select>
+     <label *ngIf="tipoError" class="form-text text-danger">Falta ingresar el tipo de perfil</label>
+   </div>
+
+
+  <div *ngIf="tipoPerfil === 'Paciente'" class="registro">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 order-md-1">
+          <div class="card">
+            <article class="card-body general alturaPac bordeBlanco">
+              <div class="etiqueta" ><p matLine>Registro</p> </div>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label>Usuario</label>
+                  <input class="form-control" placeholder="Ingrese un nombre.." [(ngModel)]="usuario.email" name="email">
+                  <label *ngIf="usuarioError" class="form-text text-danger">Falta nombre</label>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Contraseña</label>
+                  <input class="form-control" type="password" placeholder="Ingrese un contraseña.." [(ngModel)]="usuario.pass" name="pass">
+                  <label *ngIf="passError" class="form-text text-danger">Falta El pass</label>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Confirme la contraseña</label>
+                  <input class="form-control" type="password" placeholder="reingrese la contraseña.." [(ngModel)]="repass" name="repass">
+                  <label *ngIf="repassError" class="form-text text-danger">Falta repetir el pass</label>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label>Nombre</label>
+                  <input class="form-control" placeholder="Ingrese un apellido.." [(ngModel)]="perfil.nombre" name="nombre">
+                  <label *ngIf="apellidoError" class="form-text text-danger">Falta apellido</label>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label>Apellido</label>
+                  <input class="form-control" placeholder="Ingrese un apellido.." [(ngModel)]="perfil.apellido" name="apellido">
+                  <label *ngIf="apellidoError" class="form-text text-danger">Falta apellido</label>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label>Fecha de Nacimiento</label>
+                  <input class="form-control" type="date" placeholder="Ingrese una fecha de Nacimiento.." [(ngModel)]="perfil.fechaNacimiento" name="fechaDeNacimiento">
+                  <label *ngIf="fechaDeNacimientoError" class="form-text text-danger">Falta ingresar la fecha de nacimiento</label>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label>Sexo</label>
+                  <select class="custom-select" id="selectSexo" [(ngModel)]="perfil.sexo" [ngModelOptions]="{standalone: true}">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                  </select>
+                  <label *ngIf="sexoError" class="form-text text-danger">Falta ingresar la fecha de nacimiento</label>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label>Primera Foto</label>
+                  <input class="form-control" type="file" placeholder="Ingrese una fecha de Nacimiento.." [(ngModel)]="perfil.img1" name="primeraFoto">
+                  <label *ngIf="primeraFotoError" class="form-text text-danger">Falta ingresar la fecha de nacimiento</label>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label>Segunda Foto</label>
+                  <input class="form-control" type="file" placeholder="Ingrese una fecha de Nacimiento.." [(ngModel)]="perfil.img2" name="segundaFoto">
+                  <label *ngIf="segundaFotoError" class="form-text text-danger">Falta ingresar la fecha de nacimiento</label>
+                </div>
+                <div class="captcha">
+                  <re-captcha (resolved)="resolved($event)" siteKey="6Lc7edsZAAAAAEG1Ftr7vyLOzOkCUwLYfmLZtGFO" > </re-captcha>
+                  <label *ngIf="captchaError" class="form-text text-danger"> debe validar que no sea un robot</label>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="d-flex justify-content-center spaceUp">
+                    <button id="btnAgregar" type="button" style="margin-right:1%;" class="btn btn-success pull-right" (click)="onRegister()"> Registrarse </button>
+                    <button id="btnLimpiar" type="reset" class="btn btn-info" (click)="restablecer()"> Limpiar </button>
+                  </div>
+                </div>
+                <br>
+                <div class="col-md-12 mb-3">
+                  <div class="d-flex justify-content-center">
+                    <a class="link" routerLink="/login">Tienes una cuenta? ingrese aqui</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+  <div *ngIf="tipoPerfil === 'Profesional'" class="registro">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 order-md-1">
+          <div class="card">
+            <article class="card-body general alturaProf bordeBlanco">
+              <div class="etiqueta" ><p matLine>Registro</p> </div>
+
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label>Usuario</label>
+                  <input class="form-control" placeholder="Ingrese un nombre.." [(ngModel)]="usuario.email" name="email">
+                  <label *ngIf="usuarioError" class="form-text text-danger">Falta nombre</label>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Contraseña</label>
+                  <input class="form-control" placeholder="Ingrese un nombre.." [(ngModel)]="usuario.pass" name="pass">
+                  <label *ngIf="passError" class="form-text text-danger">Falta El pass</label>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Confirme la contraseña</label>
+                  <input class="form-control" placeholder="Ingrese un nombre.." [(ngModel)]="repass" name="nombre">
+                  <label *ngIf="repassError" class="form-text text-danger">Falta repetir el pass</label>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label>Nombre</label>
+                  <input class="form-control" placeholder="Ingrese un apellido.." [(ngModel)]="perfil.nombre" name="nombre">
+                  <label *ngIf="apellidoError" class="form-text text-danger">Falta apellido</label>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label>Apellido</label>
+                  <input class="form-control" placeholder="Ingrese un apellido.." [(ngModel)]="perfil.apellido" name="apellido">
+                  <label *ngIf="apellidoError" class="form-text text-danger">Falta apellido</label>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Fecha de Nacimiento</label>
+                  <input class="form-control" type="date" placeholder="Ingrese una fecha de Nacimiento.." [(ngModel)]="perfil.fechaNacimiento" name="fechaDeNacimiento">
+                  <label *ngIf="fechaDeNacimientoError" class="form-text text-danger">Falta ingresar la fecha de nacimiento</label>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Sexo</label>
+                  <select class="custom-select"  [(ngModel)]="perfil.sexo" [ngModelOptions]="{standalone: true}">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                  </select>
+                  <label *ngIf="sexoError" class="form-text text-danger">Falta ingresar la fecha de nacimiento</label>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Especialidad</label>
+                  <select class="custom-select"  [(ngModel)]="seleccionados" multiple [ngModelOptions]="{standalone: true}">
+                    <option [value]="item"  *ngFor="let item of especialidad">{{item}}</option>
+                  </select>
+                  <label *ngIf="especialidadError" class="form-text text-danger">Falta ingresar la fecha de nacimiento</label>
+                </div>
+                <div class="captcha prof">
+                  <re-captcha  siteKey="6Lc7edsZAAAAAEG1Ftr7vyLOzOkCUwLYfmLZtGFO" > </re-captcha>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="d-flex justify-content-center">
+                    <button  type="button" style="margin-right:1%;" class="btn btn-success pull-right" (click)="onRegister()"> Registrarse </button>
+                    <button  type="reset" class="btn btn-info" (click)="restablecer()"> Limpiar </button>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="d-flex justify-content-center">
+                    <a class="link" routerLink="/login">Tienes una cuenta? ingrese aqui</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
