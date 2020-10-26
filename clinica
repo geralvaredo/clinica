@@ -1,0 +1,123 @@
+
+
+  Entidades:
+  -usuario (tiene perfil)
+  -perfil (profesional, paciente, Administrador)
+  -Profesional
+  - Especialidad
+  -Paciente (Historia Clinica)
+  -Administrador
+  -turnos (Encuesta)
+  -historiaClinica ( edad, temperaturaCorporal, presion, observacion1, observacion2: observacion3)
+  -encuesta
+  
+  
+  Pantalla:
+  - AltaPaciente
+  - AltaProfesional
+  - AltaAdministrador
+  - AltaEspecialidad
+  - AltaDeHorariosProfesional (el profesional carga sus horarios)
+  - ListarTurnos (listar para paciente como para profesional)
+  - CambioDeTurnos (cambio o rechaza turnos para profesional, cambios para paciente)
+  - AtencionAlPaciente (deja la historiaClinica)
+  - SolicitudDeTurno (lista general con opcion para filtrar por profesional y especialidad)
+  - VerificacionDeEspecialidad( lo va hacer el administrador)
+  - VerificacionDeEmail (se genera un token en coleccion de firebase y al mail se manda el codigo, cuando verifica se borra el token)
+  
+  
+   Componentes:
+   alta-paciente-profesional-admin
+   alta-horarios
+   alta-especialidad
+   alta-historia-clinica
+   alta-encuesta
+   alta-turno
+   btn-borrar
+   btn-modificar
+   btn-detalle
+   detalle-turnos
+   detalle-horarios
+   detalle-encuesta
+   detalle-historia-clinica
+   modificar-turno
+   modificar-horario
+   eliminar-turno
+   eliminar-horario
+   atencion-paciente
+   verificacion-especialidad
+   verificacion-email
+   
+   
+  
+  
+  
+  Especialidad:
+  1- Cardiologia
+  3- Radiologia
+  4- Traumatologia
+  5- Oftalmologia
+  6- Neurologia
+  
+  Laboratorio:
+  1- Alergista
+  2- Extraccion de sangre  (Enfermero) 
+  
+  
+  Observaciones:
+   2 animaciones
+   1 pipe
+   1 traduccion
+    Captcha de google
+    cantActivate
+    
+  A Desarrollar:  
+  
+  1- Registro (Con imagenes)
+     X Crear campos nombre , apellido , sexo , fecha de nacimiento , perfil     
+     X Crear servicio de perfil para guardar en la coleccion
+     X setear el estado en false
+     - 2 imagenes (paciente y profesional)
+     - averiguar como subir a storage el manejo de imagenes
+     X captcha
+        
+     
+     2- Login 
+    X entrar al menu principal 
+    X verificar que la cuenta este activada         
+    X cant Activate
+     
+     
+   3 - verificacion 
+    X generar token
+    X mandarlo al mail
+    X ponerlo en el menu de verificacion
+ 
+      
+     
+     
+  -4 Readme en github con video y imagen
+  
+    
+   5- Menu Principal
+    - Filtrar el menu dependiendo para perfil
+  
+    - verificacion de especialidad ( para administradores)
+    - atencion al paciente
+  
+          
+   6- Solicitud de Turnos
+     - Solicitar turno (para paciente filtrado por profesional)
+    - turnos que se vean hasta 15 dias de la fecha actual
+    - Carga de horarios (para profesional)
+      - agregar la historia clinica 
+    - agregar encuesta
+   
+     
+  theme: 
+  http://fundacionio.org/viajar/img/escudos/argentina%20escudo%20gran.png
+  
+  clave-sitio-web : 6Lc7edsZAAAAAEG1Ftr7vyLOzOkCUwLYfmLZtGFO
+  clave-secreta : 6Lc7edsZAAAAAAsJfNTwKUIw8LQqqs7vQO1iDXKO
+
+  
