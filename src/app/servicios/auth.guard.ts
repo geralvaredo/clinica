@@ -7,6 +7,7 @@ import {AuthService} from './auth.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
+   user = 'usuario';
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
@@ -19,7 +20,7 @@ export class AuthGuard implements CanActivate {
 
 
   checkLogin(url: string): boolean {
-    if (this.auth.getStorage() !== null ) { return true; }
+    if (this.auth.getStorage(this.user) !== null ) { return true; }
     this.router.navigate(['/login']);
     return false;
   }
