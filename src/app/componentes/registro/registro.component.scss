@@ -1,20 +1,22 @@
 
 .general{
-  background-color: #177445;
+  background-color: #3B6D40;
   width: 227vh;
-
+  height: 100vh;
   margin-left: -13vh;
 }
 
-.alturaProf{
-  height: 100vh;
+.generalError{
+  background-color: #3B6D40;
+  width: 227vh;
+  height: 120vh;
+  margin-left: -13vh;
 }
 
-.alturaPac{
-  height: 95vh;
+.error{
+   color: #E99400;
+  font-size: 15px;
 }
-
-
 
 .etiqueta{
   text-align: center;
@@ -37,7 +39,7 @@ label , p , a{
 .perfil{
   width: 227vh;
   height: 20vh;
-  background-color: #177445;
+  background-color: #3B6D40;
   text-align: center;
   margin-top: 3vh;
   margin-bottom: 2vh;
@@ -62,6 +64,6 @@ label , p , a{
 }
 
 .prof{
-   margin-top: -5vh;
+   margin-top: -4vh;
    margin-bottom: 5vh;
 }
