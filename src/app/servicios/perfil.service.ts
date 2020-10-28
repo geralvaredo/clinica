@@ -12,7 +12,7 @@ export class PerfilService {
 
   public crearPerfil(perfil: Perfil): void {
     perfil.nacionalidad = null;
-    perfil.fechaAlta = Date.now().toString();
+    perfil.fechaAlta = Date.now();
     perfil.fechaBaja = null;
     this.fs.agregarDocumento(JSON.parse( JSON.stringify(perfil)), 'perfiles');
   }
@@ -36,9 +36,4 @@ export class PerfilService {
   public contadorPerfiles(): Observable<any> {
     return this.fs.obtenerTotalDocumentos('perfiles');
   }
-
-
-
-
-
 }
