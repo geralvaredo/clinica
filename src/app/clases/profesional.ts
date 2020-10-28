@@ -3,6 +3,6 @@ import {Perfil} from './perfil';
 
 export class Profesional extends Perfil{
   idProfesional: string;
-  especialidad: Array<Especialidad>;
+  especialidades: Array<Especialidad> = [];
 
 }
