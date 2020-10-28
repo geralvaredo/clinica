@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Usuario} from '../../clases/usuario';
 import {AuthService} from '../../servicios/auth.service';
+import {Perfil} from '../../clases/perfil';
+import {PerfilService} from '../../servicios/perfil.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +13,14 @@ import {AuthService} from '../../servicios/auth.service';
 export class LoginComponent implements OnInit {
 
   usuario: Usuario;
+  perfil = '';
   isLogin = 'bienvenido';
   verification = 'verificacionCorreo';
   notLogin = 'error';
   errorLogin = 'ErrorOnlogin->';
   clinica = '../assets/clinica.jpeg';
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService, private pr: PerfilService) {
   }
 
   ngOnInit(): void {
@@ -27,12 +31,15 @@ export class LoginComponent implements OnInit {
     try {
       const logging = await this.auth.login(this.usuario);
       if (logging) {
+
          if (logging.emailVerified){
            this.auth.guardarEnStorage(logging);
            this.auth.redirect(this.isLogin);
          }
           else{
-             this.auth.redirect(this.verification);
+                this.auth.guardarEnStorage(logging);
+                this.auth.sitioAnterior('login');
+                this.auth.redirect(this.verification);
          }
       } else {
         this.auth.redirect(this.notLogin);
@@ -43,10 +50,10 @@ export class LoginComponent implements OnInit {
 
   }
 
-
   admin(): void{
-    this.usuario.email = 'admin@admin.com';
+    this.usuario.email = 'admin@tibui.com';
     this.usuario.pass = 'admin123' ;
   }
+
 
 }
