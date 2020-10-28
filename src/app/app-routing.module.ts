@@ -13,10 +13,10 @@ const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'bienvenido' , component : BienvenidoComponent, canActivate: [AuthGuard]},
   {path: 'busqueda' , component : BusquedaComponent},
-  {path: 'error', component : ErrorComponent, canActivate: [AuthGuard]},
+  {path: 'error', component : ErrorComponent},
   {path: 'registro' , component: RegistroComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'verificacionCorreo', component: VerificacionDeCorreoComponent}
+  {path: 'verificacionCorreo', component: VerificacionDeCorreoComponent , canActivate: [AuthGuard]}
 
 ];
 
