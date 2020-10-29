@@ -12,5 +12,5 @@ export abstract class Perfil  {
   fechaAlta: number;
   fechaBaja: string;
   img1: string;
-  img2: string;
+
 }

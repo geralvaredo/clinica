@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {Usuario} from '../../clases/usuario';
 import {AuthService} from '../../servicios/auth.service';
-import {Perfil} from '../../clases/perfil';
 import {PerfilService} from '../../servicios/perfil.service';
 import {Paciente} from '../../clases/paciente';
 import {Profesional} from '../../clases/profesional';
 import {Especialidad} from '../../clases/especialidad';
+import {Imagen} from '../../clases/imagen';
+import {ImagenService} from '../../servicios/imagen.service';
 
 @Component({
   selector: 'app-registro',
@@ -16,6 +17,13 @@ export class RegistroComponent implements OnInit {
 
   isRegistered = 'verificacionCorreo';
   registerError = 'error';
+  usuario: Usuario;
+  perfil: any ;
+  tipoPerfil: string;
+  documento: string;
+  token: string ;
+  img1: Imagen;
+  img2: Imagen;
   repass: string ;
   usuarioError: boolean;
   passError: boolean;
@@ -30,18 +38,13 @@ export class RegistroComponent implements OnInit {
   sexoError: boolean;
   tipoError: boolean;
   error: boolean ;
-  usuario: Usuario;
-  perfil: any ;
-  tipoPerfil: string;
-  documento: string;
-  token: string ;
-
+  extensiones = [ 'jpg', 'jpeg', 'png' ];
   especialidad: string[] =
     ['Cardiologia', 'Radiologia', 'Traumatologia', 'Oftalmologia' , 'Neurologia' , 'Alergista' , 'Enfermeria'];
   seleccionados: string [] = [];
 
 
-  constructor(private auth: AuthService, private pr: PerfilService) {
+  constructor(private auth: AuthService, private pr: PerfilService, private img: ImagenService) {
   }
 
   ngOnInit(): void {
@@ -58,14 +61,48 @@ export class RegistroComponent implements OnInit {
     }
   }
 
+  fileChange(event): void {
+     console.log(event.target);
+     const extension = this.ValidarExtension(event.target.files.item(0).name);
+     if (extension !== null){
+      if (event.target.id === 'img1'){
+        this.img1 = new Imagen(event.target.files.item(0));
+        console.log(this.img1.file);
+        this.img1.extension = extension;
+        this.img1.name = `${this.documento}-img1.${this.img1.extension}`;
+      }
+      else if (event.target.id === 'img2'){
+        this.img2 = new Imagen(event.target.files.item(0));
+        console.log(this.img2.file);
+        this.img2.extension = extension;
+        this.img2.name = `${this.documento}-img2.${this.img2.extension}`;
+      }
+    }
+    else{
+       (event.target.id === 'img1') ? this.img1 = null :  this.img2 = null ;
+      }
+  }
+
+
+
+  ValidarExtension(fileName: string): string{
+    const separateFileName = fileName.split('.');
+    const extension = separateFileName[separateFileName.length - 1];
+    if ( this.extensiones.includes(extension)) {
+      return extension;
+    } else{
+      return null;
+    }
+  }
+
+
   async onRegister(): Promise<void> {
     try {
-       if (this.validarCampos()){
+        if (this.validarCampos()){
          const user = await this.auth.register(this.usuario);
-         this.perfil.uid  = user.uid;
          this.auth.sitioAnterior('registro');
          this.auth.guardarEnStorage(user);
-         this.registroDireccionamiento(user);
+         this.verificacionCreacionDePerfil(user);
          this.restablecer();
        }
     } catch (error) {
@@ -73,13 +110,10 @@ export class RegistroComponent implements OnInit {
     }
   }
 
-  public registroDireccionamiento(user): void {
+  public verificacionCreacionDePerfil(user): void {
     if (user) {
-      this.verificacion();
-      this.perfil.id = this.documento;
-      if (this.tipoPerfil === 'Profesional'){
-         this.cargaEspecialidad();
-       }
+      this.verificacionDePerfil(user);
+      this.crearFotos();
       this.pr.crearPerfil(this.perfil);
       this.auth.redirect(this.isRegistered);
     } else {
@@ -87,20 +121,35 @@ export class RegistroComponent implements OnInit {
     }
   }
 
-  verificacion(): void {
+  verificacionDePerfil(user): void {
     if (this.tipoPerfil === 'Paciente'){
        this.perfil.tipo = 'Paciente';
     }
-    else{
+    if (this.tipoPerfil === 'Profesional'){
       this.perfil.tipo = 'Profesional';
+      this.cargaEspecialidad();
     }
+    else{
+      this.perfil.tipo = 'Administrador';
+    }
+    this.perfil.id = this.documento;
+    this.perfil.uid  = user.uid;
   }
 
   cargaEspecialidad(): void {
     for (let i = 0; i < this.seleccionados.length; i++) {
       this.perfil.especialidades.push(new Especialidad(i, this.seleccionados[i]));
     }
+  }
 
+  crearFotos(): void {
+    this.perfil.img1 = this.img1.name;
+    this.img.cargaImagenes(this.img1, this.img1.name);
+    if (this.tipoPerfil === 'Paciente'){
+      this.perfil.img2  = this.img2.name;
+      this.img.cargaImagenes(this.img2, this.img2.name);
+
+    }
   }
 
   asignarId(): void{
@@ -125,6 +174,7 @@ export class RegistroComponent implements OnInit {
     this.especialidadError = false;
     this.sexoError = false;
     this.captchaError = false;
+    this.documento = '';
   }
 
   resolved(token): void{
@@ -133,11 +183,7 @@ export class RegistroComponent implements OnInit {
 
    validarCampos(): boolean {
     this.error = false;
-    let fotos = true;
     let especialidad = true;
-    if (this.tipoPerfil === 'Paciente'){
-         fotos = this.validarFotos();
-      }
     if (this.tipoPerfil === 'Profesional'){
          especialidad = this.validarEspecialidad();
       }
@@ -147,6 +193,7 @@ export class RegistroComponent implements OnInit {
     const apellido = this.validarApellido();
     const fecha = this.validarFecha();
     const sexo = this.validarSexo();
+    const fotos = this.validarFotos();
     const captcha = this.validarCaptcha();
 
     if (usuario && pass && nombre && apellido && fecha && sexo && fotos && especialidad && captcha){
@@ -219,14 +266,16 @@ export class RegistroComponent implements OnInit {
   validarFotos(): boolean {
      let primera = true ;
      let segunda = true ;
-     if (this.perfil.img1 === null || this.perfil.img1 === undefined){
+     if (this.img1 === null || this.img1 === undefined){
        this.primeraFotoError = true ;
        primera = false;
     }
-     if (this.perfil.img2 === null || this.perfil.img2 === undefined){
-      this.segundaFotoError = true;
-      segunda = false;
-    }
+     if (this.tipoPerfil === 'Paciente'){
+        if (this.img2 === null || this.img2 === undefined){
+          this.segundaFotoError = true;
+          segunda = false;
+        }
+      }
      return (primera && segunda);
   }
 

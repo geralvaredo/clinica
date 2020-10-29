@@ -36,4 +36,8 @@ export class PerfilService {
   public contadorPerfiles(): Observable<any> {
     return this.fs.obtenerTotalDocumentos('perfiles');
   }
+
+  public obtenerPerfilSnapshot(): any {
+    return this.fs.obtenerColeccionSnapshot('perfiles');
+  }
 }

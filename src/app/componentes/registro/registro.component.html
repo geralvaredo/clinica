@@ -1,5 +1,4 @@
 
-
  <div class="perfil bordeBlanco">
 
      <label class="etiquetaPerfil">Seleccione un Perfil</label>
@@ -7,10 +6,11 @@
      <select class="custom-select col-md-3" id="selectPerfil" [(ngModel)]="tipoPerfil" (change)="onChange($event.target)" [ngModelOptions]="{standalone: true}">
        <option value="Paciente">Paciente</option>
        <option value="Profesional">Profesional</option>
+       <!--option value="Administrador">Administrador</option-->
      </select>
      <label *ngIf="tipoError" class="form-text text-danger">Falta ingresar el tipo de perfil</label>
    </div>
-  <div *ngIf="tipoPerfil === 'Profesional' || tipoPerfil === 'Paciente'" class="registro">
+  <div *ngIf="tipoPerfil === 'Profesional' || tipoPerfil === 'Paciente' || tipoPerfil === 'Administrador'" class="registro">
     <div class="container">
       <form>
       <div class="row">
@@ -58,21 +58,22 @@
                   </select>
                   <label *ngIf="sexoError" class="form-text error">*Falta ingresar el sexo</label>
                 </div>
-                <div *ngIf="tipoPerfil === 'Profesional'" class="col-md-6 mb-3">
+                <div  class="col-md-3 mb-3">
+                  <label> Foto</label>
+                  <input class="form-control" type="file" id="img1" placeholder="Ingrese una fecha de Nacimiento.."  (change)="fileChange($event)"  name="img1">
+                  <label *ngIf="primeraFotoError" class="form-text error">* Falta ingresar la foto de perfil</label>
+                </div>
+                <div *ngIf="tipoPerfil === 'Profesional'" class="col-md-3 mb-3">
                   <label>Especialidad</label>
                   <select class="custom-select"  [(ngModel)]="seleccionados" multiple [ngModelOptions]="{standalone: true}">
                     <option [value]="item"  *ngFor="let item of especialidad">{{item}}</option>
                   </select>
                   <label *ngIf="especialidadError" class="form-text error">*Falta ingresar la especialidad</label>
                 </div>
-                <div *ngIf="tipoPerfil === 'Paciente'" class="col-md-3 mb-3">
-                  <label>Primera Foto</label>
-                  <input class="form-control" type="file" placeholder="Ingrese una fecha de Nacimiento.." [(ngModel)]="perfil.img1" name="primeraFoto">
-                  <label *ngIf="primeraFotoError" class="form-text error">* Falta ingresar la primera foto</label>
-                </div>
+
                 <div *ngIf="tipoPerfil === 'Paciente'" class="col-md-3 mb-3">
                   <label>Segunda Foto</label>
-                  <input class="form-control" type="file" placeholder="Ingrese una fecha de Nacimiento.." [(ngModel)]="perfil.img2" name="segundaFoto">
+                  <input class="form-control" type="file" id="img2" placeholder="Ingrese una fecha de Nacimiento.." (change)="fileChange($event)" name="img2">
                   <label *ngIf="segundaFotoError" class="form-text error">* Falta ingresar la segunda foto</label>
                 </div>
                 <div class="captcha">

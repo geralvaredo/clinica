@@ -4,6 +4,7 @@ import {Perfil} from './perfil';
 export class Paciente extends Perfil{
   idPaciente: string;
   listaTurnos: Array<Turno>;
+  img2: string;
 
   constructor() {
     super();
