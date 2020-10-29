@@ -34,7 +34,6 @@ export class CabeceraComponent implements OnInit {
      this.usuario = JSON.parse(this.auth.getStorage('usuario')).uid;
      this.pr.contadorPerfiles().subscribe(
       (lista: any) => {
-        // tslint:disable-next-line:prefer-for-of
         for (let i = 0; i < lista.length; i++) {
            if (this.usuario === lista[i].uid){
              this.img = lista[i].img1;
