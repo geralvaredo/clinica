@@ -56,8 +56,11 @@ export class RegistroComponent implements OnInit {
   onChange(e): void{
     if (e.value === 'Profesional'){
       this.perfil = new Profesional();
-    }else {
+    }else if (e.value === 'Paciente') {
       this.perfil = new Paciente();
+    }
+    else{
+      this.tipoPerfil = 'Administrador';
     }
   }
 
@@ -125,7 +128,7 @@ export class RegistroComponent implements OnInit {
     if (this.tipoPerfil === 'Paciente'){
        this.perfil.tipo = 'Paciente';
     }
-    if (this.tipoPerfil === 'Profesional'){
+    else if (this.tipoPerfil === 'Profesional'){
       this.perfil.tipo = 'Profesional';
       this.cargaEspecialidad();
     }

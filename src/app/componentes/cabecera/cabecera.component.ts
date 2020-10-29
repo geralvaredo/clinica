@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Usuario} from '../../clases/usuario';
 import {AuthService} from '../../servicios/auth.service';
 import {ImagenService} from '../../servicios/imagen.service';
 import {PerfilService} from '../../servicios/perfil.service';
