@@ -43,4 +43,9 @@ export class FirestoreService {
     const objetoDoc = this.db.collection(`${collection}`).doc(id);
     return objetoDoc.delete();
   }
+
+  obtenerColeccionSnapshot(collection: string): any {
+    return this.db.collection(collection).snapshotChanges();
+  }
+
 }
