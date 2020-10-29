@@ -15,3 +15,32 @@
   background-color: #059797;
   border-radius: 5px;
 }
+
+.avatar {
+  /* cambia estos dos valores para definir el tamaño de tu círculo */
+  height: 50px;
+  width: 50px;
+  /* los siguientes valores son independientes del tamaño del círculo */
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+}
+.avatar2 {
+  /* cambia estos dos valores para definir el tamaño de tu círculo */
+  height: 100px;
+  width: 100px;
+  /* los siguientes valores son independientes del tamaño del círculo */
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+  border: 3px solid;
+  border-color: blue;
+}
+
+
+label {
+  color : white;
+  font: oblique bold 120% cursive;
+}

@@ -7,7 +7,9 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       </ul>
-        <a class="nav-link sesion"  (click)="usuario = null; auth.logOut()">Cerrar sesion</a>
+      <label>Bienvenido {{nombre}}!</label>
+      <a class="nav-link sesion"  (click)="usuario = null; auth.logOut()"><img [src]="perfil" class="avatar" id="perfil" alt="perfil"></a>
+
     </div>
   </nav>
 </div>
