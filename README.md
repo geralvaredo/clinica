@@ -9,7 +9,7 @@ Podra registrarse como paciente o profesional.
 
 Registro para paciente :
 
-![](src/assets/RegistroPaciente.gif)
+![](src/assets/registroPaciente.gif)
 
 Registro para Profesional :
 
