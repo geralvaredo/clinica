@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AltaTurnoComponent implements OnInit {
 
+  conoceProfesionalError: boolean;
+  especialidadError: boolean;
+  especialidad: string[] =
+    ['Cardiologia', 'Radiologia', 'Traumatologia', 'Oftalmologia' , 'Neurologia' , 'Alergista' , 'Enfermeria'];
+  seleccionados: string [] = [];
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  buscarTurnos(): void {
+
   }
 
 }
