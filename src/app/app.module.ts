@@ -40,6 +40,7 @@ import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import {MatCardModule} from '@angular/material/card';
 import {RecaptchaFormsModule, RecaptchaModule} from 'ng-recaptcha';
+import { RegistroAdminComponent } from './componentes/registro-admin/registro-admin.component';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import {RecaptchaFormsModule, RecaptchaModule} from 'ng-recaptcha';
     VerificacionEspecialidadComponent,
     VerificacionDeCorreoComponent,
     CabeceraComponent,
-    MenuComponent
+    MenuComponent,
+    RegistroAdminComponent
   ],
   imports: [
     BrowserModule,
