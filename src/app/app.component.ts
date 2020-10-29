@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, RouterOutlet} from '@angular/router';
+import {slideInAnimation} from './animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [slideInAnimation]
 })
 export class AppComponent {
-  title = 'clinicaHospitalArgentino';
+  title = 'clinicaUniversitaria';
   ruta ;
 
   constructor(router: Router) {
@@ -15,4 +17,8 @@ export class AppComponent {
       this.ruta = router.url;
     });
   }
+  prepareRoute(outlet: RouterOutlet): any {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
+
 }
