@@ -1,13 +1,10 @@
-export class Usuario {
+import {Perfil} from './perfil';
+import {Pais} from './pais';
 
-  email: string;
-  pass: string;
-  nombre: string;
-  private apellido: string;
-  private img;
-  sexo: string;
-  fechaNacimiento: string;
-
-  constructor() {
+export  class Usuario {
+   id: string;
+   email: string;
+   pass: string;
+   constructor() {
   }
 }

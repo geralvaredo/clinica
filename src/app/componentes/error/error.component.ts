@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../servicios/auth.service';
 
 @Component({
   selector: 'app-error',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorComponent implements OnInit {
 
-  constructor() { }
+  error: string;
+
+  constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
+    this.inicializador();
   }
+
+  inicializador(): void {
+    this.error = JSON.parse(this.auth.getErrorLocalStorage('error'));
+  }
+
 
 }

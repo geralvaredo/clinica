@@ -1,0 +1,19 @@
+<div class="mb-5">
+  <nav class="navbar navbar-expand-lg cabecera  ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!--a id="home" class="navbar-brand" routerLink="/bienvenido">Home</a-->
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      </ul>
+      <label>Bienvenido {{nombre}}!</label>
+      <a class="nav-link sesion"  (click)="usuario = null; auth.logOut()"><img [src]="perfil" class="avatar" id="perfil" alt="perfil"></a>
+
+    </div>
+  </nav>
+</div>
+
+
+
+

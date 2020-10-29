@@ -35,6 +35,12 @@ import { DetalleHistoriaClinicaComponent } from './componentes/detalle-historia-
 import { AtencionPacienteComponent } from './componentes/atencion-paciente/atencion-paciente.component';
 import { VerificacionEspecialidadComponent } from './componentes/verificacion-especialidad/verificacion-especialidad.component';
 import { VerificacionDeCorreoComponent } from './componentes/verificacion-de-correo/verificacion-de-correo.component';
+import {BienvenidoComponent} from './componentes/bienvenido/bienvenido.component';
+import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
+import { MenuComponent } from './componentes/menu/menu.component';
+import {MatCardModule} from '@angular/material/card';
+import {RecaptchaFormsModule, RecaptchaModule} from 'ng-recaptcha';
+import { RegistroAdminComponent } from './componentes/registro-admin/registro-admin.component';
 
 
 @NgModule({
@@ -51,6 +57,7 @@ import { VerificacionDeCorreoComponent } from './componentes/verificacion-de-cor
     AltaEncuestaComponent,
     AltaTurnoComponent,
     BtnBorrarComponent,
+    BienvenidoComponent,
     BtnModificarComponent,
     BtnDetalleComponent,
     DetalleTurnoComponent,
@@ -59,7 +66,10 @@ import { VerificacionDeCorreoComponent } from './componentes/verificacion-de-cor
     DetalleHistoriaClinicaComponent,
     AtencionPacienteComponent,
     VerificacionEspecialidadComponent,
-    VerificacionDeCorreoComponent
+    VerificacionDeCorreoComponent,
+    CabeceraComponent,
+    MenuComponent,
+    RegistroAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +84,10 @@ import { VerificacionDeCorreoComponent } from './componentes/verificacion-de-cor
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

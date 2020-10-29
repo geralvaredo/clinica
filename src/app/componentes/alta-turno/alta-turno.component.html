@@ -1,1 +1,45 @@
-<p>alta-turno works!</p>
+<div class="container-fluid">
+  <p> Reservar Turno</p>
+  <br>
+  <p>Conoce el apellido del profesional con quien desea reservar ? </p>
+  <form>
+    <div class="row">
+       <div class="col-md-12 order-md-1">
+           <article [ngClass]="'general'">
+             <div class="row">
+               <div class="col-md-12 mb-1">
+                   <div class="form-check form-check-inline">
+                     <input class="form-check-input"  type="radio" placeholder="Ingrese un nombre.."  name="conoce">
+                     <label class="form-check-label">Si</label>
+                   </div>
+                 <div class="form-check form-check-inline">
+                   <input class="form-check-input"  type="radio" placeholder="Ingrese un nombre.."  name="conoce">
+                   <label class="form-check-label">No</label>
+                 </div>
+                 <label *ngIf="conoceProfesionalError" class="form-text text-danger"> Ingrese si conoce al profesional</label>
+               </div>
+               <br>
+               <div class="col-md-6 mb-3">
+                 <label>Especialidad</label>
+                 <select class="custom-select"  [(ngModel)]="seleccionados"  [ngModelOptions]="{standalone: true}">
+                   <option [value]="item"  *ngFor="let item of especialidad">{{item}}</option>
+                 </select>
+                 <label *ngIf="especialidadError" class="form-text error">*Falta ingresar la especialidad</label>
+               </div>
+               <div class="col-md-12 mb-3">
+                 <div class="d-flex justify-content-center spaceUp">
+                   <button id="btnAgregar" type="button" style="margin-right:1%;" class="btn btn-success pull-right" (click)="buscarTurnos()"> Buscar Turno </button>
+                 </div>
+               </div>
+
+             </div>
+           </article>
+
+       </div>
+
+
+
+    </div>
+  </form>
+
+</div>
