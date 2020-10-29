@@ -7,6 +7,7 @@ import {BienvenidoComponent} from './componentes/bienvenido/bienvenido.component
 import {BusquedaComponent} from './componentes/busqueda/busqueda.component';
 import {AuthGuard} from './servicios/auth.guard';
 import {VerificacionDeCorreoComponent} from './componentes/verificacion-de-correo/verificacion-de-correo.component';
+import {AltaTurnoComponent} from './componentes/alta-turno/alta-turno.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'error', component : ErrorComponent},
   {path: 'registro' , component: RegistroComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'verificacionCorreo', component: VerificacionDeCorreoComponent , canActivate: [AuthGuard]}
+  {path: 'verificacionCorreo', component: VerificacionDeCorreoComponent , canActivate: [AuthGuard]},
+  {path: 'solicitudTurno', component: AltaTurnoComponent}
 
 ];
 
