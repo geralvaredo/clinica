@@ -75,16 +75,17 @@
   
   1- Registro (Con imagenes)
      X Crear campos nombre , apellido , sexo , fecha de nacimiento , perfil     
-     X Crear servicio de perfil para guardar en la coleccion
-     X setear el estado en false
-     - 2 imagenes (paciente y profesional)
-     - averiguar como subir a storage el manejo de imagenes
-     X captcha
+     X Crear servicio de perfil para guardar en la coleccion     X 
+     X Validar todos los campos
+     X setear un profesional
+     X Guardar La Especialidades
+     X subir 2 imagenes a storage (paciente)
+     X captcha (solicitar otro captcha para produccion)
         
      
      2- Login 
     X entrar al menu principal 
-    X verificar que la cuenta este activada         
+    X verificar que la cuenta este activada con firebase         
     X cant Activate
      
      
@@ -93,25 +94,23 @@
     X mandarlo al mail
     X ponerlo en el menu de verificacion
  
-      
+        
      
-     
-  -4 Readme en github con video y imagen
+  -4 Readme en github con video y imagen (MARTES)
   
     
    5- Menu Principal
-    - Filtrar el menu dependiendo para perfil
-  
-    - verificacion de especialidad ( para administradores)
-    - atencion al paciente
-  
+    - Filtrar el menu dependiendo para perfil (MARTES) 
+    - verificacion de especialidad ( para administradores)  (MARTES)
+    - atencion al paciente (MARTES)
+    - Registro de administradores que hacen administradores  
           
    6- Solicitud de Turnos
-     - Solicitar turno (para paciente filtrado por profesional)
-    - turnos que se vean hasta 15 dias de la fecha actual
-    - Carga de horarios (para profesional)
-      - agregar la historia clinica 
-    - agregar encuesta
+     - Solicitar turno (para paciente filtrado por profesional) (Martes)
+    - turnos que se vean hasta 15 dias de la fecha actual  miercoles
+    - Carga de horarios (para profesional) miercoles
+    - agregar la historia clinica  miercoles
+    - agregar encuesta miercoles
    
      
   theme: 
@@ -119,5 +118,15 @@
   
   clave-sitio-web : 6Lc7edsZAAAAAEG1Ftr7vyLOzOkCUwLYfmLZtGFO
   clave-secreta : 6Lc7edsZAAAAAAsJfNTwKUIw8LQqqs7vQO1iDXKO
+  
+  
+  admin: admin@tibui.com
+  pass: admin123
+  
+  profe: profe@llubed.com
+  pass: profe123
+  
+  
+  
 
   
