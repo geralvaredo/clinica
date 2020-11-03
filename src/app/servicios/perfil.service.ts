@@ -12,7 +12,7 @@ export class PerfilService {
 
   public crearPerfil(perfil: Perfil): void {
     perfil.nacionalidad = null;
-    perfil.fechaAlta = Date.now();
+    perfil.fechaAlta =  Date.now().toLocaleString();
     perfil.fechaBaja = null;
     this.fs.agregarDocumento(JSON.parse( JSON.stringify(perfil)), 'perfiles');
   }
