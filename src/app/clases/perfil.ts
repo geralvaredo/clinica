@@ -9,7 +9,7 @@ export abstract class Perfil  {
   fechaNacimiento: string;
   nacionalidad: Pais;
   sexo: string ;
-  fechaAlta: number;
+  fechaAlta: string;
   fechaBaja: string;
   img1: string;
 
