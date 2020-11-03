@@ -1,12 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {LOCALE_ID, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './componentes/error/error.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -19,7 +19,6 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {environment} from '../environments/environment.prod';
 import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
-import { AltaPacProfAdminComponent } from './componentes/alta-pac-prof-admin/alta-pac-prof-admin.component';
 import { AltaHorariosComponent } from './componentes/alta-horarios/alta-horarios.component';
 import { AltaEspecialidadComponent } from './componentes/alta-especialidad/alta-especialidad.component';
 import { AltaHistoriaClinicaComponent } from './componentes/alta-historia-clinica/alta-historia-clinica.component';
@@ -40,7 +39,13 @@ import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import {MatCardModule} from '@angular/material/card';
 import {RecaptchaFormsModule, RecaptchaModule} from 'ng-recaptcha';
-import { RegistroAdminComponent } from './componentes/registro-admin/registro-admin.component';
+import { AltaAdminComponent } from './componentes/alta-admin/alta-admin.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {DateAdapter, MAT_DATE_FORMATS, MatNativeDateModule} from '@angular/material/core';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, MomentDateModule} from '@angular/material-moment-adapter';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 
 @NgModule({
@@ -50,7 +55,6 @@ import { RegistroAdminComponent } from './componentes/registro-admin/registro-ad
     LoginComponent,
     RegistroComponent,
     BusquedaComponent,
-    AltaPacProfAdminComponent,
     AltaHorariosComponent,
     AltaEspecialidadComponent,
     AltaHistoriaClinicaComponent,
@@ -69,7 +73,7 @@ import { RegistroAdminComponent } from './componentes/registro-admin/registro-ad
     VerificacionDeCorreoComponent,
     CabeceraComponent,
     MenuComponent,
-    RegistroAdminComponent
+    AltaAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -87,9 +91,17 @@ import { RegistroAdminComponent } from './componentes/registro-admin/registro-ad
     FormsModule,
     MatCardModule,
     RecaptchaModule,
-    RecaptchaFormsModule
+    RecaptchaFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableModule,
+    MatPaginatorModule,
+    ReactiveFormsModule,
+    MomentDateModule,
+    NgxMaterialTimepickerModule
   ],
-  providers: [],
+  providers: [{ provide: DateAdapter, useClass: MomentDateAdapter, deps: [LOCALE_ID] , useValue: 'es' },
+    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

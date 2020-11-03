@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   usuario: Usuario;
   perfil = '';
-  isLogin = 'bienvenido';
+  isLogin = 'principal';
   verification = 'verificacionCorreo';
   notLogin = 'error';
   errorLogin = 'ErrorOnlogin->';
@@ -51,9 +51,18 @@ export class LoginComponent implements OnInit {
   }
 
   admin(): void{
-    this.usuario.email = 'admin@tibui.com';
+    this.usuario.email = 'admin@llubed.com';
     this.usuario.pass = 'admin123' ;
   }
 
+  profe(){
+    this.usuario.email = 'profe@llubed.com';
+    this.usuario.pass = 'profe123' ;
+  }
+
+  paciente(){
+    this.usuario.email = 'paciente@llubed.com';
+    this.usuario.pass = 'pac123' ;
+  }
 
 }

@@ -49,7 +49,7 @@ export class VerificacionDeCorreoComponent implements OnInit {
   profesionales(): void{
     if (this.perfil === 'Profesional'  && this.sitioAnterior === 'login'){
       this.auth.sitioAnterior('verificacionCorreo');
-      this.auth.redirect('bienvenido');
+      this.auth.redirect('principal');
     }
   }
 
