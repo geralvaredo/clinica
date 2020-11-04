@@ -1,7 +1,8 @@
 .menu{
   margin-left: -1vh;
   margin-top: -9vh;
-  background-color: #177445;
+  height: 120vh;
+  background-color: #4e73df;
 }
 
 a{
@@ -14,4 +15,16 @@ a{
 a:hover{
   background-color: #059797;
   border-radius: 5px;
+}
+
+.fijo{
+  position: fixed;
+}
+
+.app-admin{
+  width: 20vh;
+}
+
+.pacProf{
+  margin-top: -25vh;
 }
