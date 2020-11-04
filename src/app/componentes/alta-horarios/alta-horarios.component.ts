@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {Turno} from '../../clases/turno';
 import {MatPaginator} from '@angular/material/paginator';
@@ -6,7 +6,8 @@ import {DateAdapter, MAT_DATE_FORMATS} from '@angular/material/core';
 import {AdaptadorFecha, APP_DATE_FORMATS} from '../../clases/adaptador-fecha';
 import {TurnoService} from '../../servicios/turno.service';
 import {PerfilService} from '../../servicios/perfil.service';
-import {Time} from '@angular/common';
+import {Profesional} from '../../clases/profesional';
+import {Perfil} from '../../clases/perfil';
 
 
 @Component({
@@ -20,20 +21,26 @@ import {Time} from '@angular/common';
 export class AltaHorariosComponent implements OnInit {
   inicio: Date;
   fin: Date;
+  perfil: any;
   diaInicio: number;
   diaFin: number;
+  ultimo: number;
+  fechaHoy : string;
   horaInicio: string;
   minutoInicio: string;
   horaFin: string;
   minutoFin: string;
+  estado = 'DISPONIBLE';
   listaTurnos: Array<Turno> ;
   semana: Array<string> = ['Domingo' , 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
-  ultimo: number;
-  myDateFilter: any;
   minTimeFilter: string;
   maxTimeFilter: string;
   idProfesional: string;
+  nombreProfesional: string;
+  apellidoProfesional: string;
   horasConfirmadas: string;
+  myDateFilter: any;
+  especialidad: any;
   data: MatTableDataSource<any>;
   displayedColumns = ['fecha', 'estado', 'horaInicio', 'horaFin' , 'accion' ];
   @ViewChild('pagina') paginator: MatPaginator;
@@ -76,13 +83,21 @@ export class AltaHorariosComponent implements OnInit {
    generarListaDeTurnos(final): void {
      for (let i = this.inicio.getDate(); i < this.fin.getDate() + 1; i++) {
        for (let j = 0; j < final; j++) {
-         this.listaTurnos.push( new Turno( this.ultimo.toString(),
-           (new Date(this.inicio.getFullYear(), this.inicio.getMonth(), i )).toLocaleDateString() ,
-           'disponible', (parseInt(this.horaInicio)) + j , parseInt(this.minutoInicio),
-           (parseInt(this.horaInicio)) + (j + 1) , (parseInt(this.minutoInicio)), this.idProfesional));
+         let idPaciente = null;
+         this.cargaDatosProfesional();
+         this.fechaHoy = (new Date(this.inicio.getFullYear(), this.inicio.getMonth(), i )).toLocaleDateString()
+         this.listaTurnos.push( new Turno( this.ultimo.toString(), this.fechaHoy , this.estado, (parseInt(this.horaInicio)) + j , parseInt(this.minutoInicio),
+           (parseInt(this.horaInicio)) + (j + 1) , (parseInt(this.minutoInicio)), this.perfil , idPaciente ,this.especialidad.toString()));
          this.ultimo++;
        }
      }
+   }
+
+   cargaDatosProfesional(): void {
+     this.perfil = new Profesional();
+     this.perfil.id =  this.idProfesional;
+     this.perfil.nombre = this.nombreProfesional;
+      this.perfil.apellido = this.apellidoProfesional;
    }
 
    filtroCalendario(): void {
@@ -93,7 +108,8 @@ export class AltaHorariosComponent implements OnInit {
    }
 
   confirmarHorarios(): void {
-    this.turnos.agregarListaDeTurnos(this.listaTurnos);
+    console.log(this.listaTurnos);
+   this.turnos.agregarListaDeTurnos(this.listaTurnos);
     this.data = new MatTableDataSource();
     this.horasConfirmadas = 'Las Horas ya fueron confirmadas';
 
@@ -123,6 +139,9 @@ export class AltaHorariosComponent implements OnInit {
         for (let i = 0; i < lista.length; i++) {
           if (user.uid === lista[i].uid ){
             this.idProfesional = lista[i].id;
+            this.nombreProfesional = lista[i].nombre;
+            this.apellidoProfesional = lista[i].apellido;
+            this.especialidad = lista[i].especialidades[0].nombre;
           }
         }
       }) ;
