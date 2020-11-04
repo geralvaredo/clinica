@@ -49,6 +49,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSortModule} from '@angular/material/sort';
+import { TipoPerfilComponent } from './componentes/tipo-perfil/tipo-perfil.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import {MatSortModule} from '@angular/material/sort';
     VerificacionDeCorreoComponent,
     CabeceraComponent,
     MenuComponent,
-    AltaAdminComponent
+    AltaAdminComponent,
+    TipoPerfilComponent
   ],
   imports: [
     BrowserModule,

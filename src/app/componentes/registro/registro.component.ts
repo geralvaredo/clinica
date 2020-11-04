@@ -7,6 +7,7 @@ import {Profesional} from '../../clases/profesional';
 import {Especialidad} from '../../clases/especialidad';
 import {Imagen} from '../../clases/imagen';
 import {ImagenService} from '../../servicios/imagen.service';
+import {Administrador} from '../../clases/administrador';
 
 @Component({
   selector: 'app-registro',
@@ -22,7 +23,8 @@ export class RegistroComponent implements OnInit {
   img1: Imagen;
   img2: Imagen;
   fecha: Date;
-  perfil: any ;
+  fechaHoy: Date;
+  perfil: any;
   usuarioError: boolean;
   passError: boolean;
   repassError: boolean;
@@ -35,11 +37,14 @@ export class RegistroComponent implements OnInit {
   captchaError: boolean;
   sexoError: boolean;
   tipoError: boolean;
-  error: boolean ;
+  error: boolean;
   tipoPerfil: string;
+  nombre: string;
+  apellido: string;
+  sexo: string;
   documento: string;
-  token: string ;
-  repass: string ;
+  token: string;
+  repass: string;
   extensiones = [ 'jpg', 'jpeg', 'png' ];
   especialidad: string[] =
     ['Cardiologia', 'Radiologia', 'Traumatologia', 'Oftalmologia' , 'Neurologia' , 'Alergista' , 'Enfermeria'];
@@ -47,7 +52,8 @@ export class RegistroComponent implements OnInit {
 
 
   constructor(private auth: AuthService, private pr: PerfilService, private img: ImagenService) {
-    this.fecha = new Date();
+   this.fecha = new Date();
+   this.fechaHoy = new Date();
   }
 
   ngOnInit(): void {
@@ -63,7 +69,7 @@ export class RegistroComponent implements OnInit {
       this.perfil = new Paciente();
     }
     else{
-      this.tipoPerfil = 'Administrador';
+      this.perfil = new Administrador();
     }
   }
 
@@ -87,8 +93,6 @@ export class RegistroComponent implements OnInit {
       }
   }
 
-
-
   ValidarExtension(fileName: string): string{
     const separateFileName = fileName.split('.');
     const extension = separateFileName[separateFileName.length - 1];
@@ -98,7 +102,6 @@ export class RegistroComponent implements OnInit {
       return null;
     }
   }
-
 
   async onRegister(): Promise<void> {
     try {
@@ -129,9 +132,10 @@ export class RegistroComponent implements OnInit {
   fechasNacionalidad(): void{
     this.perfil.nacionalidad = null;
     this.perfil.fechaBaja = null;
-    this.perfil.fechaAlta = ( new Date( this.fecha.getFullYear(), this.fecha.getMonth(), this.fecha.getDay())).toLocaleDateString();
-  }
+    this.perfil.fechaNacimiento = this.fecha;
+    this.perfil.fechaAlta = ( new Date( this.fechaHoy.getFullYear(), this.fechaHoy.getMonth(), this.fechaHoy.getDay())).toLocaleDateString();
 
+  }
 
   verificacionDePerfil(user): void {
     if (this.tipoPerfil === 'Paciente'){
@@ -145,8 +149,15 @@ export class RegistroComponent implements OnInit {
     else{
       this.perfil.tipo = 'Administrador';
     }
+    this.cargaDePerfil(user);
+  }
+
+  cargaDePerfil(user): void {
     this.perfil.id = this.documento;
     this.perfil.uid  = user.uid;
+    this.perfil.nombre = this.nombre;
+    this.perfil.apellido = this.apellido;
+    this.perfil.sexo = this.sexo;
   }
 
   cargaEspecialidad(): void {
@@ -242,7 +253,7 @@ export class RegistroComponent implements OnInit {
 
    validarNombre(): boolean{
       let nombre = true;
-      if (this.perfil.nombre === null || this.perfil.nombre === undefined){
+      if (this.nombre === null || this.nombre === undefined){
        this.nombreError = true;
        nombre = false;
      }
@@ -251,7 +262,7 @@ export class RegistroComponent implements OnInit {
 
   validarApellido(): boolean {
     let apellido = true;
-    if (this.perfil.apellido === null || this.perfil.apellido === undefined){
+    if (this.apellido === null || this.apellido === undefined){
       this.apellidoError = true;
       apellido = false;
     }
@@ -260,7 +271,7 @@ export class RegistroComponent implements OnInit {
 
   validarFecha(): boolean {
     let fecha = true;
-    if (this.perfil.fechaNacimiento === null || this.perfil.fechaNacimiento === undefined){
+    if (this.fecha === null || this.fecha === undefined){
       this.fechaDeNacimientoError = true;
       fecha = false;
     }
@@ -269,7 +280,7 @@ export class RegistroComponent implements OnInit {
 
   validarSexo(): boolean {
     let sexo = true;
-    if (this.perfil.sexo === null || this.perfil.sexo === undefined){
+    if (this.sexo === null || this.sexo === undefined){
       this.sexoError = true;
       sexo = false;
     }
