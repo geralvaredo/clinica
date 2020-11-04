@@ -4,8 +4,8 @@
       <app-cabecera></app-cabecera>
     </div>
   </div>
-  <div class="row">
-    <div [@routeAnimations]="prepareRoute(outlet)">
+  <div [ngClass]="ruta == '/verificacionCorreo' ? 'blue-theme' : 'row' " >
+    <div  [@routeAnimations]="prepareRoute(outlet)">
       <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </div>
