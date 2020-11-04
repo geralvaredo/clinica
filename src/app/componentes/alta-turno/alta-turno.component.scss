@@ -1,3 +1,43 @@
 .general{
   background-color: #3B6D40;
 }
+
+.altaTurno{
+  width: 160vh;
+}
+
+.spaceLeft{
+  margin-left: 2vh;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+.example-full-width {
+  width: 70%;
+}
+
+table {
+  width: 120vh;
+  text-align: center;
+}
+
+.tableHeaderCellDiv {
+  resize: horizontal;
+  overflow:hidden;
+}
+
+th.mat-header-cell {
+  text-align: center;
+  font-size: 16px;
+}
+
+.etiqueta{
+  color : #4e73df;
+  font: oblique bold 120% cursive;
+  padding: 1vh;
+}
+
+.button{
+  text-align: center;
+}

@@ -46,6 +46,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, MomentDateModule} from '@angular/material-moment-adapter';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 @NgModule({
@@ -98,7 +100,9 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     MatPaginatorModule,
     ReactiveFormsModule,
     MomentDateModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    MatRadioModule,
+    MatAutocompleteModule
   ],
   providers: [{ provide: DateAdapter, useClass: MomentDateAdapter, deps: [LOCALE_ID] , useValue: 'es' },
     { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS }],
