@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {TurnoService} from '../../servicios/turno.service';
 import {Turno} from '../../clases/turno';
 import {FormControl} from '@angular/forms';
@@ -8,13 +8,15 @@ import {PerfilService} from '../../servicios/perfil.service';
 import {Perfil} from '../../clases/perfil';
 import {MatTableDataSource} from '@angular/material/table';
 import {Paciente} from '../../clases/paciente';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-alta-turno',
   templateUrl: './alta-turno.component.html',
   styleUrls: ['./alta-turno.component.scss']
 })
-export class AltaTurnoComponent implements OnInit {
+export class AltaTurnoComponent implements OnInit  {
 
   conoceProfesionalError: boolean;
   especialidadError: boolean;
@@ -35,6 +37,9 @@ export class AltaTurnoComponent implements OnInit {
   displayedColumns = ['accion' ,  'fecha', 'hora', 'profesional' , 'especialidad'  ,  'estado' ];
   myControl = new FormControl();
   filteredOptions: Observable<Perfil[]>;
+  @ViewChild('pagina') paginator: MatPaginator;
+  @ViewChild(MatSort, {static:false}) sort: MatSort;
+
 
   constructor(private turnos: TurnoService, private pr: PerfilService) { }
 
@@ -50,6 +55,7 @@ export class AltaTurnoComponent implements OnInit {
     this.filtrados();
   }
 
+
   buscarTurnos(valor): void {
     if(valor == 'no'){
       this.listaTurnos = this.listaTurnos.filter(turno => turno.especialidad == this.seleccionados);
@@ -58,6 +64,8 @@ export class AltaTurnoComponent implements OnInit {
       this.listaTurnos = this.listaTurnos.filter(turno => turno.profesional.id == this.myControl.value.id.toString());
     }
     this.data = new MatTableDataSource(this.listaTurnos);
+    this.data.paginator = this.paginator;
+    this.data.sort = this.sort;
     this.vistaTurnos = true;
   }
 
@@ -69,7 +77,6 @@ export class AltaTurnoComponent implements OnInit {
            if(lista[i].estado == 'DISPONIBLE'){
              this.listaTurnos.push(lista[i]);
            }
-
         }
       });
   }

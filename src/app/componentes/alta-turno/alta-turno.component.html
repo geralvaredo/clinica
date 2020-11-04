@@ -50,35 +50,35 @@
           <div class="col-md-12">
             <div class="d-flex justify-content-around">
               <div class="mat-elevation-z8">
-                <table mat-table [dataSource]="data">
+                <table mat-table [dataSource]="data" matSort >
 
                   <ng-container matColumnDef="accion">
-                    <th mat-header-cell *matHeaderCellDef>  </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Opcion: </th>
                     <td mat-cell *matCellDef="let row"> <mat-radio-button value="si" (click)="turno(row.id)" (change)="seleccionado()"  ></mat-radio-button> </td>
                   </ng-container>
 
                   <ng-container matColumnDef="fecha">
-                    <th mat-header-cell *matHeaderCellDef> Fecha </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
                     <td mat-cell *matCellDef="let row"> {{row.fecha}} </td>
                   </ng-container>
 
                   <ng-container matColumnDef="hora">
-                    <th mat-header-cell *matHeaderCellDef> Hora </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Hora </th>
                     <td mat-cell *matCellDef="let row"> {{row.horaInicio + ':' + row.minutoInicio + row.minutoInicio}} </td>
                   </ng-container>
 
                   <ng-container matColumnDef="profesional">
-                    <th mat-header-cell *matHeaderCellDef> Profesional </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Profesional </th>
                     <td mat-cell *matCellDef="let row"> {{ row.profesional.apellido + ' , ' + row.profesional.nombre }} </td>
                   </ng-container>
 
                   <ng-container matColumnDef="especialidad">
-                    <th mat-header-cell *matHeaderCellDef> Especialidad </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Especialidad </th>
                     <td mat-cell *matCellDef="let row"> {{row.especialidad }} </td>
                   </ng-container>
 
                   <ng-container matColumnDef="estado">
-                    <th mat-header-cell *matHeaderCellDef> Estado </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
                     <td mat-cell *matCellDef="let row"> {{row.estado}} </td>
                   </ng-container>
 
@@ -94,7 +94,7 @@
             <br>
             <div class="button">
               <button *ngIf="turnoSeleccionado" class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="reservarTurno()">Reservar Turno</button>
-              <button *ngIf="turnoSeleccionado" class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="limpiar()">Limpiar</button>
+              <button *ngIf="vistaTurnos" class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="limpiar()">Limpiar</button>
             </div>
           </div>
         </div>
