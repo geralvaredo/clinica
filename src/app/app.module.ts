@@ -48,6 +48,7 @@ import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, MomentDateModule} from '@ang
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatSortModule} from '@angular/material/sort';
 
 
 @NgModule({
@@ -102,7 +103,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MomentDateModule,
     NgxMaterialTimepickerModule,
     MatRadioModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatSortModule
   ],
   providers: [{ provide: DateAdapter, useClass: MomentDateAdapter, deps: [LOCALE_ID] , useValue: 'es' },
     { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS }],
