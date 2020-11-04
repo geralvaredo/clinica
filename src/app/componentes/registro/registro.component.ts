@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Usuario} from '../../clases/usuario';
 import {AuthService} from '../../servicios/auth.service';
 import {PerfilService} from '../../servicios/perfil.service';
@@ -16,15 +16,13 @@ import {ImagenService} from '../../servicios/imagen.service';
 export class RegistroComponent implements OnInit {
 
   isRegistered = 'verificacionCorreo';
+  @Input() altaAdmin = false;
   registerError = 'error';
   usuario: Usuario;
-  perfil: any ;
-  tipoPerfil: string;
-  documento: string;
-  token: string ;
   img1: Imagen;
   img2: Imagen;
-  repass: string ;
+  fecha: Date;
+  perfil: any ;
   usuarioError: boolean;
   passError: boolean;
   repassError: boolean;
@@ -38,6 +36,10 @@ export class RegistroComponent implements OnInit {
   sexoError: boolean;
   tipoError: boolean;
   error: boolean ;
+  tipoPerfil: string;
+  documento: string;
+  token: string ;
+  repass: string ;
   extensiones = [ 'jpg', 'jpeg', 'png' ];
   especialidad: string[] =
     ['Cardiologia', 'Radiologia', 'Traumatologia', 'Oftalmologia' , 'Neurologia' , 'Alergista' , 'Enfermeria'];
@@ -45,6 +47,7 @@ export class RegistroComponent implements OnInit {
 
 
   constructor(private auth: AuthService, private pr: PerfilService, private img: ImagenService) {
+    this.fecha = new Date();
   }
 
   ngOnInit(): void {
@@ -70,13 +73,11 @@ export class RegistroComponent implements OnInit {
      if (extension !== null){
       if (event.target.id === 'img1'){
         this.img1 = new Imagen(event.target.files.item(0));
-        console.log(this.img1.file);
         this.img1.extension = extension;
         this.img1.name = `${this.documento}-img1.${this.img1.extension}`;
       }
       else if (event.target.id === 'img2'){
         this.img2 = new Imagen(event.target.files.item(0));
-        console.log(this.img2.file);
         this.img2.extension = extension;
         this.img2.name = `${this.documento}-img2.${this.img2.extension}`;
       }
@@ -117,6 +118,7 @@ export class RegistroComponent implements OnInit {
     if (user) {
       this.verificacionDePerfil(user);
       this.crearFotos();
+      this.fechasNacionalidad();
       this.pr.crearPerfil(this.perfil);
       this.auth.redirect(this.isRegistered);
     } else {
@@ -124,12 +126,20 @@ export class RegistroComponent implements OnInit {
     }
   }
 
+  fechasNacionalidad(): void{
+    this.perfil.nacionalidad = null;
+    this.perfil.fechaBaja = null;
+    this.perfil.fechaAlta = ( new Date( this.fecha.getFullYear(), this.fecha.getMonth(), this.fecha.getDay())).toLocaleDateString();
+  }
+
+
   verificacionDePerfil(user): void {
     if (this.tipoPerfil === 'Paciente'){
        this.perfil.tipo = 'Paciente';
     }
     else if (this.tipoPerfil === 'Profesional'){
       this.perfil.tipo = 'Profesional';
+      this.perfil.habilitado = user.emailVerified;
       this.cargaEspecialidad();
     }
     else{
