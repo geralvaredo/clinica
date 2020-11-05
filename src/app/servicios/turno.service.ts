@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {FirestoreService} from './firestore.service';
 import {Turno} from '../clases/turno';
+import {HistoriaClinica} from '../clases/historia-clinica';
 
 
 @Injectable({
@@ -29,5 +30,10 @@ export class TurnoService {
   public modificarTurno(turno : Turno){
     this.fs.modificarDocumento(turno, 'turnos');
   }
+
+  public agregarHistoriaClinica(hc: HistoriaClinica ): void {
+      this.fs.agregarDocumento(JSON.parse( JSON.stringify(hc)), 'historiasClinicas');
+  }
+
 
 }

@@ -1,6 +1,7 @@
 import {Encuesta} from './encuesta';
 import {HistoriaClinica} from './historia-clinica';
 import {Profesional} from './profesional';
+import {Paciente} from './paciente';
 
 export class Turno {
   id: string;
@@ -10,7 +11,7 @@ export class Turno {
   minutoInicio: number;
   horaFin: number;
   minutoFin: number;
-  paciente: string;
+  paciente: Paciente;
   profesional: Profesional;
   especialidad: string;
   encuesta: Encuesta;
@@ -18,7 +19,7 @@ export class Turno {
 
   constructor(id?: string , fecha?: string, estado?: string ,
               horaInicio?: number, minutoInicio?: number, horaFin?: number, minutoFin?: number ,
-              profesional?: Profesional, idPaciente?: string, especialidad?: string) {
+              profesional?: Profesional, paciente?: Paciente, especialidad?: string) {
     this.id = id;
     this.fecha = fecha;
     this.estado = estado;
@@ -27,7 +28,8 @@ export class Turno {
     this.horaFin = horaFin;
     this.minutoFin = minutoFin;
     this.profesional = profesional;
-    this.paciente = idPaciente;
+    this.paciente = paciente;
     this.especialidad = especialidad;
+    this.historiaClinica = null;
   }
 }

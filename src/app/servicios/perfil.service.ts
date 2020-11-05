@@ -18,7 +18,7 @@ export class PerfilService {
     return this.fs.obtenerUnDocumento('perfiles', id);
   }
 
-  public obtenerPerfiles(): any {
+  public obtenerPerfiles(): Promise<any> {
     return this.fs.obtenerColeccion('perfiles');
   }
 
