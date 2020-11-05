@@ -80,7 +80,11 @@ y cancelados
 
 Profesional: 
 
+![](src/assets/HistoricoProfesionales.gif)
+
 Paciente:
+
+![](src/assets/HistoricoPacientes.gif)
 
 ## Reservar un turno
 
@@ -88,8 +92,15 @@ Usted podra reservar un turno con un paciente.
 Debe ir a la solapa solicitud de turnos
 puede realizar la busqueda por especialidad o por apellido del profesional
 
+Paciente:
 
+por especialidad:
 
+![](src/assets/SolicitudTurnoPorEspecialidad.gif)
+
+por apellido:
+
+![](src/assets/SolicitarTurno.gif)
 
 ## Validar Especialidad para profesionales
 
@@ -97,7 +108,11 @@ Para validar la especialidad de los profesionales
 debera loguearse con una cuenta administradora y debe ir 
 a la solapa "Verificacion de especialidad"
 
-## Validar al profesional para que pueda atender
+Administrador:
+
+![](src/assets/validarEspecialidad.gif)
+
+## profesional validado que pueda atender
 
 en proceso ....
 
@@ -105,6 +120,8 @@ en proceso ....
 
 La atencion se realiza en la solapa "Mis Turnos Agendados" tanto
 para paciente como para profesional
+
+
 
 ##Agregar historia Clinico
 
