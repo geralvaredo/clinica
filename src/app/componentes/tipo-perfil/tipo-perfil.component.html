@@ -1,0 +1,10 @@
+<div class="row">
+  <label class="etiquetaPerfil">Seleccione un Perfil</label>
+  <br>
+  <select class="custom-select col-md-3" id="selectPerfil" [(ngModel)]="tipoPerfil" (change)="onChange($event.target)" [ngModelOptions]="{standalone: true}">
+    <option value="Paciente">Paciente</option>
+    <option value="Profesional">Profesional</option>
+    <option  value="Administrador">Administrador</option>
+  </select>
+  <label *ngIf="tipoError" class="form-text text-danger">Falta ingresar el tipo de perfil</label>
+</div>
