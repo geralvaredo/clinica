@@ -1,0 +1,38 @@
+
+.avatar2 {
+  /* cambia estos dos valores para definir el tamaño de tu círculo */
+  height: 100px;
+  width: 100px;
+  /* los siguientes valores son independientes del tamaño del círculo */
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+  border: 3px solid;
+  border-color: blue;
+}
+
+
+
+.turno {
+  width: 110vh;
+  margin-left: 30vh;
+  margin-top: -20vh;
+}
+
+h6{
+  font: oblique bold 120% cursive;
+}
+
+.tarjeta{
+  border: 3px solid;
+  border-color: #4e73df;
+}
+
+.button{
+ margin-top: 2vh;
+}
+
+.general{
+  background-color: #B7DDFF;
+}

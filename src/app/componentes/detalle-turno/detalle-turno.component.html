@@ -1,1 +1,50 @@
-<p>detalle-turno works!</p>
+
+<div *ngIf="comienzaConsulta" class="row fila">
+  <div *ngFor="let item of this.listaTurnos">
+    <mat-card class="tarjeta general">
+
+      <a class="nav-link" *ngIf="perfil == 'Paciente'" ><img [src]="item.profesional.img1" class="avatar2" id="especialista" alt="especialista"></a>
+      <a class="nav-link" *ngIf="perfil == 'Profesional'" ><img [src]="item.paciente.img1" class="avatar2" id="especialista2" alt="especialista"></a>
+      <div class="turno">
+         <div class="row">
+           <div class="col-md-3">
+             <mat-label>Fecha :</mat-label>
+             <h6>  {{item.fecha}} </h6>
+           </div>
+           <div class="col-md-3">
+             <mat-label>Hora : </mat-label>
+             <h6>  {{item.horaInicio}} : {{item.minutoInicio}}{{ item.minutoInicio}} Hs </h6>
+           </div>
+           <div *ngIf="perfil == 'Paciente'" class="col-md-3">
+             <mat-label>Profesional :</mat-label>
+             <h6> {{item.profesional.apellido + ' ' + item.profesional.nombre }} </h6>
+           </div>
+           <div *ngIf="perfil == 'Profesional'" class="col-md-3">
+             <mat-label>Paciente :</mat-label>
+             <h6> {{item.paciente.apellido + ' ' + item.paciente.nombre }} </h6>
+           </div>
+           <div class="col-md-3">
+             <mat-label>Especialidad:</mat-label>
+             <h6>  {{item.especialidad}} </h6>
+           </div>
+           <div class="col-md-5">
+              <mat-label>Estado:</mat-label>
+             <h6> {{item.estado}} </h6>
+           </div>
+           <div class="col-md-3">
+             <button *ngIf="perfil == 'Paciente' || (perfil == 'Profesional' && item.estado == 'ASIGNADO')" [disabled]="iniciarConsulta" (click)="comenzarConsulta(item)" class="button" mat-raised-button color="primary">Iniciar Consulta</button>
+           </div>
+           <div class="col-md-3">
+             <button  class="button" mat-raised-button color="warn" (click)="cancelarTurno(item)"  >Cancelar Turno</button>
+           </div>
+         </div>
+      </div>
+    </mat-card>
+    <br>
+  </div>
+
+</div>
+<div *ngIf="!comienzaConsulta" class="row">
+  <app-alta-historia-clinica [comienzo] = 'comienzaConsulta' [perfil] ='perfil' [turno] = 'turnoSelecionado'></app-alta-historia-clinica>
+</div>
+
