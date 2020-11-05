@@ -10,10 +10,7 @@ export class PerfilService {
 
   constructor(private fs: FirestoreService) { }
 
-  public crearPerfil(perfil: Perfil): void {
-    perfil.nacionalidad = null;
-    perfil.fechaAlta = Date.now();
-    perfil.fechaBaja = null;
+  public crearPerfil(perfil: any): void {
     this.fs.agregarDocumento(JSON.parse( JSON.stringify(perfil)), 'perfiles');
   }
 
@@ -21,7 +18,7 @@ export class PerfilService {
     return this.fs.obtenerUnDocumento('perfiles', id);
   }
 
-  public obtenerPerfiles(): any {
+  public obtenerPerfiles(): Promise<any> {
     return this.fs.obtenerColeccion('perfiles');
   }
 

@@ -1,12 +1,13 @@
-<div class="container-fluid" [ngClass]="ruta != '/bienvenido' ? 'green-theme' : ''  ">
+<div class="container-fluid" [ngClass]="ruta != '/principal' ? 'white-gray-gradient-theme' : ''  ">
   <div class="row">
-    <div *ngIf="ruta == '/bienvenido' || ruta== '/solicitudTurno'" class="col">
+    <div *ngIf="ruta == '/principal' || ruta== '/solicitudTurno'" class="col">
       <app-cabecera></app-cabecera>
     </div>
   </div>
-  <div class="row">
-    <app-menu *ngIf="ruta == '/bienvenido' || ruta== '/solicitudTurno'"></app-menu>
-    <router-outlet></router-outlet>
+  <div [ngClass]="ruta == '/verificacionCorreo' ? 'blue-theme' : 'row' " >
+    <div  [@routeAnimations]="prepareRoute(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
   </div>
 </div>
 

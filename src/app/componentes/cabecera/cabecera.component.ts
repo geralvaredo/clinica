@@ -23,7 +23,6 @@ export class CabeceraComponent implements OnInit {
   }
 
   fotoPerfil(): void {
-    console.log(this.img);
     this.foto.getUpload('imagenes/' + this.img ).then(
       res => { this.perfil = res; }
     );

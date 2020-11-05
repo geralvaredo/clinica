@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Usuario} from '../../clases/usuario';
 import {AuthService} from '../../servicios/auth.service';
 import {PerfilService} from '../../servicios/perfil.service';
@@ -7,6 +7,7 @@ import {Profesional} from '../../clases/profesional';
 import {Especialidad} from '../../clases/especialidad';
 import {Imagen} from '../../clases/imagen';
 import {ImagenService} from '../../servicios/imagen.service';
+import {Administrador} from '../../clases/administrador';
 
 @Component({
   selector: 'app-registro',
@@ -16,15 +17,14 @@ import {ImagenService} from '../../servicios/imagen.service';
 export class RegistroComponent implements OnInit {
 
   isRegistered = 'verificacionCorreo';
+  @Input() altaAdmin = false;
   registerError = 'error';
   usuario: Usuario;
-  perfil: any ;
-  tipoPerfil: string;
-  documento: string;
-  token: string ;
   img1: Imagen;
   img2: Imagen;
-  repass: string ;
+  fecha: Date;
+  fechaHoy: Date;
+  perfil: any;
   usuarioError: boolean;
   passError: boolean;
   repassError: boolean;
@@ -37,7 +37,14 @@ export class RegistroComponent implements OnInit {
   captchaError: boolean;
   sexoError: boolean;
   tipoError: boolean;
-  error: boolean ;
+  error: boolean;
+  tipoPerfil: string;
+  nombre: string;
+  apellido: string;
+  sexo: string;
+  documento: string;
+  token: string;
+  repass: string;
   extensiones = [ 'jpg', 'jpeg', 'png' ];
   especialidad: string[] =
     ['Cardiologia', 'Radiologia', 'Traumatologia', 'Oftalmologia' , 'Neurologia' , 'Alergista' , 'Enfermeria'];
@@ -45,6 +52,8 @@ export class RegistroComponent implements OnInit {
 
 
   constructor(private auth: AuthService, private pr: PerfilService, private img: ImagenService) {
+   this.fecha = new Date();
+   this.fechaHoy = new Date();
   }
 
   ngOnInit(): void {
@@ -60,7 +69,7 @@ export class RegistroComponent implements OnInit {
       this.perfil = new Paciente();
     }
     else{
-      this.tipoPerfil = 'Administrador';
+      this.perfil = new Administrador();
     }
   }
 
@@ -70,13 +79,11 @@ export class RegistroComponent implements OnInit {
      if (extension !== null){
       if (event.target.id === 'img1'){
         this.img1 = new Imagen(event.target.files.item(0));
-        console.log(this.img1.file);
         this.img1.extension = extension;
         this.img1.name = `${this.documento}-img1.${this.img1.extension}`;
       }
       else if (event.target.id === 'img2'){
         this.img2 = new Imagen(event.target.files.item(0));
-        console.log(this.img2.file);
         this.img2.extension = extension;
         this.img2.name = `${this.documento}-img2.${this.img2.extension}`;
       }
@@ -85,8 +92,6 @@ export class RegistroComponent implements OnInit {
        (event.target.id === 'img1') ? this.img1 = null :  this.img2 = null ;
       }
   }
-
-
 
   ValidarExtension(fileName: string): string{
     const separateFileName = fileName.split('.');
@@ -97,7 +102,6 @@ export class RegistroComponent implements OnInit {
       return null;
     }
   }
-
 
   async onRegister(): Promise<void> {
     try {
@@ -117,11 +121,20 @@ export class RegistroComponent implements OnInit {
     if (user) {
       this.verificacionDePerfil(user);
       this.crearFotos();
+      this.fechasNacionalidad();
       this.pr.crearPerfil(this.perfil);
       this.auth.redirect(this.isRegistered);
     } else {
       this.auth.redirect(this.registerError);
     }
+  }
+
+  fechasNacionalidad(): void{
+    this.perfil.nacionalidad = null;
+    this.perfil.fechaBaja = null;
+    this.perfil.fechaNacimiento = this.fecha;
+    this.perfil.fechaAlta = ( new Date( this.fechaHoy.getFullYear(), this.fechaHoy.getMonth(), this.fechaHoy.getDay())).toLocaleDateString();
+
   }
 
   verificacionDePerfil(user): void {
@@ -130,13 +143,21 @@ export class RegistroComponent implements OnInit {
     }
     else if (this.tipoPerfil === 'Profesional'){
       this.perfil.tipo = 'Profesional';
+      this.perfil.habilitado = user.emailVerified;
       this.cargaEspecialidad();
     }
     else{
       this.perfil.tipo = 'Administrador';
     }
+    this.cargaDePerfil(user);
+  }
+
+  cargaDePerfil(user): void {
     this.perfil.id = this.documento;
     this.perfil.uid  = user.uid;
+    this.perfil.nombre = this.nombre;
+    this.perfil.apellido = this.apellido;
+    this.perfil.sexo = this.sexo;
   }
 
   cargaEspecialidad(): void {
@@ -232,7 +253,7 @@ export class RegistroComponent implements OnInit {
 
    validarNombre(): boolean{
       let nombre = true;
-      if (this.perfil.nombre === null || this.perfil.nombre === undefined){
+      if (this.nombre === null || this.nombre === undefined){
        this.nombreError = true;
        nombre = false;
      }
@@ -241,7 +262,7 @@ export class RegistroComponent implements OnInit {
 
   validarApellido(): boolean {
     let apellido = true;
-    if (this.perfil.apellido === null || this.perfil.apellido === undefined){
+    if (this.apellido === null || this.apellido === undefined){
       this.apellidoError = true;
       apellido = false;
     }
@@ -250,7 +271,7 @@ export class RegistroComponent implements OnInit {
 
   validarFecha(): boolean {
     let fecha = true;
-    if (this.perfil.fechaNacimiento === null || this.perfil.fechaNacimiento === undefined){
+    if (this.fecha === null || this.fecha === undefined){
       this.fechaDeNacimientoError = true;
       fecha = false;
     }
@@ -259,7 +280,7 @@ export class RegistroComponent implements OnInit {
 
   validarSexo(): boolean {
     let sexo = true;
-    if (this.perfil.sexo === null || this.perfil.sexo === undefined){
+    if (this.sexo === null || this.sexo === undefined){
       this.sexoError = true;
       sexo = false;
     }

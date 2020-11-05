@@ -1,6 +1,6 @@
 import {Pais} from './pais';
 
-export abstract class Perfil  {
+export class Administrador {
   uid: string;
   id: string;
   nombre: string;
@@ -12,5 +12,4 @@ export abstract class Perfil  {
   fechaAlta: string;
   fechaBaja: string;
   img1: string;
-
 }

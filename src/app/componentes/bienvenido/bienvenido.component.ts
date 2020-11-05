@@ -13,7 +13,6 @@ export class BienvenidoComponent implements OnInit {
     router.events.subscribe((url: any) => {
       this.ruta = router.url;
     });
-
   }
 
   ngOnInit(): void {

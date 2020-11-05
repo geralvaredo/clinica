@@ -1,8 +1,21 @@
 import {Especialidad} from './especialidad';
 import {Perfil} from './perfil';
+import {Pais} from './pais';
 
-export class Profesional extends Perfil{
-  idProfesional: string;
+export class Profesional{
+  uid: string;
+  id: string;
+  nombre: string;
+  apellido: string;
+  tipo: string;
+  fechaNacimiento: string;
+  nacionalidad: Pais;
+  sexo: string ;
+  fechaAlta: string;
+  fechaBaja: string;
+  img1: string;
   especialidades: Array<Especialidad> = [];
+  habilitado: boolean;
 
+  constructor( ) {}
 }

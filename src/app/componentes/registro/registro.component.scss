@@ -1,13 +1,28 @@
 
 .general{
-  background-color: #3B6D40;
+  background-color: #4e73df;
   width: 227vh;
   height: 100vh;
   margin-left: -13vh;
 }
 
+.altaAdmin{
+  background-color: #4e73df;
+  width: 170vh;
+  height: 20vh;
+  text-align: center;
+  margin-left: 10vh;
+}
+
+.registroAdmin{
+  background-color: #4e73df;
+  width: 10vh;
+  height: 50vh;
+  margin-left: -13vh;
+}
+
 .generalError{
-  background-color: #3B6D40;
+  background-color: #4e73df;
   width: 227vh;
   height: 120vh;
   margin-left: -13vh;
@@ -39,7 +54,7 @@ label , p , a{
 .perfil{
   width: 227vh;
   height: 20vh;
-  background-color: #3B6D40;
+  background-color: #4e73df;
   text-align: center;
   margin-top: 3vh;
   margin-bottom: 2vh;
@@ -66,4 +81,46 @@ label , p , a{
 .prof{
    margin-top: -4vh;
    margin-bottom: 5vh;
+}
+
+.admin{
+  background-color: #4e73df;
+  width: 169vh;
+  height: 90vh;
+  margin-left: 10vh;
+}
+
+
+.margin-left{
+  margin-left: 15vh;
+}
+
+.margin-pass {
+  margin-left: 10vh;
+}
+
+.margin-2{
+  margin-left: 12vh;
+}
+
+.margin-apellido{
+  margin-left: 7vh;
+}
+
+
+.catpcha-profe{
+  margin-top: 5vh;
+}
+
+.captcha-pac{
+  margin-left: 10vh;
+  margin-top: 2vh;
+}
+
+.captcha-admin{
+  margin-left: 55vh;
+}
+
+.captcha-bottom{
+  margin-top: -5vh;
 }

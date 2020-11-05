@@ -1,1 +1,59 @@
-<p>alta-historia-clinica works!</p>
+<div class="container-fluid general">
+  <form>
+    <div class="col-md-12 mb-2 spaceLeft">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="etiqueta">Historia clinica:</h6>
+        </div>
+        <div class="card-body">
+          <mat-form-field *ngIf="perfil == 'Profesional'" class="example-full-width input" appearance="fill">
+             <mat-label>Reseña Profesional</mat-label>
+             <!--input matInput  [(ngModel)]="resenaProfesional" name="resenaProfesional"-->
+            <textarea matInput placeholder="Reseña profesional..." [(ngModel)]="resenaProfesional" name="resenaProfesional"></textarea>
+         </mat-form-field>
+          <mat-form-field *ngIf="perfil == 'Paciente'" class="example-full-width input" appearance="fill">
+            <mat-label>Reseña Paciente</mat-label>
+            <!--input matInput  [(ngModel)]="resenaProfesional" name="resenaProfesional"-->
+            <textarea matInput placeholder="Reseña paciente..." [(ngModel)]="resenaPaciente" name="resenaPaciente"></textarea>
+          </mat-form-field>
+          <div *ngIf="perfil == 'Profesional'" >
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Edad</mat-label>
+              <input matInput  [(ngModel)]="hc.edad" name="edad">
+            </mat-form-field>
+            <mat-form-field class="example-full-width spaceLeft" appearance="fill">
+              <mat-label>Temperatura</mat-label>
+              <input matInput  [(ngModel)]="hc.temperatura" name="temperatura">
+            </mat-form-field>
+            <mat-form-field class="example-full-width spaceLeft" appearance="fill">
+              <mat-label>Presion</mat-label>
+              <input matInput  [(ngModel)]="hc.presion" name="presion">
+            </mat-form-field>
+          </div>
+          <div *ngIf="perfil == 'Profesional'">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Observacion 1</mat-label>
+              <input matInput  [(ngModel)]="hc.primeraObservacion" name="obs1">
+            </mat-form-field>
+            <mat-form-field class="example-full-width spaceLeft" appearance="fill">
+              <mat-label>Observacion 2</mat-label>
+              <input matInput  [(ngModel)]="hc.segundaObservacion" name="obs2">
+            </mat-form-field>
+            <mat-form-field class="example-full-width spaceLeft" appearance="fill">
+              <mat-label>Observacion 3</mat-label>
+              <input matInput  [(ngModel)]="hc.terceraObservacion" name="obs3">
+            </mat-form-field>
+          </div>
+          <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="agregarHistoriaClinica()">Agregar Historia</button>
+          <button *ngIf="habilitaFinalizar" class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="finalizarTurno()"> Finalizar</button>
+
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+
+
+
+</div>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegistroAdminComponent } from './registro-admin.component';
+import { HistorialTurnosComponent } from './historial-turnos.component';
 
-describe('RegistroAdminComponent', () => {
-  let component: RegistroAdminComponent;
-  let fixture: ComponentFixture<RegistroAdminComponent>;
+describe('HistorialTurnosComponent', () => {
+  let component: HistorialTurnosComponent;
+  let fixture: ComponentFixture<HistorialTurnosComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegistroAdminComponent ]
+      declarations: [ HistorialTurnosComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegistroAdminComponent);
+    fixture = TestBed.createComponent(HistorialTurnosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

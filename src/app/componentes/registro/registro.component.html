@@ -1,95 +1,97 @@
 
- <div class="perfil bordeBlanco">
+ <div [ngClass]="altaAdmin ? 'altaAdmin bordeBlanco' : 'perfil bordeBlanco' " >
 
      <label class="etiquetaPerfil">Seleccione un Perfil</label>
      <br>
      <select class="custom-select col-md-3" id="selectPerfil" [(ngModel)]="tipoPerfil" (change)="onChange($event.target)" [ngModelOptions]="{standalone: true}">
        <option value="Paciente">Paciente</option>
        <option value="Profesional">Profesional</option>
-       <!--option value="Administrador">Administrador</option-->
+       <option *ngIf="altaAdmin" value="Administrador">Administrador</option>
      </select>
      <label *ngIf="tipoError" class="form-text text-danger">Falta ingresar el tipo de perfil</label>
    </div>
-  <div *ngIf="tipoPerfil === 'Profesional' || tipoPerfil === 'Paciente'" class="registro">
+  <div *ngIf="tipoPerfil === 'Profesional' || tipoPerfil === 'Paciente' || tipoPerfil === 'Administrador'" class="registro">
     <div class="container">
       <form>
       <div class="row">
-        <div class="col-md-12 order-md-1">
-          <div class="card">
-            <article [ngClass]=" error ? 'card-body general  bordeBlanco' : 'card-body generalError  bordeBlanco' ">
-              <div class="etiqueta" ><p matLine>Registro</p> </div>
-              <div class="row">
-                <div class="col-md-4 mb-3">
-                  <label>Usuario</label>
-                  <input class="form-control" placeholder="Ingrese un nombre.." [(ngModel)]="usuario.email" name="email">
-                  <label *ngIf="usuarioError" class="form-text error">*Falta el usuario</label>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label>Contraseña</label>
-                  <input class="form-control" type="password" placeholder="Ingrese un contraseña.." [(ngModel)]="usuario.pass" name="pass">
-                  <label *ngIf="passError" class="form-text error">*Falta El pass</label>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label>Confirme la contraseña</label>
-                  <input class="form-control" type="password" placeholder="reingrese la contraseña.." [(ngModel)]="repass" name="repass">
-                  <label *ngIf="repassError" class="form-text error">*Falta repetir el pass</label>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label>Nombre</label>
-                  <input class="form-control" placeholder="Ingrese un apellido.." [(ngModel)]="perfil.nombre" name="nombre">
-                  <label *ngIf="apellidoError" class="form-text error">*Falta apellido</label>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label>Apellido</label>
-                  <input class="form-control" placeholder="Ingrese un apellido.." [(ngModel)]="perfil.apellido" name="apellido">
-                  <label *ngIf="apellidoError" class="form-text error">*Falta apellido</label>
-                </div>
-                <div class="col-md-3 mb-3">
-                  <label>Fecha de Nacimiento</label>
-                  <input class="form-control" type="date" placeholder="Ingrese una fecha de Nacimiento.." [(ngModel)]="perfil.fechaNacimiento" name="fechaDeNacimiento">
-                  <label *ngIf="fechaDeNacimientoError" class="form-text error">*Falta ingresar la fecha de nacimiento</label>
-                </div>
-                <div class="col-md-3 mb-3">
-                  <label>Sexo</label>
-                  <select class="custom-select" id="selectSexo" [(ngModel)]="perfil.sexo" [ngModelOptions]="{standalone: true}">
-                    <option value=""></option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                  </select>
-                  <label *ngIf="sexoError" class="form-text error">*Falta ingresar el sexo</label>
-                </div>
-                <div  class="col-md-3 mb-3">
-                  <label> Foto</label>
-                  <input class="form-control" type="file" id="img1" placeholder="Ingrese una fecha de Nacimiento.."  (change)="fileChange($event)"  name="img1">
-                  <label *ngIf="primeraFotoError" class="form-text error">* Falta ingresar la foto de perfil</label>
-                </div>
-                <div *ngIf="tipoPerfil === 'Profesional'" class="col-md-3 mb-3">
-                  <label>Especialidad</label>
-                  <select class="custom-select"  [(ngModel)]="seleccionados" multiple [ngModelOptions]="{standalone: true}">
-                    <option [value]="item"  *ngFor="let item of especialidad">{{item}}</option>
-                  </select>
-                  <label *ngIf="especialidadError" class="form-text error">*Falta ingresar la especialidad</label>
-                </div>
-
-                <div *ngIf="tipoPerfil === 'Paciente'" class="col-md-3 mb-3">
-                  <label>Segunda Foto</label>
-                  <input class="form-control" type="file" id="img2" placeholder="Ingrese una fecha de Nacimiento.." (change)="fileChange($event)" name="img2">
-                  <label *ngIf="segundaFotoError" class="form-text error">* Falta ingresar la segunda foto</label>
-                </div>
-                <div class="captcha">
-                  <re-captcha (resolved)="resolved($event)" siteKey="6Lc7edsZAAAAAEG1Ftr7vyLOzOkCUwLYfmLZtGFO" > </re-captcha>
-                  <label *ngIf="captchaError" class="form-text error">* debe validar que no sea un robot</label>
-                </div>
-                <div class="col-md-12 mb-3">
-                  <div class="d-flex justify-content-center spaceUp">
-                    <button id="btnAgregar" type="button" style="margin-right:1%;" class="btn btn-success pull-right" (click)="onRegister()"> Registrarse </button>
-                    <button id="btnLimpiar" type="reset" class="btn btn-info" (click)="restablecer()"> Limpiar </button>
+        <div  class="col-md-12 order-md-1">
+          <div  [ngClass]="altaAdmin ? '' : 'card'">
+            <article [ngClass]="altaAdmin ? 'admin' :  (error ? 'card-body general  bordeBlanco' : 'card-body generalError  bordeBlanco') " >
+              <div>
+                <div class="etiqueta" ><p>Registro</p> </div>
+                <div class="row">
+                  <div [ngClass]="altaAdmin ? 'col-xs-6 mb-3 margin-left' : 'col-md-4 mb-3' ">
+                    <label>Usuario</label>
+                    <input class="form-control" placeholder="Ingrese un nombre.." [(ngModel)]="usuario.email" name="email">
+                    <label *ngIf="usuarioError" class="form-text error">*Falta el usuario</label>
                   </div>
-                </div>
-                <br>
-                <div class="col-md-12 mb-3">
-                  <div class="d-flex justify-content-center">
-                    <a class="link" routerLink="/login">Tienes una cuenta? ingrese aqui</a>
+                  <div [ngClass]="altaAdmin ? 'col-xs-6 mb-3 margin-pass' : 'col-md-4 mb-3' ">
+                    <label>Contraseña</label>
+                    <input class="form-control" type="password" placeholder="Ingrese un contraseña.." [(ngModel)]="usuario.pass" name="pass">
+                    <label *ngIf="passError" class="form-text error">*Falta El pass</label>
+                  </div>
+                  <div [ngClass]="altaAdmin ? 'col-xs-6 mb-3 margin-pass' : 'col-md-4 mb-3' ">
+                    <label>Confirme la contraseña</label>
+                    <input class="form-control" type="password" placeholder="reingrese la contraseña.." [(ngModel)]="repass" name="repass">
+                    <label *ngIf="repassError" class="form-text error">*Falta repetir el pass</label>
+                  </div>
+                  <div  [ngClass]="altaAdmin ? 'col-md-5 mb-3 margin-2' : 'col-md-6 mb-3' ">
+                    <label>Nombre</label>
+                    <input class="form-control" placeholder="Ingrese un apellido.." [(ngModel)]="nombre" name="nombre">
+                    <label *ngIf="apellidoError" class="form-text error">*Falta apellido</label>
+                  </div>
+                  <div [ngClass]="altaAdmin ? 'col-md-5 mb-3 margin-apellido' : 'col-md-6 mb-3' ">
+                    <label>Apellido</label>
+                    <input class="form-control" placeholder="Ingrese un apellido.." [(ngModel)]="apellido" name="apellido">
+                    <label *ngIf="apellidoError" class="form-text error">*Falta apellido</label>
+                  </div>
+                  <div [ngClass]="altaAdmin ? 'col-xs-6 mb-3 margin-left' : 'col-md-3 mb-3' ">
+                    <label>Fecha de Nacimiento</label>
+                    <input class="form-control" type="date" placeholder="Ingrese una fecha de Nacimiento.." [(ngModel)]="fecha" name="fechaDeNacimiento">
+                    <label *ngIf="fechaDeNacimientoError" class="form-text error">*Falta ingresar la fecha de nacimiento</label>
+                  </div>
+                  <div [ngClass]="altaAdmin ? 'col-xs-6 mb-3 margin-left' : 'col-md-3 mb-3'">
+                    <label>Sexo</label>
+                    <select class="custom-select" id="selectSexo" [(ngModel)]="sexo" [ngModelOptions]="{standalone: true}">
+                      <option value=""></option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="Femenino">Femenino</option>
+                    </select>
+                    <label *ngIf="sexoError" class="form-text error">*Falta ingresar el sexo</label>
+                  </div>
+                  <div [ngClass]="altaAdmin ? 'col-xs-4 mb-3 margin-pass' : 'col-md-3 mb-3'">
+                    <label> Foto</label>
+                    <input class="form-control" type="file" id="img1"   (change)="fileChange($event)"  name="img1">
+                    <label *ngIf="primeraFotoError" class="form-text error">* Falta ingresar la foto de perfil</label>
+                  </div>
+                  <div *ngIf="tipoPerfil === 'Profesional'" [ngClass]="altaAdmin ? 'col-xs-4 mb-3 margin-left' : 'col-md-3 mb-3'">
+                    <label>Especialidad</label>
+                    <select class="custom-select"  [(ngModel)]="seleccionados" multiple [ngModelOptions]="{standalone: true}">
+                      <option [value]="item"  *ngFor="let item of especialidad">{{item}}</option>
+                    </select>
+                    <label *ngIf="especialidadError" class="form-text error">*Falta ingresar la especialidad</label>
+                  </div>
+
+                  <div *ngIf="tipoPerfil === 'Paciente'" [ngClass]="altaAdmin ? 'col-xs-4 mb-3 margin-left' : 'col-md-3 mb-3'">
+                    <label>Segunda Foto</label>
+                    <input class="form-control" type="file" id="img2" (change)="fileChange($event)" name="img2">
+                    <label *ngIf="segundaFotoError" class="form-text error">* Falta ingresar la segunda foto</label>
+                  </div>
+                  <div [ngClass]="altaAdmin && tipoPerfil == 'Profesional' ? 'col-xs-4 mb-3 margin-pass catpcha-profe' : altaAdmin && tipoPerfil == 'Paciente' ?  'captcha-pac' :  altaAdmin  ? 'captcha-admin' : tipoPerfil == 'Paciente' ?  'captcha' :  'captcha captcha-bottom col-md-3 mb-3' " >
+                    <re-captcha (resolved)="resolved($event)" siteKey="6Lc7edsZAAAAAEG1Ftr7vyLOzOkCUwLYfmLZtGFO" > </re-captcha>
+                    <label *ngIf="captchaError" class="form-text error">* debe validar que no sea un robot</label>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <div class="d-flex justify-content-center spaceUp">
+                      <button id="btnAgregar" type="button" style="margin-right:1%;" class="btn btn-success pull-right" (click)="onRegister()"> Registrarse </button>
+                      <button id="btnLimpiar" type="reset" class="btn btn-info" (click)="restablecer()"> Limpiar </button>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="col-md-12 mb-3">
+                    <div class="d-flex justify-content-center">
+                      <a *ngIf="!altaAdmin" class="link" routerLink="/login">Tienes una cuenta? ingrese aqui</a>
+                    </div>
                   </div>
                 </div>
               </div>
