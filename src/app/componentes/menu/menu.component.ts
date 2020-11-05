@@ -44,6 +44,8 @@ export class MenuComponent implements OnInit {
       case 'carga' : this.menu[0] = 'C' ; break;
       case 'verificacion' : this.menu[0] = 'V' ; break;
       case 'altaAdmin' : this.menu[0] = 'AA' ; break;
+      case 'listaTurnos': this.menu[0] = 'L'; break;
+      case 'historial': this.menu[0] = 'H'; break;
     }
 
   }

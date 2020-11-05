@@ -25,6 +25,7 @@ export class AltaHorariosComponent implements OnInit {
   diaInicio: number;
   diaFin: number;
   ultimo: number;
+  uid: string;
   fechaHoy : string;
   horaInicio: string;
   minutoInicio: string;
@@ -35,6 +36,7 @@ export class AltaHorariosComponent implements OnInit {
   semana: Array<string> = ['Domingo' , 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
   minTimeFilter: string;
   maxTimeFilter: string;
+  imagen: string;
   idProfesional: string;
   nombreProfesional: string;
   apellidoProfesional: string;
@@ -98,6 +100,8 @@ export class AltaHorariosComponent implements OnInit {
      this.perfil.id =  this.idProfesional;
      this.perfil.nombre = this.nombreProfesional;
       this.perfil.apellido = this.apellidoProfesional;
+      this.perfil.img1 = this.imagen;
+      this.perfil.uid = this.uid;
    }
 
    filtroCalendario(): void {
@@ -133,6 +137,7 @@ export class AltaHorariosComponent implements OnInit {
 
   buscarPerfil(): void {
     const user  = JSON.parse(sessionStorage.getItem('usuario'));
+    let j = 0;
     console.log(user);
     this.pr.contadorPerfiles().subscribe(
       (lista: Array<any>) => {
@@ -141,7 +146,9 @@ export class AltaHorariosComponent implements OnInit {
             this.idProfesional = lista[i].id;
             this.nombreProfesional = lista[i].nombre;
             this.apellidoProfesional = lista[i].apellido;
-            this.especialidad = lista[i].especialidades[0].nombre;
+            this.especialidad = lista[i].especialidades[j].nombre;
+            this.imagen = lista[i].img1;
+            this.uid = lista[i].uid;
           }
         }
       }) ;

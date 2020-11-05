@@ -50,6 +50,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSortModule} from '@angular/material/sort';
 import { TipoPerfilComponent } from './componentes/tipo-perfil/tipo-perfil.component';
+import { HistorialTurnosComponent } from './componentes/historial-turnos/historial-turnos.component';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import { TipoPerfilComponent } from './componentes/tipo-perfil/tipo-perfil.compo
     CabeceraComponent,
     MenuComponent,
     AltaAdminComponent,
-    TipoPerfilComponent
+    TipoPerfilComponent,
+    HistorialTurnosComponent
   ],
   imports: [
     BrowserModule,

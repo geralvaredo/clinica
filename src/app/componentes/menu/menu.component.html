@@ -14,11 +14,11 @@
         <li *ngIf="perfil == 'Administrador' ||  perfil == 'Profesional' " class="nav-item">
           <a class="nav-link" (click)="vista('carga')" > Carga Horarios </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"> Mis Turnos Agendados </a>
+        <li *ngIf="perfil == 'Paciente' ||  perfil == 'Profesional' " class="nav-item">
+          <a class="nav-link" (click)="vista('listaTurnos')"> Mis Turnos Agendados </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"> Alta Historia Clinica </a>
+        <li *ngIf="perfil == 'Paciente' ||  perfil == 'Profesional' " class="nav-item">
+          <a class="nav-link" (click)="vista('historial')" > Historial de Turnos </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"> Alta Historia Clinica </a>
@@ -36,6 +36,12 @@
     <app-verificacion-especialidad *ngIf="menu[0]== 'V'" ></app-verificacion-especialidad>
     <div class="app-admin">
       <app-alta-admin *ngIf="menu[0]== 'AA'"></app-alta-admin>
+    </div>
+    <div class="app-detalle-turno">
+      <app-detalle-turno *ngIf="menu[0]== 'L'"></app-detalle-turno>
+    </div>
+    <div class="app-historial-turno">
+      <app-historial-turnos *ngIf="menu[0]== 'H'"></app-historial-turnos>
     </div>
 
   </div>
