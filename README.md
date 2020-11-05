@@ -70,6 +70,7 @@ Profesional:
 
 Paciente:
 
+![](src/assets/turnoCancelado.gif)
 
 ## Historico de turnos 
 
