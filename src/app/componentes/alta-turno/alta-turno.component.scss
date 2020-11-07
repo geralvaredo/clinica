@@ -3,6 +3,7 @@
 }
 
 .altaTurno{
+  margin-top: 30vh;
   width: 160vh;
 }
 
@@ -17,7 +18,7 @@
   width: 70%;
 }
 
-table {
+.turnos table {
   width: 120vh;
   text-align: center;
 }
@@ -29,10 +30,13 @@ table {
 
 th.mat-header-cell {
   text-align: center;
+  align-items: center;
   font-size: 16px;
 }
 
-
+td.mat-cell {
+  text-align: center;
+}
 
 .etiqueta{
   color : #4e73df;
@@ -42,4 +46,9 @@ th.mat-header-cell {
 
 .button{
   text-align: center;
+}
+
+
+.alineacion{
+  margin-left: 80vh;
 }

@@ -22,19 +22,35 @@ export class AltaTurnoComponent implements OnInit  {
   especialidadError: boolean;
   turnoSeleccionado: boolean;
   vistaTurnos : boolean;
-  especialidad: string[] =
-    ['Cardiologia', 'Radiologia', 'Traumatologia', 'Oftalmologia' , 'Neurologia' , 'Alergista' , 'Enfermeria'];
   seleccionados: string ;
   conoce: string;
   reserva: string;
   turnoModificado: Turno;
   paciente: Paciente;
   listaTurnos: Array<Turno>;
+  listraFiltrada: Array<Turno>;
   usuario: any;
   listaPerfiles: Array<any>;
   idProfesional : string;
   data: MatTableDataSource<any>;
+  dataEspecialidad: MatTableDataSource<any>;
+  //especialidad: string[] =  ['Cardiologia', 'Radiologia', 'Traumatologia', 'Oftalmologia' , 'Neurologia' , 'Alergista' , 'Enfermeria'];
   displayedColumns = ['accion' ,  'fecha', 'hora', 'profesional' , 'especialidad'  ,  'estado' ];
+  displayEspecialidad = ['accion' ,  'especialidad'];
+
+
+   especialidad = [
+    {position: 1, name: 'Cardiologia'},
+    {position: 2, name: 'Radiologia'},
+    {position: 3, name: 'Traumatologia'},
+    {position: 4, name: 'Oftalmologia'},
+    {position: 5, name: 'Neurologia', },
+    {position: 6, name: 'Alergista'},
+    {position: 7, name: 'Enfermeria'},
+  ];
+
+
+
   myControl = new FormControl();
   filteredOptions: Observable<Perfil[]>;
   @ViewChild('pagina') paginator: MatPaginator;
@@ -56,12 +72,12 @@ export class AltaTurnoComponent implements OnInit  {
   }
 
 
-  buscarTurnos(valor): void {
-    if(valor == 'no'){
-      this.listaTurnos = this.listaTurnos.filter(turno => turno.especialidad == this.seleccionados);
+  buscarTurnos(conoce, especialidad): void {
+    if(conoce == 'no'){
+      this.listraFiltrada = this.listaTurnos.filter(turno => turno.especialidad == especialidad);
     }
     else{
-      this.listaTurnos = this.listaTurnos.filter(turno => turno.profesional.id == this.myControl.value.id.toString());
+      this.listraFiltrada = this.listaTurnos.filter(turno => turno.profesional.id == this.myControl.value.id.toString());
     }
     this.data = new MatTableDataSource(this.listaTurnos);
     this.data.paginator = this.paginator;
@@ -134,7 +150,13 @@ export class AltaTurnoComponent implements OnInit  {
 
  profesional(valor): void {
     this.conoce = valor;
+    if(valor == 'no'){
+    this.dataEspecialidad = new MatTableDataSource(this.especialidad);
+
+    }
  }
+
+
 
   traerPerfil(): void{
     this.pr.contadorPerfiles().subscribe(
@@ -153,6 +175,8 @@ export class AltaTurnoComponent implements OnInit  {
     this.turnoSeleccionado = false;
     this.vistaTurnos = false;
     this.seleccionados = '';
+    this.conoce = '';
   }
+
 
 }

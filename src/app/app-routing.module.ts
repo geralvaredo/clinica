@@ -11,11 +11,12 @@ import {AltaAdminComponent} from './componentes/alta-admin/alta-admin.component'
 import {MenuComponent} from './componentes/menu/menu.component';
 import {VerificacionEspecialidadComponent} from './componentes/verificacion-especialidad/verificacion-especialidad.component';
 import {DetalleTurnoComponent} from './componentes/detalle-turno/detalle-turno.component';
+import {BienvenidoComponent} from './componentes/bienvenido/bienvenido.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
-   {path: 'principal' , component : MenuComponent, canActivate: [AuthGuard]},
+   {path: 'principal' , component : BienvenidoComponent, canActivate: [AuthGuard]},
   {path: 'busqueda' , component : BusquedaComponent},
   {path: 'error', component : ErrorComponent},
   {path: 'registro' , component: RegistroComponent ,  data: {animation: 'registro'}},

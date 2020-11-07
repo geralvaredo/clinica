@@ -1,29 +1,42 @@
-<div class="container-fluid altaTurno">
+<div class="container-fluid altaTurno ">
   <form *ngIf="!vistaTurnos">
-    <h3> Reservar Turno</h3>
+    <h3 class="alineacion"> Reservar Turno</h3>
     <br><br>
     <div class="row">
-           <div class="form-check form-check-inline col-md-12">
-              <div class="col-md-4">
-                <label class="form-check-label">Conoce el apellido del profesional?</label>
-              </div>
-             <mat-radio-group aria-label="Select an option">
-               <mat-radio-button  (click)="profesional('si')" value="si">Si</mat-radio-button>
-               <mat-radio-button  (click)="profesional('no')" value="no">No</mat-radio-button>
+           <div *ngIf="this.conoce == ''" class="form-check form-check-inline col-md-12 spaceLeft alineacion">
+               <mat-radio-group aria-label="Select an option">
+               <mat-radio-button  (click)="profesional('si')" value="si" name="option">Por Apellido</mat-radio-button>
+               <mat-radio-button  (click)="profesional('no')" value="no" name="option">Por Especialidad</mat-radio-button>
              </mat-radio-group>
              <label *ngIf="conoceProfesionalError" class="form-text text-danger"> Ingrese si conoce al profesional</label>
-       </div>
+              </div>
+      <div class="alineacion" *ngIf="conoce == 'no'">
+        <!--mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Especialidad</mat-label>
+          <select matNativeControl [(ngModel)]="seleccionados" [ngModelOptions]="{standalone: true}">
+            <option [value]="item"  *ngFor="let item of especialidad">{{item}}</option>
+          </select>
+        </mat-form-field-->
+        <table  mat-table [dataSource]="dataEspecialidad" matSort >
+          <ng-container matColumnDef="accion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Opcion: </th>
+            <td mat-cell *matCellDef="let row"> <mat-radio-button value="si" name="accion" (click)="buscarTurnos(conoce, row.name)"  ></mat-radio-button> </td>
+          </ng-container>
+
+          <ng-container matColumnDef="especialidad">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Especialidad </th>
+            <td mat-cell *matCellDef="let row"> {{row.name }} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayEspecialidad" class="tableHeaderCellDiv"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayEspecialidad;"></tr>
+          <label style="color: green">{{this.reserva}}</label>;
+        </table>
+        <!--mat-paginator #pagina [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator-->
+      </div>
     </div>
     <br>
-    <div *ngIf="conoce == 'no'">
-      <mat-form-field appearance="fill" class="example-full-width">
-        <mat-label>Especialidad</mat-label>
-        <select matNativeControl [(ngModel)]="seleccionados" [ngModelOptions]="{standalone: true}">
-          <option [value]="item"  *ngFor="let item of especialidad">{{item}}</option>
-        </select>
-      </mat-form-field>
-      <label *ngIf="especialidadError" class="form-text error">*Falta ingresar la especialidad</label>
-    </div>
+
     <br>
     <div *ngIf="conoce == 'si'">
       <mat-form-field appearance="fill" class="example-full-width">
@@ -36,8 +49,7 @@
         </mat-option>
       </mat-autocomplete>
     </div>
-    <button *ngIf="conoce == 'no'" class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="buscarTurnos('no')">Buscar Turnos</button>
-    <button *ngIf="conoce == 'si'" class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="buscarTurnos('si')">Buscar Turnos</button>
+    <button *ngIf="conoce == 'no' || conoce == 'si'" class="spaceLeft spaceUp btnAgregar alineacion" mat-raised-button color="primary" (click)="limpiar()" >Volver Atras</button>
   </form>
   <br>
   <div *ngIf="vistaTurnos" class="row">
@@ -50,7 +62,7 @@
           <div class="col-md-12">
             <div class="d-flex justify-content-around">
               <div class="mat-elevation-z8">
-                <table mat-table [dataSource]="data" matSort >
+                <table mat-table class="turnos" [dataSource]="data" matSort >
 
                   <ng-container matColumnDef="accion">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Opcion: </th>
@@ -94,7 +106,7 @@
             <br>
             <div class="button">
               <button *ngIf="turnoSeleccionado" class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="reservarTurno()">Reservar Turno</button>
-              <button *ngIf="vistaTurnos" class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="limpiar()">Limpiar</button>
+              <button *ngIf="vistaTurnos" class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="limpiar()">Volver Atras</button>
             </div>
           </div>
         </div>
