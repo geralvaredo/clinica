@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
     try {
       const logging = await this.auth.login(this.usuario);
       if (logging) {
-
          if (logging.emailVerified){
            this.auth.guardarEnStorage(logging);
            this.auth.redirect(this.isLogin);
