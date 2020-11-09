@@ -23,7 +23,6 @@ export class CabeceraComponent implements OnInit {
 
   ngOnInit(): void {
     this.inicializador();
-
   }
 
   inicializador(): void {
@@ -31,10 +30,6 @@ export class CabeceraComponent implements OnInit {
     this.usuario = JSON.parse(sessionStorage.getItem('usuario'));
     this.buscarPerfil();
   }
-
-
-
-
 
   buscarPerfil(): void{
      this.pr.contadorPerfiles().subscribe(
@@ -50,10 +45,7 @@ export class CabeceraComponent implements OnInit {
         }
       }
     );
-
  }
-
-
 
   fotoPerfil(): void {
     this.foto.getUpload('imagenes/' + this.img ).then(
