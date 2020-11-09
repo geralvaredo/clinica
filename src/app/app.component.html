@@ -1,6 +1,8 @@
 <div class="container-fluid"  [ngClass]="ruta == '/login' || ruta == '/registro' ? 'blue-theme' : ''  ">
   <div class="row">
-    <div *ngIf="ruta == '/principal' || ruta== '/solicitudTurno' || ruta == '/listaTurnos'"  class="col" >
+    <div *ngIf="ruta == '/principal' || ruta== '/solicitudTurno' || ruta == '/listaTurnos'
+    || ruta == '/cargaHorarios' || ruta == '/validarEspecialidad' || ruta == '/altaAdministrador'
+     || ruta  == '/historialTurnos'"   class="col" >
       <app-cabecera></app-cabecera>
     </div>
   </div>
