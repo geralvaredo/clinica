@@ -1,9 +1,8 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import {TurnoService} from '../../servicios/turno.service';
 import {Turno} from '../../clases/turno';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
 import {PerfilService} from '../../servicios/perfil.service';
 import {Perfil} from '../../clases/perfil';
 import {MatTableDataSource} from '@angular/material/table';
@@ -29,14 +28,18 @@ export class AltaTurnoComponent implements OnInit  {
   paciente: Paciente;
   listaTurnos: Array<Turno>;
   listraFiltrada: Array<Turno>;
+  listaProfesionales: Array<any>;
   usuario: any;
   listaPerfiles: Array<any>;
   idProfesional : string;
   data: MatTableDataSource<any>;
   dataEspecialidad: MatTableDataSource<any>;
+  dataProfesionales: MatTableDataSource<any>;
+
   //especialidad: string[] =  ['Cardiologia', 'Radiologia', 'Traumatologia', 'Oftalmologia' , 'Neurologia' , 'Alergista' , 'Enfermeria'];
   displayedColumns = ['accion' ,  'fecha', 'hora', 'profesional' , 'especialidad'  ,  'estado' ];
   displayEspecialidad = ['accion' ,  'especialidad'];
+  displayProfesional = ['accion' , 'nombre' , 'apellido' , 'especialidad'];
 
 
    especialidad = [
@@ -54,6 +57,7 @@ export class AltaTurnoComponent implements OnInit  {
   myControl = new FormControl();
   filteredOptions: Observable<Perfil[]>;
   @ViewChild('pagina') paginator: MatPaginator;
+  @ViewChild('paginaProf') paginatorProf: MatPaginator;
   @ViewChild(MatSort, {static:false}) sort: MatSort;
 
 
@@ -65,59 +69,97 @@ export class AltaTurnoComponent implements OnInit  {
     this.conoce = '';
     this.listaTurnos = [];
     this.listaPerfiles = [];
+    this.listraFiltrada = [];
     this.traerUsuario();
     this.traerPerfil();
     this.cargarListaDeTurnos();
-    this.filtrados();
   }
 
 
-  buscarTurnos(conoce, especialidad): void {
-    if(conoce == 'no'){
-      this.listraFiltrada = this.listaTurnos.filter(turno => turno.especialidad == especialidad);
-    }
-    else{
-      this.listraFiltrada = this.listaTurnos.filter(turno => turno.profesional.id == this.myControl.value.id.toString());
-    }
-    this.data = new MatTableDataSource(this.listaTurnos);
-    this.data.paginator = this.paginator;
-    this.data.sort = this.sort;
-    this.vistaTurnos = true;
+  traerUsuario(): void{
+    this.usuario = JSON.parse(sessionStorage.getItem('usuario'));
   }
 
+  traerPerfil(): void{
+    this.pr.contadorPerfiles().subscribe(
+      (lista: any) => {
+        for (let i = 0; i < lista.length; i++) {
+          this.listaPerfiles.push(lista[i]);
+        }
+        this.filtroTipo();
+      });
+  }
 
   cargarListaDeTurnos(): void {
     this.turnos.ultimoTurnoId().subscribe(
       (lista: Array<any>) => {
         for (let i = 0; i < lista.length; i++) {
-           if(lista[i].estado == 'DISPONIBLE'){
-             this.listaTurnos.push(lista[i]);
-           }
+          if(lista[i].estado == 'DISPONIBLE'){
+            this.listaTurnos.push(lista[i]);
+          }
         }
       });
   }
 
-  filtrados(){
+  /*filtrados(){
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith('Profesional'),
       map(value => typeof value === 'string' ? value : value.tipo),
-      map( tipo => tipo ? this.filtroTipo(tipo) : this.listaPerfiles.slice())
+      map( tipo => tipo ? this.filtroTipo() : this.listaPerfiles.slice())
     );
-  }
-
-
-  displayFn(perfil: Perfil): string {
-    return perfil && perfil.nombre ? perfil.nombre : '';
-  }
-
-  /*private filtroNombre(name: string): any {
-    const filterValue = name.toLowerCase();
-    return this.listaPerfiles.filter(option => option.nombre.toLowerCase().indexOf(filterValue) === 0);
   }*/
 
-  private filtroTipo(tipo : string): any{
-    return this.listaPerfiles.filter(option => option.tipo === 'Profesional');
+  private filtroTipo(): any{
+    return this.listaProfesionales = this.listaPerfiles.filter(option => option.tipo === 'Profesional');
   }
+
+  opcionProfesional(valor): void {
+    this.conoce = valor;
+    if(valor == 'no'){
+      this.dataEspecialidad = new MatTableDataSource(this.especialidad);
+    }
+    else {
+      this.dataProfesionales = new MatTableDataSource(this.listaProfesionales);
+    }
+   // console.log(this.listaProfesionales);
+  }
+
+  buscarTurnos(conoce, opcion): void {
+    if(conoce == 'no'){
+      this.busquedaTurnoPorEspecialidad(opcion);
+    }
+    else{
+       this.busquedaTurnoPorProfesional(opcion);
+    }
+     this.vistaTurnos = true;
+  }
+
+  busquedaTurnoPorEspecialidad(especialidad): void{
+    this.listraFiltrada = this.listaTurnos.filter(turno => turno.especialidad == especialidad);
+    console.log('Lista Filtrada');
+    console.log(this.listraFiltrada);
+    this.data = new MatTableDataSource(this.listraFiltrada);
+    this.data.paginator = this.paginator;
+    this.data.sort = this.sort;
+  }
+
+  busquedaTurnoPorProfesional(profesional) : void{
+    console.log('Profesional:');
+    console.log(profesional);
+    console.log('lista de Turnos:');
+    console.log(this.listaTurnos);
+    this.listraFiltrada = this.listaTurnos.filter(turno => turno.profesional.id == profesional.id );
+    console.log('lista Filtrada:' );
+    console.log(this.listraFiltrada);
+    this.data = new MatTableDataSource(this.listraFiltrada);
+    this.data.paginator = this.paginator;
+    this.data.sort = this.sort;
+  }
+
+  /*displayFn(perfil: Perfil): string {
+    return perfil && perfil.nombre ? perfil.nombre : '';
+  }*/
+
 
   reservarTurno(): void {
     this.listaPerfiles = this.listaPerfiles.filter( perfil => perfil.uid == this.usuario.uid );
@@ -148,28 +190,9 @@ export class AltaTurnoComponent implements OnInit  {
     console.log(this.turnoModificado);
   }
 
- profesional(valor): void {
-    this.conoce = valor;
-    if(valor == 'no'){
-    this.dataEspecialidad = new MatTableDataSource(this.especialidad);
-
-    }
- }
 
 
 
-  traerPerfil(): void{
-    this.pr.contadorPerfiles().subscribe(
-      (lista: any) => {
-        for (let i = 0; i < lista.length; i++) {
-          this.listaPerfiles.push(lista[i]);
-        }
-      });
-  }
-
- traerUsuario(): void{
-   this.usuario = JSON.parse(sessionStorage.getItem('usuario'));
- }
 
   limpiar(): void {
     this.turnoSeleccionado = false;
@@ -177,6 +200,11 @@ export class AltaTurnoComponent implements OnInit  {
     this.seleccionados = '';
     this.conoce = '';
   }
+
+  /*private filtroNombre(name: string): any {
+    const filterValue = name.toLowerCase();
+    return this.listaPerfiles.filter(option => option.nombre.toLowerCase().indexOf(filterValue) === 0);
+  }*/
 
 
 }
