@@ -12,6 +12,8 @@ import {MenuComponent} from './componentes/menu/menu.component';
 import {VerificacionEspecialidadComponent} from './componentes/verificacion-especialidad/verificacion-especialidad.component';
 import {DetalleTurnoComponent} from './componentes/detalle-turno/detalle-turno.component';
 import {BienvenidoComponent} from './componentes/bienvenido/bienvenido.component';
+import {AltaHorariosComponent} from './componentes/alta-horarios/alta-horarios.component';
+import {HistorialTurnosComponent} from './componentes/historial-turnos/historial-turnos.component';
 
 
 const routes: Routes = [
@@ -25,7 +27,12 @@ const routes: Routes = [
   {path: 'verificacionCorreo', component: VerificacionDeCorreoComponent , canActivate: [AuthGuard]},
   {path: 'verificacion', component: VerificacionEspecialidadComponent , canActivate: [AuthGuard]},
   {path: 'solicitudTurno', component: AltaTurnoComponent, canActivate: [AuthGuard]},
-  {path: 'listaTurnos', component: DetalleTurnoComponent , canActivate: [AuthGuard]}
+  {path: 'listaTurnos', component: DetalleTurnoComponent , canActivate: [AuthGuard]},
+  {path: 'validarEspecialidad', component: VerificacionEspecialidadComponent , canActivate: [AuthGuard]},
+  {path: 'cargaHorarios', component: AltaHorariosComponent , canActivate: [AuthGuard]},
+  {path: 'historialTurnos', component: HistorialTurnosComponent , canActivate: [AuthGuard]}
+
+
 ];
 
 @NgModule({
