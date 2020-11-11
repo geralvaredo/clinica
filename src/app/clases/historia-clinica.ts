@@ -1,9 +1,6 @@
-import {Paciente} from './paciente';
-import {Profesional} from './profesional';
 
 export class HistoriaClinica {
-  paciente: Paciente;
-  profesional: Profesional;
+  id: string;
   resenaPaciente: string;
   resenaProfesional: string;
   edad: string;
