@@ -7,7 +7,7 @@ import {AdaptadorFecha, APP_DATE_FORMATS} from '../../clases/adaptador-fecha';
 import {TurnoService} from '../../servicios/turno.service';
 import {PerfilService} from '../../servicios/perfil.service';
 import {Profesional} from '../../clases/profesional';
-import {Perfil} from '../../clases/perfil';
+import {HistoriaClinica} from '../../clases/historia-clinica';
 
 
 @Component({
@@ -21,6 +21,8 @@ import {Perfil} from '../../clases/perfil';
 export class AltaHorariosComponent implements OnInit {
   inicio: Date;
   fin: Date;
+  hc: HistoriaClinica;
+  vistaHorarios: boolean;
   perfil: any;
   diaInicio: number;
   diaFin: number;
@@ -62,6 +64,48 @@ export class AltaHorariosComponent implements OnInit {
     this.diaInicio = 0;
     this.diaFin = 0;
     this.horasConfirmadas = '';
+    this.vistaHorarios = false;
+  }
+
+  buscarPerfil(): void {
+    const user  = JSON.parse(sessionStorage.getItem('usuario'));
+    let j = 0;
+    this.pr.contadorPerfiles().subscribe(
+      (lista: Array<any>) => {
+        for (let i = 0; i < lista.length; i++) {
+          if (user.uid === lista[i].uid ){
+            this.idProfesional = lista[i].id;
+            this.nombreProfesional = lista[i].nombre;
+            this.apellidoProfesional = lista[i].apellido;
+            this.especialidad = lista[i].especialidades[j].nombre;
+            this.imagen = lista[i].img1;
+            this.uid = lista[i].uid;
+          }
+        }
+      }) ;
+  }
+
+  traerUltimoId(): void {
+    this.turnos.ultimoTurnoId().subscribe(
+      (lista: Array<any>) => {
+        if (lista.length === undefined){
+          this.ultimo = 1;
+        }else {
+          this.ultimo = (lista.length + 1);
+        }
+      });
+  }
+
+  filtroCalendario(): void {
+    this.myDateFilter = (d: Date): boolean => {
+      const day = d.getDay();
+      return day !== 0;
+    };
+  }
+
+  filtrarHora(): void {
+    this.minTimeFilter = '08' ;
+    this.maxTimeFilter = '19';
   }
 
   cambioTiempoInicio(e): void{
@@ -80,6 +124,8 @@ export class AltaHorariosComponent implements OnInit {
     this.generarListaDeTurnos(final);
     this.data = new MatTableDataSource(this.listaTurnos);
     this.data.paginator = this.paginator;
+    this.vistaHorarios = true;
+
   }
 
    generarListaDeTurnos(final): void {
@@ -89,7 +135,7 @@ export class AltaHorariosComponent implements OnInit {
          this.cargaDatosProfesional();
          this.fechaHoy = (new Date(this.inicio.getFullYear(), this.inicio.getMonth(), i )).toLocaleDateString()
          this.listaTurnos.push( new Turno( this.ultimo.toString(), this.fechaHoy , this.estado, (parseInt(this.horaInicio)) + j , parseInt(this.minutoInicio),
-           (parseInt(this.horaInicio)) + (j + 1) , (parseInt(this.minutoInicio)), this.perfil , idPaciente ,this.especialidad.toString()));
+           (parseInt(this.horaInicio)) + (j + 1) , (parseInt(this.minutoInicio)), this.perfil , idPaciente , this.especialidad.toString() , this.hc));
          this.ultimo++;
        }
      }
@@ -102,17 +148,14 @@ export class AltaHorariosComponent implements OnInit {
       this.perfil.apellido = this.apellidoProfesional;
       this.perfil.img1 = this.imagen;
       this.perfil.uid = this.uid;
+      this.hc = new HistoriaClinica();
+      this.hc.resenaPaciente = null;
+      this.hc.resenaProfesional = null;
    }
 
-   filtroCalendario(): void {
-     this.myDateFilter = (d: Date): boolean => {
-       const day = d.getDay();
-       return day !== 0;
-     };
-   }
+
 
   confirmarHorarios(): void {
-    console.log(this.listaTurnos);
    this.turnos.agregarListaDeTurnos(this.listaTurnos);
     this.data = new MatTableDataSource();
     this.horasConfirmadas = 'Las Horas ya fueron confirmadas';
@@ -124,40 +167,11 @@ export class AltaHorariosComponent implements OnInit {
     this.data = new MatTableDataSource(this.listaTurnos);
   }
 
-  traerUltimoId(): void {
-    this.turnos.ultimoTurnoId().subscribe(
-      (lista: Array<any>) => {
-        if (lista.length === undefined){
-          this.ultimo = 1;
-        }else {
-          this.ultimo = (lista.length + 1);
-        }
-      });
- }
 
-  buscarPerfil(): void {
-    const user  = JSON.parse(sessionStorage.getItem('usuario'));
-    let j = 0;
-    console.log(user);
-    this.pr.contadorPerfiles().subscribe(
-      (lista: Array<any>) => {
-        for (let i = 0; i < lista.length; i++) {
-          if (user.uid === lista[i].uid ){
-            this.idProfesional = lista[i].id;
-            this.nombreProfesional = lista[i].nombre;
-            this.apellidoProfesional = lista[i].apellido;
-            this.especialidad = lista[i].especialidades[j].nombre;
-            this.imagen = lista[i].img1;
-            this.uid = lista[i].uid;
-          }
-        }
-      }) ;
-  }
 
-  filtrarHora(): void {
-      this.minTimeFilter = '08' ;
-      this.maxTimeFilter = '19';
-  }
+
+
+
 
 }
 
