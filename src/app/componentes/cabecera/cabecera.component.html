@@ -12,13 +12,13 @@
           <a class="nav-link"  routerLink="/altaAdministrador"> Alta Administrador </a>
         </li>
         <li *ngIf="perfil == 'Administrador' ||  perfil == 'Profesional' " class="nav-item">
-          <a class="nav-link" routerLink="/cargaHorarios" (click)="vista('carga')" > Carga Horarios </a>
+          <a class="nav-link" routerLink="/cargaHorarios"> Carga Horarios </a>
         </li>
         <li *ngIf="perfil == 'Paciente' ||  perfil == 'Profesional' " class="nav-item">
-          <a class="nav-link" routerLink="/listaTurnos" (click)="vista('listaTurnos')"> Mis Turnos Agendados </a>
+          <a class="nav-link" routerLink="/listaTurnos"> Mis Turnos Agendados </a>
         </li>
         <li *ngIf="perfil == 'Paciente' ||  perfil == 'Profesional' " class="nav-item">
-          <a class="nav-link" routerLink="/historialTurnos" (click)="vista('historial')" > Historial de Turnos </a>
+          <a class="nav-link" routerLink="/historialTurnos" > Historial de Turnos </a>
         </li>
         <!--li class="nav-item">
           <a class="nav-link" href="#"> Alta Historia Clinica </a>
