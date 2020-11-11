@@ -4,7 +4,8 @@
             <option [value]="item"  *ngFor="let item of especialidad">{{item}}</option>
           </select>
         </mat-form-field-->
-<div class="container-fluid altaTurno ">
+<h1 class="exito">{{this.reserva}}</h1>
+<div *ngIf="!reservado" class="container-fluid altaTurno ">
   <form *ngIf="!vistaTurnos">
     <h3 class="alineacion"> Reservar Turno</h3>
     <br><br>
@@ -14,8 +15,8 @@
                <mat-radio-button  (click)="opcionProfesional('si')" value="si" name="option">Por Apellido</mat-radio-button>
                <mat-radio-button  (click)="opcionProfesional('no')" value="no" name="option">Por Especialidad</mat-radio-button>
              </mat-radio-group>
-             <label *ngIf="conoceProfesionalError" class="form-text text-danger"> Ingrese si conoce al profesional</label>
               </div>
+
       <div class="alineacion" *ngIf="conoce == 'no'">
         <table  mat-table [dataSource]="dataEspecialidad" matSort >
           <ng-container matColumnDef="accion">
@@ -30,7 +31,6 @@
 
           <tr mat-header-row *matHeaderRowDef="displayEspecialidad" class="tableHeaderCellDiv"></tr>
           <tr mat-row *matRowDef="let row; columns: displayEspecialidad;"></tr>
-          <label style="color: green">{{this.reserva}}</label>;
         </table>
         <!--mat-paginator #pagina [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator-->
       </div>
@@ -76,7 +76,6 @@
         </mat-option>
       </mat-autocomplete-->
     </div>
-    <!--button *ngIf="conoce == 'no' || conoce == 'si'" class="spaceLeft spaceUp btnAgregar alineacion" mat-raised-button color="primary" (click)="limpiar()" >Volver Atras</button-->
   </form>
   <br>
   <div *ngIf="vistaTurnos" class="row">

@@ -18,10 +18,10 @@ import {HistoriaClinica} from '../../clases/historia-clinica';
 })
 export class AltaTurnoComponent implements OnInit  {
 
-  conoceProfesionalError: boolean;
   especialidadError: boolean;
   turnoSeleccionado: boolean;
   vistaTurnos : boolean;
+  reservado: boolean;
   seleccionados: string ;
   conoce: string;
   reserva: string;
@@ -69,6 +69,8 @@ export class AltaTurnoComponent implements OnInit  {
     this.vistaTurnos = false;
     this.turnoSeleccionado = false;
     this.conoce = '';
+    this.reserva = '';
+    this.reservado = false;
     this.listaTurnos = [];
     this.listaPerfiles = [];
     this.listraFiltrada = [];
@@ -167,11 +169,11 @@ export class AltaTurnoComponent implements OnInit  {
   reservarTurno(): void {
     this.listaPerfiles = this.listaPerfiles.filter( perfil => perfil.uid == this.usuario.uid );
     this.traerPaciente();
-    this.turnoModificado.historiaClinica = this.hc;
+    // this.turnoModificado.historiaClinica = this.hc;
     this.turnos.modificarTurno(this.turnoModificado);
     this.data = new MatTableDataSource();
     this.reserva = 'se reservo el turno';
-
+    this.reservado = true;
   }
 
   traerPaciente(){

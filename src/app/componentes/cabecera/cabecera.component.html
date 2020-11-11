@@ -11,7 +11,13 @@
         <li *ngIf="perfil == 'Administrador'" class="nav-item">
           <a class="nav-link"  routerLink="/altaAdministrador"> Alta Administrador </a>
         </li>
-        <li *ngIf="perfil == 'Administrador' ||  perfil == 'Profesional' " class="nav-item">
+        <li *ngIf="perfil == 'Administrador'" class="nav-item">
+          <a class="nav-link"  routerLink="/informes"> Informes </a>
+        </li>
+        <li *ngIf="perfil == 'Administrador'" class="nav-item">
+          <a class="nav-link"  routerLink="/busqueda"> Busqueda </a>
+        </li>
+        <li *ngIf="perfil == 'Profesional' " class="nav-item">
           <a class="nav-link" routerLink="/cargaHorarios"> Carga Horarios </a>
         </li>
         <li *ngIf="perfil == 'Paciente' ||  perfil == 'Profesional' " class="nav-item">

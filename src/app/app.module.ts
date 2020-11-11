@@ -51,6 +51,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSortModule} from '@angular/material/sort';
 import { TipoPerfilComponent } from './componentes/tipo-perfil/tipo-perfil.component';
 import { HistorialTurnosComponent } from './componentes/historial-turnos/historial-turnos.component';
+import { InformesComponent } from './componentes/informes/informes.component';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import { HistorialTurnosComponent } from './componentes/historial-turnos/histori
     MenuComponent,
     AltaAdminComponent,
     TipoPerfilComponent,
-    HistorialTurnosComponent
+    HistorialTurnosComponent,
+    InformesComponent
   ],
   imports: [
     BrowserModule,

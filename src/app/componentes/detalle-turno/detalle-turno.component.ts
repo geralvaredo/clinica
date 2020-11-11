@@ -23,6 +23,7 @@ export class DetalleTurnoComponent implements OnInit {
   resenaCargada: boolean;
   detalleResena: boolean;
   habilitaFinalizar: boolean;
+  profesionalHabilitado : boolean;
 
 
 
@@ -52,6 +53,8 @@ export class DetalleTurnoComponent implements OnInit {
         for (let i = 0; i < lista.length; i++) {
           if (user.uid === lista[i].uid ){
             this.perfil = lista[i].tipo;
+            this.profesionalHabilitado = lista[i].habilitado;
+
             this.cargarListaDeTurnos();
           }
         }
@@ -133,7 +136,10 @@ export class DetalleTurnoComponent implements OnInit {
 
   cancelarTurno(e): void {
     e.estado = 'CANCELADO';
-    e.paciente = null;
+    if(this.perfil == 'Profesional'){
+      e.paciente = null;
+    }
+    //
     this.turnos.modificarTurno(e);
     this.listaTurnos = [];
     //this.iniciar();
@@ -172,23 +178,33 @@ export class DetalleTurnoComponent implements OnInit {
       return true;
     }
     if(item.estado == 'ASIGNADO'){
-      return (item.historiaClinica.resenaPaciente == null && item.historiaClinica.resenaProfesional == null);
+      if(item.historiaClinica == null){
+        return true;
+      }
+      else {
+        return ( item.historiaClinica.resenaPaciente == null && item.historiaClinica.resenaProfesional == null) ;
+      }
+
     }
   }
 
   evaluaHistoriaClinicaDistintaANula(item){
     if(item.estado == 'ASIGNADO'){
-      return (item.historiaClinica.resenaPaciente != null && item.historiaClinica.resenaProfesional != null);
+      if(item.historiaClinica != null){
+        return (item.historiaClinica.resenaPaciente != null && item.historiaClinica.resenaProfesional != null);
+      }
     }
   }
 
   evaluarPerfilYHistoriaClinica(item){
-    return (this.perfil=='Paciente' && item.historiaClinica.resenaPaciente != null ||
-    this.perfil == 'Profesional' && item.historiaClinica.resenaProfesional != null);
+    if(item.historiaClinica != null){
+      return (this.perfil=='Paciente' && item.historiaClinica.resenaPaciente != null ||
+        this.perfil == 'Profesional' && item.historiaClinica.resenaProfesional != null);
+    }
   }
 
   evaluarPerfilYEstado(item){
-    return (this.perfil == 'Paciente' || (this.perfil == 'Profesional' && item.estado == 'ASIGNADO'));
+    return (this.perfil == 'Paciente' || (this.perfil == 'Profesional' && item.estado == 'ASIGNADO' && this.profesionalHabilitado));
   }
 
 }

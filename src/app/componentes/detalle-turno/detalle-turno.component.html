@@ -1,4 +1,6 @@
-
+<div *ngIf="!profesionalHabilitado" class="verificacion">
+  <mat-label class="mensaje">Para poder atender deberá estar validada su especialidad, contáctese con el administrador.</mat-label>
+</div>
 <div *ngIf="comienzaConsulta && !detalleResena" class="row fila">
   <div *ngFor="let item of this.listaTurnos">
     <mat-card class="tarjeta general">

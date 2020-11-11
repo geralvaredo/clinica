@@ -21,4 +21,11 @@ export class AppComponent {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
 
+  cabecera(): boolean{
+    return this.ruta == '/principal' || this.ruta== '/solicitudTurno' || this.ruta == '/listaTurnos'
+    || this.ruta == '/cargaHorarios' || this.ruta == '/validarEspecialidad' || this.ruta == '/altaAdministrador'
+    || this.ruta  == '/historialTurnos' || this.ruta == '/informes' || this.ruta == '/busqueda';
+  }
+
+
 }
