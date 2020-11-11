@@ -9,6 +9,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {Paciente} from '../../clases/paciente';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
+import {HistoriaClinica} from '../../clases/historia-clinica';
 
 @Component({
   selector: 'app-alta-turno',
@@ -24,6 +25,7 @@ export class AltaTurnoComponent implements OnInit  {
   seleccionados: string ;
   conoce: string;
   reserva: string;
+  hc: HistoriaClinica;
   turnoModificado: Turno;
   paciente: Paciente;
   listaTurnos: Array<Turno>;
@@ -70,6 +72,7 @@ export class AltaTurnoComponent implements OnInit  {
     this.listaTurnos = [];
     this.listaPerfiles = [];
     this.listraFiltrada = [];
+    this.hc = new HistoriaClinica();
     this.traerUsuario();
     this.traerPerfil();
     this.cargarListaDeTurnos();
@@ -164,6 +167,7 @@ export class AltaTurnoComponent implements OnInit  {
   reservarTurno(): void {
     this.listaPerfiles = this.listaPerfiles.filter( perfil => perfil.uid == this.usuario.uid );
     this.traerPaciente();
+    this.turnoModificado.historiaClinica = this.hc;
     this.turnos.modificarTurno(this.turnoModificado);
     this.data = new MatTableDataSource();
     this.reserva = 'se reservo el turno';
@@ -189,10 +193,6 @@ export class AltaTurnoComponent implements OnInit  {
     this.cargarListaDeTurnos();
     console.log(this.turnoModificado);
   }
-
-
-
-
 
   limpiar(): void {
     this.turnoSeleccionado = false;

@@ -40,7 +40,6 @@ export class HistorialTurnosComponent implements OnInit {
     }else {
       this.listaTurnos = this.listaTurnos.filter(turno => turno.profesional.uid == user.uid);
     }
-    console.log(this.listaTurnos);
     this.fotosDeProfesionales();
 
   }
@@ -52,7 +51,6 @@ export class HistorialTurnosComponent implements OnInit {
   buscarPerfil(): void {
     const user  = JSON.parse(sessionStorage.getItem('usuario'));
     let j = 0;
-    console.log(user);
     this.pr.contadorPerfiles().subscribe(
       (lista: Array<any>) => {
         for (let i = 0; i < lista.length; i++) {
