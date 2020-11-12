@@ -113,38 +113,42 @@ Administrador:
 
 ![](src/assets/validarEspecialidad.gif)
 
-## profesional validado que pueda atender
-
-en proceso ....
 
 #Atencion de los pacientes
 
 La atencion se realiza en la solapa "Mis Turnos Agendados" tanto
 para paciente como para profesional
 
+Paciente : 
+-Inicia la consulta y carga la reseña 
 
-
-##Agregar historia Clinico
-
-Esta desarrollada las pantalla se puede acceder en la solapa "Mis Turnos Agendados".
-Falta corregir la persistencia en la coleccion de turnos y persistir
-una coleccion de historias clinicas.
-
-## Solicitud de turno con fecha especial 
-
-en proceso.....
-
-## Agregar encuesta 
-
-en proceso ....
+Profesional:
+-Inicia la consulta y carga la reseña y la historia clinica del turno
+que serian los datos adicionales
 
 
 ## Agregar reportes en PDF
 
-en proceso........
+Para obtener los informes se debe loguearse con una cuenta de administradora
+debe ir a la solapa informes y podra obtener:
 
-## Busquedas de informacion en proceso
+- Los días y horarios que se Ingresaron al sistema en un lapso de tiempo
+- Cantidad de operaciones de todos por especialidad
+- Cantidad de turnos por día de la semana
+
+
+## Informes en proceso 
+
+- Médicos por cantidad de turnos dados en un lapso de tiempo.
+- Médicos por cantidad de días que trabajaron en un lapso de tiempo.
+- graficos estadisticos
+
+## Busquedas de informacion 
 
 en proceso .....
 
+
+## Traduccion 
+
+en proceso ....
 
