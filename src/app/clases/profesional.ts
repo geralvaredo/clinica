@@ -1,5 +1,4 @@
 import {Especialidad} from './especialidad';
-import {Perfil} from './perfil';
 import {Pais} from './pais';
 
 export class Profesional{
