@@ -98,7 +98,7 @@
           <div class="col-md-12">
             <div  class="d-flex justify-content-around">
               <div  class="mat-elevation-z8">
-                <table id="fecha"  mat-table [dataSource]="dataFechas" matSort matTableExporter #exporter3="matTableExporter">
+                <table id="turnoFecha"  mat-table [dataSource]="dataFechas" matSort matTableExporter #exporter3="matTableExporter">
 
                   <ng-container matColumnDef="fechas">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
@@ -117,7 +117,7 @@
               </div>
             </div>
             <div class="button">
-              <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="generarPDF('fecha','turnosPorFechas_')"> exportar A PDF</button>
+              <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="generarPDF('turnoFecha','turnosPorFechas_')"> exportar A PDF</button>
               <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="exporter3.exportTable('xlsx', {fileName:'turnosPorFecha'})"> exportar A Excel</button>
             </div>
 
