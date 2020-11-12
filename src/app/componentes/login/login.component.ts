@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Usuario} from '../../clases/usuario';
 import {AuthService} from '../../servicios/auth.service';
-import {Perfil} from '../../clases/perfil';
-import {PerfilService} from '../../servicios/perfil.service';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +17,7 @@ export class LoginComponent implements OnInit {
   errorLogin = 'ErrorOnlogin->';
   clinica = '../assets/clinica.jpeg';
 
-  constructor(private auth: AuthService, private pr: PerfilService) {
+  constructor(private auth: AuthService) {
   }
 
   ngOnInit(): void {
@@ -31,7 +28,6 @@ export class LoginComponent implements OnInit {
     try {
       const logging = await this.auth.login(this.usuario);
       if (logging) {
-
          if (logging.emailVerified){
            this.auth.guardarEnStorage(logging);
            this.auth.redirect(this.isLogin);

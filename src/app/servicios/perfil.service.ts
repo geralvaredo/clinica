@@ -14,6 +14,10 @@ export class PerfilService {
     this.fs.agregarDocumento(JSON.parse( JSON.stringify(perfil)), 'perfiles');
   }
 
+  public crearHorarioIngreso(horario : any):void {
+    this.fs.agregarDocumento(JSON.parse( JSON.stringify(horario)), 'horarios');
+  }
+
   public obtenerPerfilPorId(id: number): any {
     return this.fs.obtenerUnDocumento('perfiles', id);
   }
@@ -32,6 +36,10 @@ export class PerfilService {
 
   public contadorPerfiles(): Observable<any> {
     return this.fs.obtenerTotalDocumentos('perfiles');
+  }
+
+  public contadorHorarios(): Observable<any> {
+    return this.fs.obtenerTotalDocumentos('horarios');
   }
 
   public obtenerPerfilSnapshot(): any {

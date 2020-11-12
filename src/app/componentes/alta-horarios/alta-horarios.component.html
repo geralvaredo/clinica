@@ -1,5 +1,5 @@
-<div class="container-fluid">
-  <form>
+<div  class="container-fluid">
+  <form *ngIf="!vistaHorarios" class="formulario">
     <div class="row">
       <div class="col-md-12 mb-2 spaceLeft">
          <div class="card shadow mb-4">
@@ -24,7 +24,6 @@
                  </mat-datepicker-toggle>
                  <mat-datepicker #picker2></mat-datepicker>
                </mat-form-field>
-               <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="generarHorarios()">Agregar Horario</button>
              </div>
              <div class="row">
                <mat-label class="spaceLeftInicioFin spaceInicioUp" >Horario de Inicio:</mat-label>
@@ -39,13 +38,14 @@
                  <ngx-timepicker-field id="fin" (timeChanged)="cambioTiempoFin($event)"  [format]="24" [defaultTime]="'00:00'"></ngx-timepicker-field>
                </div>
              </div>
+             <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="generarHorarios()">Agregar Horario</button>
 
            </div>
          </div>
       </div>
     </div>
   </form>
-  <div class="row">
+  <div *ngIf="vistaHorarios"  class="row tabla">
     <div class="col-md-12 mb-2 spaceLeft">
       <div class="card shadow mb-4">
         <div class="card-header py-3">

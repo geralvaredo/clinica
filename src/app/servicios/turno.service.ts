@@ -35,5 +35,8 @@ export class TurnoService {
       this.fs.agregarDocumento(JSON.parse( JSON.stringify(hc)), 'historiasClinicas');
   }
 
+  public obtenerUnTurnoPorHistoriaClinica(id: number): any {
+    return this.fs.obtenerUnDocumento('turnos', id);
+  }
 
 }

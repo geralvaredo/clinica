@@ -8,13 +8,11 @@
         <div class="card-body">
           <mat-form-field *ngIf="perfil == 'Profesional'" class="example-full-width input" appearance="fill">
              <mat-label>Reseña Profesional</mat-label>
-             <!--input matInput  [(ngModel)]="resenaProfesional" name="resenaProfesional"-->
-            <textarea matInput placeholder="Reseña profesional..." [(ngModel)]="resenaProfesional" name="resenaProfesional"></textarea>
+            <textarea matInput placeholder="Reseña profesional..." [(ngModel)]="this.hc.resenaProfesional" name="resenaProfesional"></textarea>
          </mat-form-field>
           <mat-form-field *ngIf="perfil == 'Paciente'" class="example-full-width input" appearance="fill">
             <mat-label>Reseña Paciente</mat-label>
-            <!--input matInput  [(ngModel)]="resenaProfesional" name="resenaProfesional"-->
-            <textarea matInput placeholder="Reseña paciente..." [(ngModel)]="resenaPaciente" name="resenaPaciente"></textarea>
+            <textarea matInput placeholder="Reseña paciente..." [(ngModel)]="this.hc.resenaPaciente" name="resenaPaciente"></textarea>
           </mat-form-field>
           <div *ngIf="perfil == 'Profesional'" >
             <mat-form-field class="example-full-width" appearance="fill">
@@ -45,7 +43,6 @@
             </mat-form-field>
           </div>
           <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="agregarHistoriaClinica()">Agregar Historia</button>
-          <button *ngIf="habilitaFinalizar" class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="finalizarTurno()"> Finalizar</button>
 
         </div>
       </div>

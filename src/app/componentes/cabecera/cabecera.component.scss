@@ -5,7 +5,6 @@
   margin-right: -3vh;
 }
 
-
 .sesion{
   cursor: pointer;
   color: white;
@@ -43,4 +42,39 @@
 label {
   color : white;
   font: oblique bold 120% cursive;
+}
+
+a{
+  color : white;
+  font: oblique bold 120% cursive;
+  padding: 4.3vh;
+
+}
+
+a:hover{
+  background-color: #059797;
+  border-radius: 5px;
+}
+
+.fijo{
+  position: fixed;
+}
+
+.app-admin{
+  width: 20vh;
+}
+
+.pacProf{
+  margin-top: -25vh;
+}
+
+.app-detalle-turno{
+  width: 110vh;
+  margin-left: 50vh;
+  margin-top: -110vh;
+}
+.app-historial-turno{
+  width: 50vh;
+  margin-left: 53vh;
+  margin-top: -110vh;
 }

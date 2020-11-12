@@ -3,7 +3,8 @@
 }
 
 .altaTurno{
-  width: 160vh;
+  margin-top : -6vh;
+  /*background-color: #B3DBFF;*/
 }
 
 .spaceLeft{
@@ -17,7 +18,7 @@
   width: 70%;
 }
 
-table {
+.turnos table {
   width: 120vh;
   text-align: center;
 }
@@ -29,17 +30,30 @@ table {
 
 th.mat-header-cell {
   text-align: center;
+  align-items: center;
   font-size: 16px;
 }
 
-
+td.mat-cell {
+  text-align: center;
+}
 
 .etiqueta{
   color : #4e73df;
   font: oblique bold 120% cursive;
   padding: 1vh;
 }
+.exito{
+  color : green;
+  font: oblique bold 120% cursive;
+  padding: 1vh;
+}
 
 .button{
   text-align: center;
+}
+
+
+.alineacion{
+  margin-left: 80vh;
 }

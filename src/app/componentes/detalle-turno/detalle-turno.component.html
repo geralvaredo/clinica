@@ -1,8 +1,9 @@
-
-<div *ngIf="comienzaConsulta" class="row fila">
+<div *ngIf="!profesionalHabilitado" class="verificacion">
+  <mat-label class="mensaje">Para poder atender deberá estar validada su especialidad, contáctese con el administrador.</mat-label>
+</div>
+<div *ngIf="comienzaConsulta && !detalleResena" class="row fila">
   <div *ngFor="let item of this.listaTurnos">
     <mat-card class="tarjeta general">
-
       <a class="nav-link" *ngIf="perfil == 'Paciente'" ><img [src]="item.profesional.img1" class="avatar2" id="especialista" alt="especialista"></a>
       <a class="nav-link" *ngIf="perfil == 'Profesional'" ><img [src]="item.paciente.img1" class="avatar2" id="especialista2" alt="especialista"></a>
       <div class="turno">
@@ -27,16 +28,25 @@
              <mat-label>Especialidad:</mat-label>
              <h6>  {{item.especialidad}} </h6>
            </div>
-           <div class="col-md-5">
+           <div class="col-md-3">
               <mat-label>Estado:</mat-label>
              <h6> {{item.estado}} </h6>
            </div>
-           <div class="col-md-3">
-             <button *ngIf="perfil == 'Paciente' || (perfil == 'Profesional' && item.estado == 'ASIGNADO')" [disabled]="iniciarConsulta" (click)="comenzarConsulta(item)" class="button" mat-raised-button color="primary">Iniciar Consulta</button>
+           <div *ngIf="renderizarBotones(item,'PE')"  class="col-md-3">
+             <button  [disabled]="renderizarBotones(item,'I')"
+                     (click)="comenzarConsulta(item)" class="button" mat-raised-button color="primary">Iniciar Consulta</button>
            </div>
-           <div class="col-md-3">
+           <div *ngIf="renderizarBotones(item,'C')" class="col-md-3">
              <button  class="button" mat-raised-button color="warn" (click)="cancelarTurno(item)"  >Cancelar Turno</button>
            </div>
+           <div *ngIf="item.estado == 'ASIGNADO'" class="col-md-2">
+             <button   class="button" [disabled]="renderizarBotones(item,'V')"
+                      mat-raised-button color="info" (click)="verResenaPaciente(item)"  > Ver Reseñas</button>
+           </div>
+           <div *ngIf="renderizarBotones(item,'F')" class="col-md-2">
+             <button  class="spaceLeft button" mat-raised-button color="primary" (click)="finalizarTurno(item)"> Finalizar</button>
+           </div>
+
          </div>
       </div>
     </mat-card>
@@ -45,6 +55,10 @@
 
 </div>
 <div *ngIf="!comienzaConsulta" class="row">
-  <app-alta-historia-clinica [comienzo] = 'comienzaConsulta' [perfil] ='perfil' [turno] = 'turnoSelecionado'></app-alta-historia-clinica>
+  <app-alta-historia-clinica [comienzo] = 'comienzaConsulta'  (consulta) = "devolucion($event)"   (resena)="devolucionResena($event)"      [perfil] ='perfil' [turno] = 'turnoSelecionado'></app-alta-historia-clinica>
+</div>
+
+<div *ngIf="detalleResena">
+  <app-detalle-historia-clinica [resena]="detalleResena"  [turno] = 'turnoSelecionado' [perfil] = 'perfil' (salir)="volver($event)"   ></app-detalle-historia-clinica>
 </div>
 

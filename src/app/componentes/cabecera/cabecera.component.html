@@ -1,17 +1,57 @@
 <div class="mb-5">
   <nav class="navbar navbar-expand-lg cabecera  ">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!--a id="home" class="navbar-brand" routerLink="/bienvenido">Home</a-->
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <div class ='collapse navbar-collapse'  id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li *ngIf="perfil == 'Paciente'" class="nav-item ">
+          <a class="nav-link" routerLink="/solicitudTurno" >Solicitar Turnos</a>
+        </li>
+        <li *ngIf="perfil == 'Administrador'" class="nav-item ">
+          <a class="nav-link" routerLink="/validarEspecialidad" > Verificacion Especialidad </a>
+        </li>
+        <li *ngIf="perfil == 'Administrador'" class="nav-item">
+          <a class="nav-link"  routerLink="/altaAdministrador"> Alta Administrador </a>
+        </li>
+        <li *ngIf="perfil == 'Administrador'" class="nav-item">
+          <a class="nav-link"  routerLink="/informes"> Informes </a>
+        </li>
+        <li *ngIf="perfil == 'Administrador'" class="nav-item">
+          <a class="nav-link"  routerLink="/busqueda"> Busqueda </a>
+        </li>
+        <li *ngIf="perfil == 'Profesional' " class="nav-item">
+          <a class="nav-link" routerLink="/cargaHorarios"> Carga Horarios </a>
+        </li>
+        <li *ngIf="perfil == 'Paciente' ||  perfil == 'Profesional' " class="nav-item">
+          <a class="nav-link" routerLink="/listaTurnos"> Mis Turnos Agendados </a>
+        </li>
+        <li *ngIf="perfil == 'Paciente' ||  perfil == 'Profesional' " class="nav-item">
+          <a class="nav-link" routerLink="/historialTurnos" > Historial de Turnos </a>
+        </li>
+        <!--li class="nav-item">
+          <a class="nav-link" href="#"> Alta Historia Clinica </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"> Alta Historia Clinica </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"> Alta Historia Clinica </a>
+        </li-->
       </ul>
       <label>Bienvenido {{nombre}}!</label>
-      <a class="nav-link sesion"  (click)="usuario = null; auth.logOut()"><img [src]="perfil" class="avatar" id="perfil" alt="perfil"></a>
-
+      <a class="nav-link sesion"  (click)="usuario = null; auth.logOut()"><img [src]="imagen" class="avatar" id="perfil" alt="perfil"></a>
     </div>
   </nav>
+  <!--app-alta-turno *ngIf="menu[0]== 'S'"></app-alta-turno-->
+  <!--app-alta-horarios *ngIf="menu[0]== 'C'"></app-alta-horarios-->
+  <!--app-verificacion-especialidad *ngIf="menu[0]== 'V'" ></app-verificacion-especialidad-->
+  <!--div class="app-admin">
+    <app-alta-admin *ngIf="menu[0]== 'AA'"></app-alta-admin>
+  </div-->
+  <!--div class="app-detalle-turno">
+    <app-detalle-turno *ngIf="menu[0]== 'L'"></app-detalle-turno>
+  </div-->
+  <!--div class="app-historial-turno">
+    <app-historial-turnos *ngIf="menu[0]== 'H'"></app-historial-turnos>
+  </div-->
 </div>
 
 
