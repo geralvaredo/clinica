@@ -85,10 +85,6 @@ export class AuthService {
     localStorage.setItem('sitio', JSON.stringify(sitio));
    }
 
-   tipoPerfil(tipoPerfil): void {
-     localStorage.setItem('tipoPerfil', JSON.stringify(tipoPerfil));
-   }
-
    getLocalStorage(tipo): any {
     return localStorage.getItem(tipo);
    }
