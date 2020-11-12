@@ -14,6 +14,7 @@ export class BienvenidoComponent implements OnInit {
   horario: Horario;
   listaPerfiles: Array<any>;
   usuario: any;
+  perfil: any;
 
   constructor(private pr: PerfilService) {
     this.fecha = new Date();
@@ -43,9 +44,16 @@ export class BienvenidoComponent implements OnInit {
     this.usuario = JSON.parse(sessionStorage.getItem('usuario'));
     this.listaPerfiles = await this.pr.obtenerPerfiles().then(
       perfil => {  return perfil;  });
-    this.listaPerfiles = this.listaPerfiles.filter( perfil => perfil.tipo == 'Profesional' && perfil.uid == this.usuario.uid);
-    console.log(this.listaPerfiles);
-    this.cargaHorarios();
+    for (let i = 0; i < this.listaPerfiles.length; i++) {
+      if(this.listaPerfiles[i].uid == this.usuario.uid){
+        this.perfil = this.listaPerfiles[i].tipo;
+      }
+    }
+    if(this.perfil == 'Profesional'){
+      this.listaPerfiles = this.listaPerfiles.filter( perfil => perfil.tipo == 'Profesional' && perfil.uid == this.usuario.uid);
+      this.cargaHorarios();
+    }
+
   }
 
 
