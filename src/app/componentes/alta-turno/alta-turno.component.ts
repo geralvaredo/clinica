@@ -141,21 +141,13 @@ export class AltaTurnoComponent implements OnInit  {
 
   busquedaTurnoPorEspecialidad(especialidad): void{
     this.listraFiltrada = this.listaTurnos.filter(turno => turno.especialidad == especialidad);
-    console.log('Lista Filtrada');
-    console.log(this.listraFiltrada);
     this.data = new MatTableDataSource(this.listraFiltrada);
     this.data.paginator = this.paginator;
     this.data.sort = this.sort;
   }
 
   busquedaTurnoPorProfesional(profesional) : void{
-    console.log('Profesional:');
-    console.log(profesional);
-    console.log('lista de Turnos:');
-    console.log(this.listaTurnos);
     this.listraFiltrada = this.listaTurnos.filter(turno => turno.profesional.id == profesional.id );
-    console.log('lista Filtrada:' );
-    console.log(this.listraFiltrada);
     this.data = new MatTableDataSource(this.listraFiltrada);
     this.data.paginator = this.paginator;
     this.data.sort = this.sort;
@@ -193,7 +185,7 @@ export class AltaTurnoComponent implements OnInit  {
       this.turnoModificado = this.listaTurnos[i];
     }
     this.cargarListaDeTurnos();
-    console.log(this.turnoModificado);
+    // console.log(this.turnoModificado);
   }
 
   limpiar(): void {

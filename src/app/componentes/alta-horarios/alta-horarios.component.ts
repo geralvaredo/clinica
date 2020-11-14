@@ -61,6 +61,7 @@ export class AltaHorariosComponent implements OnInit {
     this.traerUltimoId();
     this.filtroCalendario();
     this.filtrarHora();
+    this.imagen = '';
     this.diaInicio = 0;
     this.diaFin = 0;
     this.horasConfirmadas = '';
@@ -149,13 +150,12 @@ export class AltaHorariosComponent implements OnInit {
       this.perfil.img1 = this.imagen;
       this.perfil.uid = this.uid;
       this.hc = new HistoriaClinica();
-      this.hc.resenaPaciente = null;
-      this.hc.resenaProfesional = null;
    }
 
 
 
   confirmarHorarios(): void {
+    // console.log(this.listaTurnos);
    this.turnos.agregarListaDeTurnos(this.listaTurnos);
     this.data = new MatTableDataSource();
     this.horasConfirmadas = 'Las Horas ya fueron confirmadas';

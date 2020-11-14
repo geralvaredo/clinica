@@ -13,8 +13,11 @@ export class Profesional{
   fechaAlta: string;
   fechaBaja: string;
   img1: string;
+  ruta: string;
   especialidades: Array<Especialidad> = [];
   habilitado: boolean;
 
-  constructor( ) {}
+  constructor( ) {
+    this.ruta = null;
+  }
 }

@@ -140,7 +140,7 @@ export class InformesComponent implements OnInit {
     }
     this.dataFechas = new MatTableDataSource(this.listaTurnosPorFecha);
     this.dataFechas.paginator = this.paginator3;
-    console.log(this.listaTurnosPorFecha);
+    // console.log(this.listaTurnosPorFecha);
   }
 
   filtrarCantidadTurnosPorMedicos(): void {

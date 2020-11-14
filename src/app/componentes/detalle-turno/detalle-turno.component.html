@@ -4,8 +4,8 @@
 <div *ngIf="comienzaConsulta && !detalleResena" class="row fila">
   <div *ngFor="let item of this.listaTurnos">
     <mat-card class="tarjeta general">
-      <a class="nav-link" *ngIf="perfil == 'Paciente'" ><img [src]="item.profesional.img1" class="avatar2" id="especialista" alt="especialista"></a>
-      <a class="nav-link" *ngIf="perfil == 'Profesional'" ><img [src]="item.paciente.img1" class="avatar2" id="especialista2" alt="especialista"></a>
+      <a class="nav-link" *ngIf="perfil == 'Paciente'" ><img [src]="item.profesional.ruta" class="avatar2" id="especialista" alt="especialista"></a>
+      <a class="nav-link" *ngIf="perfil == 'Profesional'" ><img [src]="item.paciente.ruta" class="avatar2" id="especialista2" alt="especialista"></a>
       <div class="turno">
          <div class="row">
            <div class="col-md-3">

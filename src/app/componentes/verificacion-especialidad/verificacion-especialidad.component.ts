@@ -52,7 +52,7 @@ export class VerificacionEspecialidadComponent implements OnInit {
     for (let i = 0; i < this.perfil.length; i++) {
       this.prof = this.perfil[i];
     }
-    console.log(this.prof);
+    // console.log(this.prof);
   }
 
   validarEspecialista(): void  {
