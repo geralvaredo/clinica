@@ -1,0 +1,61 @@
+<div class="row">
+  <div id="medicosTurnos" class="row tabla fecha">
+    <div class="col-md-12 mb-2 spaceLeft">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="etiqueta"> Medicos Por Cantidad de Turnos</h6>
+        </div>
+        <div class="card-body ">
+          <div class="col-md-12">
+            <div  class="d-flex justify-content-around">
+              <div  class="mat-elevation-z8">
+                <table   mat-table [dataSource]="dataTurnos" matSort matTableExporter #exporter="matTableExporter">
+
+                  <ng-container matColumnDef="medico">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Medico </th>
+                    <td mat-cell *matCellDef="let row"> {{row.clave}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="cantidad">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Cantidad de Turnos </th>
+                    <td mat-cell *matCellDef="let row"> {{row.valor}} </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayTurnos" class="tableHeaderCellDiv"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayTurnos;"></tr>
+                </table>
+                <mat-paginator #pagina3 [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+              </div>
+            </div>
+            <div class="button">
+              <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="generarPDF('medicosTurnos','medicosTurnos_')"> exportar A PDF</button>
+              <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="exporter.exportTable('xlsx', {fileName:'medicosTurnos'})"> exportar A Excel</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div  class="row tabla">
+    <div class="col-md-12 mb-2 spaceLeft">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="etiqueta"> Grafico</h6>
+        </div>
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -14,6 +14,11 @@ import {BienvenidoComponent} from './componentes/bienvenido/bienvenido.component
 import {AltaHorariosComponent} from './componentes/alta-horarios/alta-horarios.component';
 import {HistorialTurnosComponent} from './componentes/historial-turnos/historial-turnos.component';
 import {InformesComponent} from './componentes/informes/informes.component';
+import {InformeLoginComponent} from './componentes/informe-login/informe-login.component';
+import {InformeEspecialidadComponent} from './componentes/informe-especialidad/informe-especialidad.component';
+import {InformeTurnosPorDiaComponent} from './componentes/informe-turnos-por-dia/informe-turnos-por-dia.component';
+import {InformeTurnosPorMedicosComponent} from './componentes/informe-turnos-por-medicos/informe-turnos-por-medicos.component';
+import {InformeDiasTrabajadosMedicosComponent} from './componentes/informe-dias-trabajados-medicos/informe-dias-trabajados-medicos.component';
 
 
 const routes: Routes = [
@@ -31,7 +36,12 @@ const routes: Routes = [
   {path: 'validarEspecialidad', component: VerificacionEspecialidadComponent , canActivate: [AuthGuard]},
   {path: 'cargaHorarios', component: AltaHorariosComponent , canActivate: [AuthGuard]},
   {path: 'historialTurnos', component: HistorialTurnosComponent , canActivate: [AuthGuard]},
-  {path: 'informes', component: InformesComponent , canActivate: [AuthGuard]}
+  {path: 'informes', component: InformesComponent , canActivate: [AuthGuard]},
+  {path: 'informeLogin', component: InformeLoginComponent , canActivate: [AuthGuard]},
+  {path: 'informeEspecialidad', component: InformeEspecialidadComponent , canActivate: [AuthGuard]},
+  {path: 'informeTurnosPorDia', component: InformeTurnosPorDiaComponent , canActivate: [AuthGuard]},
+  {path: 'informeTurnosPorMedicos', component: InformeTurnosPorMedicosComponent , canActivate: [AuthGuard]},
+  {path: 'informeDiasTrabajados', component: InformeDiasTrabajadosMedicosComponent , canActivate: [AuthGuard]}
 
 
 ];
