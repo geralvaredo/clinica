@@ -1,0 +1,47 @@
+<div  class="row">
+  <div class="card" style="width: 18rem; height: 28rem">
+    <div class="row">
+      <div class="card-body">
+        <h5 class="card-title">{{turno.paciente.nombre}} {{turno.paciente.apellido}}</h5>
+        <h6 class="card-text mb-2 text-muted">Fecha Nacimiento: {{turno.paciente.fechaNacimiento}}</h6>
+        <h6 class="card-text mb-2 text-muted"> Edad: {{turno.historiaClinica.edad}}</h6>
+        <h6 class="card-text mb-2 text-muted">Sexo: {{turno.paciente.sexo}}</h6>
+        <h6 class="card-text mb-2 text-muted">Fecha de Alta: {{turno.paciente.fechaAlta}}</h6>
+        <img [src]="turno.paciente.ruta" class="mx-auto d-block" width="200px" height="200px">
+      </div>
+    </div>
+    </div>
+  <div class="card" style="width: 18rem; height: 28rem">
+    <div class="row">
+      <div class="card-body">
+        <h5 class="card-title">{{turno.profesional.nombre}} {{turno.profesional.apellido}}</h5>
+        <h6 class="card-text mb-2 text-muted">Fecha Nacimiento: {{turno.profesional.fechaNacimiento}}</h6>
+        <h6 class="card-text mb-2 text-muted">Sexo: {{turno.profesional.sexo}}</h6>
+        <img [src]="turno.profesional.ruta" class="mx-auto d-block" width="200px" height="200px">
+      </div>
+    </div>
+  </div>
+  <div class="card" style="width: 24rem; height: 28rem">
+    <div class="row">
+      <div class="card-body">
+        <h5 class="card-title">Detalle del Turno</h5>
+        <h6 class="card-text mb-2 text-muted">Especialidad: {{turno.especialidad}}</h6>
+        <h6 class="card-text mb-2 text-muted">Estado del turno: {{turno.estado}}</h6>
+        <mat-divider></mat-divider>
+        <br>
+        <h5 class="card-title">Encuesta</h5>
+        <h6 class="card-text mb-2 text-muted"> Calificacion del paciente: {{turno.historiaClinica.resenaPaciente}}</h6>
+        <h6 class="card-text mb-2 text-muted"> Resena del profesional: {{turno.historiaClinica.resenaProfesional}}</h6>
+        <mat-divider></mat-divider>
+        <br>
+        <h5 class="card-title">Historia Clinica</h5>
+        <h6 class="card-text mb-2 text-muted"> Presion: {{turno.historiaClinica.presion}}</h6>
+        <h6 class="card-text mb-2 text-muted"> Temperatura: {{turno.historiaClinica.temperatura}}</h6>
+        <h6 class="card-text mb-2 text-muted"> Primera Observacion: {{turno.historiaClinica.primeraObservacion}}</h6>
+        <h6 class="card-text mb-2 text-muted"> Segunda Observacion: {{turno.historiaClinica.segundaObservacion}}</h6>
+        <h6 class="card-text mb-2 text-muted"> Tercera Observacion: {{turno.historiaClinica.terceraObservacion}}</h6>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
