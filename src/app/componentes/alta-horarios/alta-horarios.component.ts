@@ -94,6 +94,7 @@ export class AltaHorariosComponent implements OnInit {
     let especialidad = new Especialidad(lista[i].especialidades[j].id,lista[i].especialidades[j].nombre);
     this.profesional.especialidades.push(especialidad);
     this.profesional.img1 = lista[i].img1;
+    this.hc = new HistoriaClinica();
   }
 
   traerUltimoId(): void {
