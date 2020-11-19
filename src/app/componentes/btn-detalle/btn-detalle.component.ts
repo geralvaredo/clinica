@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Turno} from '../../clases/turno';
 
 @Component({
   selector: 'app-btn-detalle',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BtnDetalleComponent implements OnInit {
 
+  @Output() botonDetalle : EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
+  detalleTurno() {
+    this.botonDetalle.emit(true);
+  }
 }

@@ -5,9 +5,10 @@
 }
 
 .formulario{
-  width: 120vh;
+  width: 180vh;
   text-align: center;
   align-items: center;
+  margin-left: 10vh;
 }
 
 .alineacionRadio{
@@ -15,7 +16,7 @@
 }
 
 .alineacion{
-  margin-left: 80vh;
+  margin-left: 50vh;
 }
 
 .spaceLeft{
@@ -35,13 +36,14 @@
 }
 
 .spaceBoton{
-  margin-top : 3vh;
-  margin-left : 76vh;
+  margin-top : -7vh;
+  margin-left : 110vh;
 }
 
 
 .b {
-  margin-left: 80vh;
+  margin-left: 42vh;
+  margin-bottom: -3vh;
   width: 65vh;
 }
 
@@ -62,11 +64,15 @@ td.mat-cell {
 }
 
 .fecha{
-  margin-left: 80vh;
+  margin-left: 65vh;
   text-align: center;
   width: 40vh;
 }
 
 .spaceObservacion{
   margin-left: 8vh;
+}
+
+.primera{
+  margin-left: 7vh;
 }

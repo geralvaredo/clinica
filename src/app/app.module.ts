@@ -61,6 +61,8 @@ import { InformeDiasTrabajadosMedicosComponent } from './componentes/informe-dia
 import { KeyvaluePipe } from './pipes/keyvalue.pipe';
 import { ChartsModule } from 'ng2-charts';
 import { DetalleBusquedaComponent } from './componentes/detalle-busqueda/detalle-busqueda.component';
+import { DetalleBusquedaTurnoComponent } from './componentes/detalle-busqueda-turno/detalle-busqueda-turno.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -97,7 +99,8 @@ import { DetalleBusquedaComponent } from './componentes/detalle-busqueda/detalle
     InformeTurnosPorMedicosComponent,
     InformeDiasTrabajadosMedicosComponent,
     KeyvaluePipe,
-    DetalleBusquedaComponent
+    DetalleBusquedaComponent,
+    DetalleBusquedaTurnoComponent
   ],
   imports: [
     BrowserModule,
@@ -127,7 +130,8 @@ import { DetalleBusquedaComponent } from './componentes/detalle-busqueda/detalle
     MatAutocompleteModule,
     MatSortModule,
     MatTableExporterModule,
-    ChartsModule
+    ChartsModule,
+    MatDividerModule
   ],
   providers: [{ provide: DateAdapter, useClass: MomentDateAdapter, deps: [LOCALE_ID] , useValue: 'es' },
     { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS }],

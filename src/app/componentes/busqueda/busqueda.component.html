@@ -7,43 +7,37 @@
         </div>
         <div class="card-body">
             <mat-radio-group class="alineacionRadio" aria-label="Select an option">
-              <div class="col-md-12">
-                <div class="col-xs-6">
-                  <mat-radio-button class="spaceLeft" (click)="opcionBusqueda('fecha')" value="fecha"  name="option">Por Fecha</mat-radio-button>
+               <div class="row">
+                 <div class="col-md-2">
+                   <mat-radio-button class="spaceLeft" (click)="opcionBusqueda('fecha')" value="fecha"  name="option">Por Fecha</mat-radio-button>
+                 </div>
+                 <div class="col-md-2">
+                   <mat-radio-button  (click)="opcionBusqueda('paciente')"  value="paciente" name="option">Por Paciente</mat-radio-button>
+                 </div>
+                 <div class="col-md-3">
+                   <mat-radio-button class="" (click)="opcionBusqueda('profesional')"  value="profesional"  name="option">Por Profesional</mat-radio-button>
+                 </div>
+                 <div class="col-md-2">
+                   <mat-radio-button class="" (click)="opcionBusqueda('especialidad')" value="especialidad" name="option">Por Especialidad</mat-radio-button>
+                 </div>
+                 <div class="col-md-3">
+                   <mat-radio-button class="spaceEdad" (click)="opcionBusqueda('edad')" value="edad"  name="option">Por Edad</mat-radio-button>
+                 </div>
+               </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <mat-radio-button  (click)="opcionBusqueda('temperatura')" value="temperatura"  name="option">Por Temperatura</mat-radio-button>
                 </div>
-                <div class="col-xs-6">
-                  <mat-radio-button  (click)="opcionBusqueda('paciente')"  value="paciente" name="option">Por Paciente</mat-radio-button>
+                <div class="col-md-2">
+                  <mat-radio-button   (click)="opcionBusqueda('presion')" value="presion" name="option">Por Presion</mat-radio-button>
                 </div>
-              </div>
-              <div class="col-md-12">
-                <div class="col-xs-6">
-                  <mat-radio-button class="spaceProfesional" (click)="opcionBusqueda('profesional')"  value="profesional"  name="option">Por Profesional</mat-radio-button>
+                <div class="col-md-3">
+                  <mat-radio-button class="primera"  (click)="opcionBusqueda('primera')" value="obs1" name="option">Primera Observacion</mat-radio-button>
                 </div>
-                <div class="col-xs-6">
-                  <mat-radio-button class="spaceEspecialidad" (click)="opcionBusqueda('especialidad')" value="especialidad" name="option">Por Especialidad</mat-radio-button>
+                <div class="col-md-2">
+                  <mat-radio-button  (click)="opcionBusqueda('segunda')" value="obs2" name="option">Segunda Observacion</mat-radio-button>
                 </div>
-              </div>
-              <div class="col-md-12">
-                <div class="col-xs-6">
-                  <mat-radio-button class="spaceEdad" (click)="opcionBusqueda('edad')" value="edad"  name="option">Por Edad</mat-radio-button>
-                </div>
-                <div class="col-xs-6">
-                  <mat-radio-button class="spaceEspecialidad"  (click)="opcionBusqueda('temperatura')" value="temperatura"  name="option">Por Temperatura</mat-radio-button>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="col-xs-6">
-                  <mat-radio-button class="spaceLeft"  (click)="opcionBusqueda('presion')" value="presion" name="option">Por Presion</mat-radio-button>
-                </div>
-                <div class="col-xs-6">
-                  <mat-radio-button class="spaceObservacion"  (click)="opcionBusqueda('primera')" value="obs1" name="option">Primera Observacion</mat-radio-button>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="col-xs-6">
-                  <mat-radio-button class="spaceEspecialidad spaceObservacion"  (click)="opcionBusqueda('segunda')" value="obs2" name="option">Segunda Observacion</mat-radio-button>
-                </div>
-                <div class="col-xs-6">
+                <div class="col-md-3">
                   <mat-radio-button class="spaceObservacion"  (click)="opcionBusqueda('tercera')" value="obs3" name="option">Tercera Observacion</mat-radio-button>
                 </div>
               </div>
@@ -55,7 +49,7 @@
             <label>Fecha de Turnos</label>
             <input class="form-control"  type="date" placeholder="Ingrese una fecha de Nacimiento.." [(ngModel)]="inicio" name="fechaDeNacimiento">
         </div>
-      <div class="row">
+      <div class="row ">
         <div  *ngIf="tipo == 'paciente' || tipo == 'profesional' || tipo == 'edad' || tipo =='presion'
         || tipo == 'temperatura' || tipo == 'primera' || tipo == 'segunda' || tipo == 'tercera'">
          <mat-form-field class="b">
@@ -90,13 +84,15 @@
            <!--mat-paginator #pagina [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator-->
          </div>
        </div>
-      <div class="spaceBoton">
-        <button *ngIf="!this.ocultarPanel"  mat-raised-button color="primary" (click)="buscarTurnos()">Buscar Turnos</button>
+      <div class="row">
+        <div class="spaceBoton">
+          <button *ngIf="!this.ocultarPanel && tipo != 'especialidad'"  mat-raised-button color="primary" (click)="buscarTurnos()">Buscar Turnos</button>
+          <button class="spaceProfesional" *ngIf="!this.ocultarPanel && tipo != 'especialidad'"  mat-raised-button color="primary" (click)="limpiar()">Limpiar</button>
+        </div>
       </div>
     </div>
-    <div *ngIf="verDetalle">
+    <div class="row" *ngIf="verDetalle">
       <app-detalle-busqueda [listaTurnos]="this.listaGenerica"  ></app-detalle-busqueda>
     </div>
-
   </form>
 </div>
