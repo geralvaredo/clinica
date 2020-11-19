@@ -67,6 +67,7 @@ usted podra cancelar esos turnos que ha cargado anteriormente
 y lo podra hacer en la solapa "Mis turnos Agendados"
 
 Profesional:
+![](src/assets/cancelacionTurnoProfesional.gif)
 
 Paciente:
 
@@ -101,7 +102,7 @@ por especialidad:
 
 por apellido:
 
-![](src/assets/SolicitarTurno.gif)
+![](src/assets/soliciturTurnoPorApellido.gif)
 
 ## Validar Especialidad para profesionales
 
@@ -122,12 +123,20 @@ para paciente como para profesional
 Paciente : 
 -Inicia la consulta y carga la reseña 
 
+![](src/assets/reseñaPaciente.gif)
+
 Profesional:
 -Inicia la consulta y carga la reseña y la historia clinica del turno
 que serian los datos adicionales
 
+![](src/assets/reseñaProfesional.gif)
 
-## Agregar reportes en PDF
+
+
+
+## Informes en graficos estadisticos y reportes en PDF y Excel
+
+para los reportes se debe registrar con una cuenta Administradora
 
 Para obtener los informes se debe loguearse con una cuenta de administradora
 debe ir a la solapa informes y podra obtener:
@@ -135,20 +144,32 @@ debe ir a la solapa informes y podra obtener:
 - Los días y horarios que se Ingresaron al sistema en un lapso de tiempo
 - Cantidad de operaciones de todos por especialidad
 - Cantidad de turnos por día de la semana
-
-
-## Informes en proceso 
-
 - Médicos por cantidad de turnos dados en un lapso de tiempo.
 - Médicos por cantidad de días que trabajaron en un lapso de tiempo.
 - graficos estadisticos
 
+Graficos:
+
+![](src/assets/graficosTablas.gif)
+
+Reportes:
+
+![](src/assets/reporteExcel.gif)
+
+![](src/assets/reportePDF.gif)
+
+
 ## Busquedas de informacion 
 
-en proceso .....
+ para la busqueda de informacion se debe registrar con una cuenta Administradora
+usted podra buscar la informacion del turno por :
+- Apellido del paciente
+- Apellido del profesional
+- Especialidad del profesional
+- Por la temperatura del paciente
+- Por la presion del paciente
+- Por la edad del paciente
+- por los campos dinamicos
 
-
-## Traduccion 
-
-en proceso ....
+![](src/assets/busquedaInformacion.gif)
 
