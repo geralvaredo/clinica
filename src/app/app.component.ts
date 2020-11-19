@@ -9,7 +9,7 @@ import {slideInAnimation} from './animations';
   animations: [slideInAnimation]
 })
 export class AppComponent {
-  title = 'clinicaUniversitaria';
+  title = 'clinica';
   ruta ;
 
   constructor(router: Router) {

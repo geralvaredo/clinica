@@ -1,4 +1,4 @@
-import { query, trigger, transition, style, animateChild, group, animate } from '@angular/animations';
+import {query, trigger, transition, style, animateChild, group, animate, state} from '@angular/animations';
 
 
 export const slideInAnimation =
@@ -9,6 +9,7 @@ export const slideInAnimation =
 
     transition('* => registro', slideTo('left')),
     transition('registro => *', slideTo('right')),
+
 
     /*transition('actores => actores-peliculas', slideTo('right')),
     transition('actores => nacionalidades', slideTo('right')),
@@ -22,6 +23,8 @@ export const slideInAnimation =
     transition('* => buscar', slideTo('right')),
     transition('buscar => *', slideTo('left')),*/
   ]);
+
+
 
 function slideTo(direction): any {
   const optional = { optional: true };

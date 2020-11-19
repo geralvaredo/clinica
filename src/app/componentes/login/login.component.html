@@ -5,13 +5,13 @@
     <br>
     <p matLine class="etiqueta">Login</p>
     <mat-form-field class="componentes">
-      <mat-label>Usuario</mat-label>
+      <mat-label i18n="User">Usuario</mat-label>
       <input matInput placeholder="usuario@email.com" [(ngModel)]="usuario.email" type="text"
              id="user" required>
     </mat-form-field>
     <br>
     <mat-form-field class="componentes">
-      <mat-label>Contraseña</mat-label>
+      <mat-label i18n="con">Contraseña</mat-label>
       <input matInput type="password" [(ngModel)]="usuario.pass" id="pass" required>
     </mat-form-field>
     <br>
@@ -26,6 +26,6 @@
 
       </div>
     </div>
-    <a routerLink="/registro"> no tenes cuenta? registrate aca </a>
+    <a routerLink="/registro" i18n="descripcion"> no tenes cuenta? registrate aca </a>
   </div>
 </div>

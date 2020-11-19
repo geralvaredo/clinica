@@ -3,7 +3,7 @@
     <div class="col-md-12 mb-2 spaceLeft">
       <div class="card shadow mb-4 opacity">
         <div class="card-header py-3">
-          <h6 class="etiqueta"> Horarios De Ingreso</h6>
+          <h6 class="etiqueta" i18n="scheduleBegin"> Horarios De Ingreso</h6>
         </div>
         <div  class="card-body">
           <div class="col-md-12">
@@ -11,22 +11,22 @@
               <div  class="mat-elevation-z8">
                 <table  mat-table [dataSource]="data" matSort matTableExporter #exporter="matTableExporter">
 
-                  <ng-container matColumnDef="fecha">
+                  <ng-container i18n="date" matColumnDef="fecha">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
                     <td mat-cell *matCellDef="let row"> {{row.fecha}} </td>
                   </ng-container>
 
-                  <ng-container matColumnDef="ingreso">
+                  <ng-container i18n="begin" matColumnDef="ingreso">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Ingreso </th>
                     <td mat-cell *matCellDef="let row"> {{row.id }} </td>
                   </ng-container>
 
-                  <ng-container matColumnDef="nombre">
+                  <ng-container i18n="name" matColumnDef="nombre">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
                     <td mat-cell *matCellDef="let row"> {{row.nombre }} </td>
                   </ng-container>
 
-                  <ng-container matColumnDef="apellido">
+                  <ng-container  i18n="lastname" matColumnDef="apellido">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellido </th>
                     <td mat-cell *matCellDef="let row"> {{row.apellido }} </td>
                   </ng-container>
@@ -39,8 +39,8 @@
               </div>
             </div>
             <div class="button">
-              <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="generarPDF('ingreso','horarios_')"> exportar A PDF</button>
-              <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="exporter.exportTable('xlsx', {fileName:'horarios'})"> exportar A Excel</button>
+              <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="generarPDF('ingreso','horarios_')" i18n="exportPDF"> exportar A PDF</button>
+              <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="exporter.exportTable('xlsx', {fileName:'horarios'})" i18n="exportExcel"> exportar A Excel</button>
             </div>
 
 
@@ -53,7 +53,7 @@
     <div class="col-md-12 mb-2 spaceLeft">
       <div class="card shadow mb-4 opacity">
         <div class="card-header py-3">
-          <h6 class="etiqueta"> Grafico </h6>
+          <h6 class="etiqueta" i18n="grafic"> Grafico </h6>
         </div>
         <div style="display: block">
           <canvas baseChart

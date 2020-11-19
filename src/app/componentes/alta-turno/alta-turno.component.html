@@ -7,24 +7,24 @@
 <h1 class="exito">{{this.reserva}}</h1>
 <div *ngIf="!reservado" class="container-fluid altaTurno ">
   <form *ngIf="!vistaTurnos">
-    <h3 class="alineacion"> Reservar Turno</h3>
+    <h3 class="alineacion negro" i18n="reservation"> Reservar Turno</h3>
     <br><br>
     <div class="row">
-           <div *ngIf="this.conoce == ''" class="form-check form-check-inline col-md-12 spaceLeft alineacion">
+           <div *ngIf="this.conoce == ''" class="form-check form-check-inline col-md-12 spaceLeft alineacion opacity">
                <mat-radio-group aria-label="Select an option">
-               <mat-radio-button  (click)="opcionProfesional('si')" value="si" name="option">Por Apellido</mat-radio-button>
-               <mat-radio-button  (click)="opcionProfesional('no')" value="no" name="option">Por Especialidad</mat-radio-button>
+               <mat-radio-button class="blanco"  (click)="opcionProfesional('si')" value="si" name="option" i18n="forLastname">Por Apellido</mat-radio-button>
+               <mat-radio-button  class="blanco" (click)="opcionProfesional('no')" value="no" name="option" i18n="forSpeciality">Por Especialidad</mat-radio-button>
              </mat-radio-group>
               </div>
 
       <div class="alineacion" *ngIf="conoce == 'no'">
         <table  mat-table [dataSource]="dataEspecialidad" matSort >
-          <ng-container matColumnDef="accion">
+          <ng-container i18n="action" matColumnDef="accion">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Opcion: </th>
             <td mat-cell *matCellDef="let row"> <mat-radio-button value="si" name="accion" (click)="buscarTurnos(conoce, row.name)"  ></mat-radio-button> </td>
           </ng-container>
 
-          <ng-container matColumnDef="especialidad">
+          <ng-container i18n="speciality" matColumnDef="especialidad">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Especialidad </th>
             <td mat-cell *matCellDef="let row"> {{row.name }} </td>
           </ng-container>
@@ -38,22 +38,22 @@
     <br>
     <div class="alineacion" *ngIf="conoce == 'si'">
       <table  mat-table [dataSource]="dataProfesionales" matSort >
-        <ng-container matColumnDef="accion">
+        <ng-container i18n="option" matColumnDef="accion">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Opcion: </th>
           <td mat-cell *matCellDef="let row"> <mat-radio-button value="si" name="accion" (click)="buscarTurnos(conoce, row)"  ></mat-radio-button> </td>
         </ng-container>
 
-        <ng-container matColumnDef="nombre">
+        <ng-container i18n="name" matColumnDef="nombre">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
           <td mat-cell *matCellDef="let row"> {{row.nombre }} </td>
         </ng-container>
 
-        <ng-container matColumnDef="apellido">
+        <ng-container i18n="lastname" matColumnDef="apellido">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellido </th>
           <td mat-cell *matCellDef="let row"> {{row.apellido }} </td>
         </ng-container>
 
-        <ng-container matColumnDef="especialidad">
+        <ng-container i18n="speciality" matColumnDef="especialidad">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Especialidad </th>
           <td mat-cell *matCellDef="let row"> {{row.especialidades[0].nombre }} </td>
         </ng-container>
@@ -63,7 +63,6 @@
         <tr mat-row *matRowDef="let row; columns: displayProfesional;"></tr>
         <label style="color: green">{{this.reserva}}</label>;
       </table>
-      <mat-paginator #paginaProf [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 
 
       <!--mat-form-field appearance="fill" class="example-full-width">
@@ -82,7 +81,7 @@
     <div class="col-md-12 mb-2 spaceLeft">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="etiqueta"> Seleccione un turno:</h6>
+          <h6 class="etiqueta" i18n="chooseTurn" > Seleccione un turno:</h6>
         </div>
         <div class="card-body">
           <div class="col-md-12">
@@ -90,32 +89,32 @@
               <div class="mat-elevation-z8">
                 <table mat-table class="turnos" [dataSource]="data" matSort >
 
-                  <ng-container matColumnDef="accion">
+                  <ng-container i18n="option" matColumnDef="accion">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Opcion: </th>
                     <td mat-cell *matCellDef="let row"> <mat-radio-button value="si" (click)="turno(row.id)" (change)="seleccionado()"  ></mat-radio-button> </td>
                   </ng-container>
 
-                  <ng-container matColumnDef="fecha">
+                  <ng-container i18n="date" matColumnDef="fecha">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
                     <td mat-cell *matCellDef="let row"> {{row.fecha}} </td>
                   </ng-container>
 
-                  <ng-container matColumnDef="hora">
+                  <ng-container i18n="hour" matColumnDef="hora">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Hora </th>
                     <td mat-cell *matCellDef="let row"> {{row.horaInicio + ':' + row.minutoInicio + row.minutoInicio}} </td>
                   </ng-container>
 
-                  <ng-container matColumnDef="profesional">
+                  <ng-container i18n="professional" matColumnDef="profesional">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Profesional </th>
                     <td mat-cell *matCellDef="let row"> {{ row.profesional.apellido + ' , ' + row.profesional.nombre }} </td>
                   </ng-container>
 
-                  <ng-container matColumnDef="especialidad">
+                  <ng-container i18n="speciality" matColumnDef="especialidad">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Especialidad </th>
                     <td mat-cell *matCellDef="let row"> {{row.especialidad }} </td>
                   </ng-container>
 
-                  <ng-container matColumnDef="estado">
+                  <ng-container i18n="status" matColumnDef="estado">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
                     <td mat-cell *matCellDef="let row"> {{row.estado}} </td>
                   </ng-container>

@@ -23,7 +23,7 @@ import {InformeDiasTrabajadosMedicosComponent} from './componentes/informe-dias-
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
-   {path: 'principal' , component : BienvenidoComponent, canActivate: [AuthGuard]},
+   {path: 'principal' , component : BienvenidoComponent,data: {animation: 'principal'}  , canActivate: [AuthGuard]},
   {path: 'busqueda' , component : BusquedaComponent , canActivate: [AuthGuard] },
   {path: 'error', component : ErrorComponent},
   {path: 'registro' , component: RegistroComponent ,  data: {animation: 'registro'}},
@@ -35,8 +35,8 @@ const routes: Routes = [
   {path: 'listaTurnos', component: DetalleTurnoComponent , canActivate: [AuthGuard]},
   {path: 'validarEspecialidad', component: VerificacionEspecialidadComponent , canActivate: [AuthGuard]},
   {path: 'cargaHorarios', component: AltaHorariosComponent , canActivate: [AuthGuard]},
-  {path: 'historialTurnos', component: HistorialTurnosComponent , canActivate: [AuthGuard]},
-  {path: 'informes', component: InformesComponent , canActivate: [AuthGuard]},
+  {path: 'historialTurnos', component: HistorialTurnosComponent  , canActivate: [AuthGuard]},
+  {path: 'informes', component: InformesComponent , data:{animation : 'informes' } , canActivate: [AuthGuard]},
   {path: 'informeLogin', component: InformeLoginComponent , canActivate: [AuthGuard]},
   {path: 'informeEspecialidad', component: InformeEspecialidadComponent , canActivate: [AuthGuard]},
   {path: 'informeTurnosPorDia', component: InformeTurnosPorDiaComponent , canActivate: [AuthGuard]},

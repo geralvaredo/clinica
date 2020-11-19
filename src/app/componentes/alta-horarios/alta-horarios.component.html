@@ -4,12 +4,12 @@
       <div class="col-md-12 mb-2 spaceLeft">
          <div class="card shadow mb-4 borde">
            <div class="card-header py-3">
-             <h6 class="etiqueta">Seleccionar rango de dias y horarios disponibles:</h6>
+             <h6 class="etiqueta" i18n="rangeDays">Seleccionar rango de dias y horarios disponibles:</h6>
            </div>
            <div class="card-body">
              <div class="row spaceLeft">
                <mat-form-field class="example-full-width" appearance="fill">
-                 <mat-label>Fecha Inicio</mat-label>
+                 <mat-label i18n="dateBegin">Fecha Inicio</mat-label>
                  <input matInput [matDatepickerFilter]="myDateFilter"  [(ngModel)]="inicio" name="inicio" [matDatepicker]="picker">
                  <mat-datepicker-toggle matSuffix [for]="picker">
                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
@@ -17,7 +17,7 @@
                  <mat-datepicker #picker></mat-datepicker>
                </mat-form-field>
                <mat-form-field class="example-full-width spaceLeft" appearance="fill">
-                 <mat-label>Fecha Fin</mat-label>
+                 <mat-label i18n="dateEnd" >Fecha Fin</mat-label>
                  <input matInput [matDatepickerFilter]="myDateFilter"   [(ngModel)]="fin" name="fin" [matDatepicker]="picker2">
                  <mat-datepicker-toggle matSuffix [for]="picker2">
                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
@@ -26,19 +26,19 @@
                </mat-form-field>
              </div>
              <div class="row">
-               <mat-label class="spaceLeftInicioFin spaceInicioUp" >Horario de Inicio:</mat-label>
+               <mat-label i18n="hourBegin" class="spaceLeftInicioFin spaceInicioUp" >Horario de Inicio:</mat-label>
                <div class="ngx-timepicker-field-example spaceLeft ">
                     <ngx-timepicker-field id="inicio"   (timeChanged)="cambioTiempoInicio($event)"  [format]="24" [defaultTime]="'00:00'"></ngx-timepicker-field>
                </div>
              </div>
              <div class="row">
-               <mat-label class="spaceLeftInicioFin spaceFinUp" >Horario de Fin:</mat-label>
+               <mat-label i18n="hourEnd" class="spaceLeftInicioFin spaceFinUp" >Horario de Fin:</mat-label>
                <div class="ngx-timepicker-field-example spaceLeftFin spaceBotomFin spaceInicioUp ">
                  <!--input type="time" name="fin"  [min] = "minTimeFilter" -->
                  <ngx-timepicker-field id="fin" (timeChanged)="cambioTiempoFin($event)"  [format]="24" [defaultTime]="'00:00'"></ngx-timepicker-field>
                </div>
              </div>
-             <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="generarHorarios()">Agregar Horario</button>
+             <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="generarHorarios()" i18n="addSchedule"  >Agregar Horario</button>
 
            </div>
          </div>
@@ -49,7 +49,7 @@
     <div class="col-md-12 mb-2 spaceLeft">
       <div class="card shadow mb-4  borde">
         <div class="card-header py-3">
-          <h6 class="etiqueta"> Confirmar Horarios</h6>
+          <h6 class="etiqueta" i18n="confirmSchedule"> Confirmar Horarios</h6>
         </div>
         <div class="card-body">
           <div class="col-md-12">
@@ -57,27 +57,27 @@
               <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="data">
 
-                  <ng-container matColumnDef="fecha">
+                  <ng-container i18n="date" matColumnDef="fecha">
                     <th mat-header-cell *matHeaderCellDef> Fecha </th>
                     <td mat-cell *matCellDef="let row"> {{row.fecha}} </td>
                   </ng-container>
 
-                  <ng-container matColumnDef="estado">
+                  <ng-container i18n="status" matColumnDef="estado">
                     <th mat-header-cell *matHeaderCellDef> Estado </th>
                     <td mat-cell *matCellDef="let row"> {{row.estado}} </td>
                   </ng-container>
 
-                  <ng-container matColumnDef="horaInicio">
+                  <ng-container i18n="begin" matColumnDef="horaInicio">
                     <th mat-header-cell *matHeaderCellDef> Inicio </th>
                     <td mat-cell *matCellDef="let row"> {{row.horaInicio + ':' + row.minutoInicio + row.minutoInicio}} </td>
                   </ng-container>
 
-                  <ng-container matColumnDef="horaFin">
+                  <ng-container i18n="end" matColumnDef="horaFin">
                     <th mat-header-cell *matHeaderCellDef> Fin </th>
                     <td mat-cell *matCellDef="let row"> {{row.horaFin + ':' + row.minutoFin +  row.minutoFin}} </td>
                   </ng-container>
 
-                  <ng-container matColumnDef="accion">
+                  <ng-container i18n="action" matColumnDef="accion">
                     <th mat-header-cell *matHeaderCellDef> Accion </th>
                     <td mat-cell *matCellDef="let row"> <img src="./assets/x.png" style="width: 30% ; height: 70%"  (click)="eliminarTurno(row.id)" alt="x"></td>
                   </ng-container>
@@ -89,7 +89,7 @@
               </div>
             </div>
             <div class="button">
-              <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="confirmarHorarios()">Confirmar Horarios</button>
+              <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="confirmarHorarios()" i18n="confirmSchedule" >Confirmar Horarios</button>
             </div>
             <br><br>
 

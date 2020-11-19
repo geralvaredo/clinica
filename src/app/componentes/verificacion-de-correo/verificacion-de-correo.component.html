@@ -1,6 +1,6 @@
 <div class="container general">
-  <div class="d-flex justify-content-center etiqueta" *ngIf="sitioAnterior == 'registro'" ><p matLine>Registro Exitoso!</p> </div>
-   <label class="d-flex justify-content-center notification "  *ngIf="perfil == 'Paciente'"> Te hemos enviado un correo para verificar tu cuenta! revisa tu casilla para poder loguearte!</label>
+  <div class="d-flex justify-content-center etiqueta" *ngIf="sitioAnterior == 'registro'" ><p i18n="registerSuccess" matLine>Registro Exitoso!</p> </div>
+   <label i18n="emailVerification" class="d-flex justify-content-center notification "  *ngIf="perfil == 'Paciente'"> Te hemos enviado un correo para verificar tu cuenta! revisa tu casilla para poder loguearte!</label>
   <div class="col-md-12 mb-3">
     <div class="d-flex justify-content-center">
       <button id="btnAgregar" type="button" style="margin-right:1%;" class="btn btn-success pull-right" (click)="login()" > Login </button>

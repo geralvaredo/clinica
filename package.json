@@ -3,12 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
+    "start:en": "ng serve --configuration=en",
+    "start:es": "ng serve --configuration=es",
+    "start:pt": "ng serve --configuration=pt",
+    "build:en": "ng build --configuration=en",
+    "build:es": "ng build --configuration=es",
+    "build:pt": "ng build --configuration=pt",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --output-path angularapp --aot --prod"
+    "int:extract": "ng xi18n --output-path src/idiomas"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +27,7 @@
     "@angular/core": "~10.0.14",
     "@angular/fire": "^6.0.3",
     "@angular/forms": "~10.0.14",
+    "@angular/localize": "^10.0.14",
     "@angular/material": "^10.2.0",
     "@angular/platform-browser": "~10.0.14",
     "@angular/platform-browser-dynamic": "~10.0.14",

@@ -1,5 +1,5 @@
 <div *ngIf="perfil == 'Profesional' && !profesionalHabilitado" class="verificacion">
-  <mat-label class="mensaje">Para poder atender deberá estar validada su especialidad, contáctese con el administrador.</mat-label>
+  <mat-label class="mensaje" i18n="profesionalMessage">Para poder atender deberá estar validada su especialidad, contáctese con el administrador.</mat-label>
 </div>
 <div *ngIf="comienzaConsulta && !detalleResena" class="row fila">
   <div *ngFor="let item of this.listaTurnos">
@@ -9,42 +9,42 @@
       <div class="turno">
          <div class="row">
            <div class="col-md-3">
-             <mat-label>Fecha :</mat-label>
+             <mat-label i18n="date">Fecha :</mat-label>
              <h6>  {{item.fecha}} </h6>
            </div>
            <div class="col-md-3">
-             <mat-label>Hora : </mat-label>
+             <mat-label i18n="hour">Hora : </mat-label>
              <h6>  {{item.horaInicio}} : {{item.minutoInicio}}{{ item.minutoInicio}} Hs </h6>
            </div>
            <div *ngIf="perfil == 'Paciente'" class="col-md-3">
-             <mat-label>Profesional :</mat-label>
+             <mat-label i18n="profesional">Profesional :</mat-label>
              <h6> {{item.profesional.apellido + ' ' + item.profesional.nombre }} </h6>
            </div>
            <div *ngIf="perfil == 'Profesional'" class="col-md-3">
-             <mat-label>Paciente :</mat-label>
+             <mat-label i18n="pacient">Paciente :</mat-label>
              <h6> {{item.paciente.apellido + ' ' + item.paciente.nombre }} </h6>
            </div>
            <div class="col-md-3">
-             <mat-label>Especialidad:</mat-label>
+             <mat-label i18n="speciality">Especialidad:</mat-label>
              <h6>  {{item.especialidad}} </h6>
            </div>
            <div class="col-md-3">
-              <mat-label>Estado:</mat-label>
+              <mat-label i18n="status">Estado:</mat-label>
              <h6> {{item.estado}} </h6>
            </div>
            <div *ngIf="renderizarBotones(item,'PE')"  class="col-md-3">
              <button  [disabled]="renderizarBotones(item,'I')"
-                     (click)="comenzarConsulta(item)" class="button" mat-raised-button color="primary">Iniciar Consulta</button>
+                     (click)="comenzarConsulta(item)" class="button" mat-raised-button color="primary" i18n="beginTurn">Iniciar Consulta</button>
            </div>
            <div *ngIf="renderizarBotones(item,'C')" class="col-md-3">
-             <button  class="button" mat-raised-button color="warn" (click)="cancelarTurno(item)"  >Cancelar Turno</button>
+             <button  class="button" mat-raised-button color="warn" (click)="cancelarTurno(item)" i18n="cancelTurn"  >Cancelar Turno</button>
            </div>
            <div *ngIf="item.estado == 'ASIGNADO'" class="col-md-2">
              <button   class="button" [disabled]="renderizarBotones(item,'V')"
-                      mat-raised-button color="info" (click)="verResenaPaciente(item)"  > Ver Reseñas</button>
+                      mat-raised-button color="info" (click)="verResenaPaciente(item)" i18n="seeComment"  > Ver Reseñas</button>
            </div>
            <div *ngIf="renderizarBotones(item,'F')" class="col-md-2">
-             <button  class="spaceLeft button" mat-raised-button color="primary" (click)="finalizarTurno(item)"> Finalizar</button>
+             <button  class="spaceLeft button" mat-raised-button color="primary" i18n="finishTurn" (click)="finalizarTurno(item)"> Finalizar</button>
            </div>
 
          </div>
