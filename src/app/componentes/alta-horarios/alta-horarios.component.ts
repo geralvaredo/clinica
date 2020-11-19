@@ -8,6 +8,7 @@ import {TurnoService} from '../../servicios/turno.service';
 import {PerfilService} from '../../servicios/perfil.service';
 import {Profesional} from '../../clases/profesional';
 import {HistoriaClinica} from '../../clases/historia-clinica';
+import {Especialidad} from '../../clases/especialidad';
 
 
 @Component({
@@ -22,8 +23,9 @@ export class AltaHorariosComponent implements OnInit {
   inicio: Date;
   fin: Date;
   hc: HistoriaClinica;
+  profesional : Profesional;
   vistaHorarios: boolean;
-  perfil: any;
+  // perfil: any;
   diaInicio: number;
   diaFin: number;
   ultimo: number;
@@ -56,11 +58,13 @@ export class AltaHorariosComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.profesional = new Profesional();
     this.idProfesional = '';
     this.buscarPerfil();
     this.traerUltimoId();
     this.filtroCalendario();
     this.filtrarHora();
+    this.imagen = '';
     this.diaInicio = 0;
     this.diaFin = 0;
     this.horasConfirmadas = '';
@@ -73,16 +77,23 @@ export class AltaHorariosComponent implements OnInit {
     this.pr.contadorPerfiles().subscribe(
       (lista: Array<any>) => {
         for (let i = 0; i < lista.length; i++) {
-          if (user.uid === lista[i].uid ){
-            this.idProfesional = lista[i].id;
-            this.nombreProfesional = lista[i].nombre;
-            this.apellidoProfesional = lista[i].apellido;
-            this.especialidad = lista[i].especialidades[j].nombre;
-            this.imagen = lista[i].img1;
-            this.uid = lista[i].uid;
+          if (user.uid === lista[i].uid){
+             this.crearProfesional(lista,i,j);
           }
         }
       }) ;
+  }
+
+  crearProfesional(lista,i,j): void{
+    this.profesional.uid = lista[i].uid;
+    this.profesional.id = lista[i].id;
+    this.profesional.nombre = lista[i].nombre;
+    this.profesional.apellido = lista[i].apellido;
+    this.especialidad = lista[i].especialidades[j].nombre;
+    this.profesional.fechaNacimiento = lista[i].fechaNacimiento;
+    let especialidad = new Especialidad(lista[i].especialidades[j].id,lista[i].especialidades[j].nombre);
+    this.profesional.especialidades.push(especialidad);
+    this.profesional.img1 = lista[i].img1;
   }
 
   traerUltimoId(): void {
@@ -132,30 +143,22 @@ export class AltaHorariosComponent implements OnInit {
      for (let i = this.inicio.getDate(); i < this.fin.getDate() + 1; i++) {
        for (let j = 0; j < final; j++) {
          let idPaciente = null;
-         this.cargaDatosProfesional();
-         this.fechaHoy = (new Date(this.inicio.getFullYear(), this.inicio.getMonth(), i )).toLocaleDateString()
+         //this.cargaDatosProfesional();
+         this.fechaHoy = this.fechaActual(i);
          this.listaTurnos.push( new Turno( this.ultimo.toString(), this.fechaHoy , this.estado, (parseInt(this.horaInicio)) + j , parseInt(this.minutoInicio),
-           (parseInt(this.horaInicio)) + (j + 1) , (parseInt(this.minutoInicio)), this.perfil , idPaciente , this.especialidad.toString() , this.hc));
+           (parseInt(this.horaInicio)) + (j + 1) , (parseInt(this.minutoInicio)), this.profesional , idPaciente , this.especialidad.toString() , this.hc));
          this.ultimo++;
        }
      }
    }
 
-   cargaDatosProfesional(): void {
-     this.perfil = new Profesional();
-     this.perfil.id =  this.idProfesional;
-     this.perfil.nombre = this.nombreProfesional;
-      this.perfil.apellido = this.apellidoProfesional;
-      this.perfil.img1 = this.imagen;
-      this.perfil.uid = this.uid;
-      this.hc = new HistoriaClinica();
-      this.hc.resenaPaciente = null;
-      this.hc.resenaProfesional = null;
-   }
 
-
+  fechaActual(i): string{
+     return (new Date(this.inicio.getFullYear(), this.inicio.getMonth(), i )).toLocaleDateString();
+  }
 
   confirmarHorarios(): void {
+    // console.log(this.listaTurnos);
    this.turnos.agregarListaDeTurnos(this.listaTurnos);
     this.data = new MatTableDataSource();
     this.horasConfirmadas = 'Las Horas ya fueron confirmadas';
@@ -168,7 +171,15 @@ export class AltaHorariosComponent implements OnInit {
   }
 
 
-
+  /*cargaDatosProfesional(): void {
+       this.perfil = new Profesional();
+       this.perfil.id =  this.idProfesional;
+       this.perfil.nombre = this.nombreProfesional;
+        this.perfil.apellido = this.apellidoProfesional;
+        this.perfil.img1 = this.imagen;
+        this.perfil.uid = this.uid;
+        this.hc = new HistoriaClinica();
+     }*/
 
 
 

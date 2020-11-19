@@ -53,7 +53,18 @@ import { TipoPerfilComponent } from './componentes/tipo-perfil/tipo-perfil.compo
 import { HistorialTurnosComponent } from './componentes/historial-turnos/historial-turnos.component';
 import { InformesComponent } from './componentes/informes/informes.component';
 import {MatTableExporterModule} from 'mat-table-exporter';
-
+import { InformeLoginComponent } from './componentes/informe-login/informe-login.component';
+import { InformeEspecialidadComponent } from './componentes/informe-especialidad/informe-especialidad.component';
+import { InformeTurnosPorDiaComponent } from './componentes/informe-turnos-por-dia/informe-turnos-por-dia.component';
+import { InformeTurnosPorMedicosComponent } from './componentes/informe-turnos-por-medicos/informe-turnos-por-medicos.component';
+import { InformeDiasTrabajadosMedicosComponent } from './componentes/informe-dias-trabajados-medicos/informe-dias-trabajados-medicos.component';
+import { KeyvaluePipe } from './pipes/keyvalue.pipe';
+import { ChartsModule } from 'ng2-charts';
+import { DetalleBusquedaComponent } from './componentes/detalle-busqueda/detalle-busqueda.component';
+import { DetalleBusquedaTurnoComponent } from './componentes/detalle-busqueda-turno/detalle-busqueda-turno.component';
+import {MatDividerModule} from '@angular/material/divider';
+import { ColorBusquedaDirective } from './directivas/color-busqueda.directive';
+import { ImagenDirective } from './directivas/imagen.directive';
 
 @NgModule({
   declarations: [
@@ -83,7 +94,17 @@ import {MatTableExporterModule} from 'mat-table-exporter';
     AltaAdminComponent,
     TipoPerfilComponent,
     HistorialTurnosComponent,
-    InformesComponent
+    InformesComponent,
+    InformeLoginComponent,
+    InformeEspecialidadComponent,
+    InformeTurnosPorDiaComponent,
+    InformeTurnosPorMedicosComponent,
+    InformeDiasTrabajadosMedicosComponent,
+    KeyvaluePipe,
+    DetalleBusquedaComponent,
+    DetalleBusquedaTurnoComponent,
+    ColorBusquedaDirective,
+    ImagenDirective
   ],
   imports: [
     BrowserModule,
@@ -112,7 +133,9 @@ import {MatTableExporterModule} from 'mat-table-exporter';
     MatRadioModule,
     MatAutocompleteModule,
     MatSortModule,
-    MatTableExporterModule
+    MatTableExporterModule,
+    ChartsModule,
+    MatDividerModule
   ],
   providers: [{ provide: DateAdapter, useClass: MomentDateAdapter, deps: [LOCALE_ID] , useValue: 'es' },
     { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS }],

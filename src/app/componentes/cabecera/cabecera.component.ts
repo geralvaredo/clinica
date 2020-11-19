@@ -48,7 +48,7 @@ export class CabeceraComponent implements OnInit {
  }
 
   fotoPerfil(): void {
-    this.foto.getUpload('imagenes/' + this.img ).then(
+    this.foto.getUpload('imagenes/' +  this.img ).then(
       res => { this.imagen = res; }
     );
   }

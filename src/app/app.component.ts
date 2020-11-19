@@ -9,7 +9,7 @@ import {slideInAnimation} from './animations';
   animations: [slideInAnimation]
 })
 export class AppComponent {
-  title = 'clinicaUniversitaria';
+  title = 'clinica';
   ruta ;
 
   constructor(router: Router) {
@@ -24,7 +24,9 @@ export class AppComponent {
   cabecera(): boolean{
     return this.ruta == '/principal' || this.ruta== '/solicitudTurno' || this.ruta == '/listaTurnos'
     || this.ruta == '/cargaHorarios' || this.ruta == '/validarEspecialidad' || this.ruta == '/altaAdministrador'
-    || this.ruta  == '/historialTurnos' || this.ruta == '/informes' || this.ruta == '/busqueda';
+    || this.ruta  == '/historialTurnos' || this.ruta == '/informes' || this.ruta == '/busqueda'
+    || this.ruta == '/informeLogin' || this.ruta == '/informeEspecialidad' || this.ruta == '/informeTurnosPorDia'
+    || this.ruta == '/informeTurnosPorMedicos'|| this.ruta == '/informeDiasTrabajados';
   }
 
 

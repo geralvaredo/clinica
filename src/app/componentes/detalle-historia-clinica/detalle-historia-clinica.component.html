@@ -1,16 +1,16 @@
   <div class="row">
     <div class="card-header py-3 tarjeta">
-      <h6 >Reseña:</h6>
+      <h6 i18n="comment" >Reseña:</h6>
     </div>
     <mat-card class=" general">
        <div class="resena">
          <div class="row">
            <div class="col-md-12">
-               <mat-label> Paciente: </mat-label>
+               <mat-label i18n="pacient"> Paciente: </mat-label>
                <h6>{{turno.historiaClinica.resenaPaciente}}</h6>
            </div>
            <div class="col-md-12">
-             <mat-label>Profesional :</mat-label>
+             <mat-label i18n="profesional">Profesional :</mat-label>
              <h6>  {{turno.historiaClinica.resenaProfesional}} </h6>
            </div>
          </div>
@@ -20,33 +20,33 @@
   <br>
   <div *ngIf="perfil == 'Profesional'" class="row">
     <div class="card-header py-3 tarjeta">
-      <h6 >Datos Adicionales:</h6>
+      <h6 i18n="adittionalDate" >Datos Adicionales:</h6>
     </div>
     <mat-card class="general">
-      <div class="datosAdicionales">
+      <div  class="datosAdicionales">
         <div class="row">
           <div  class="col-md-4">
-            <mat-label>Edad :</mat-label>
+            <mat-label i18n="age">Edad :</mat-label>
             <h6>  {{turno.historiaClinica.edad}} </h6>
           </div>
           <div  class="col-md-4">
-            <mat-label>Temperatura :</mat-label>
+            <mat-label i18n="temperature">Temperatura :</mat-label>
             <h6>  {{turno.historiaClinica.temperatura}} </h6>
           </div>
           <div  class="col-md-4">
-            <mat-label>Presion :</mat-label>
+            <mat-label i18n="pression">Presion :</mat-label>
             <h6>  {{turno.historiaClinica.presion}} </h6>
           </div>
           <div  class="col-md-4">
-            <mat-label>Observacion 1 :</mat-label>
+            <mat-label i18n="firstObs">Observacion 1 :</mat-label>
             <h6>  {{turno.historiaClinica.primeraObservacion}} </h6>
           </div>
           <div  class="col-md-4">
-            <mat-label>Observacion 2 :</mat-label>
+            <mat-label i18n="secondObs">Observacion 2 :</mat-label>
             <h6>  {{turno.historiaClinica.segundaObservacion}} </h6>
           </div>
           <div  class="col-md-4">
-            <mat-label>Observacion 3 :</mat-label>
+            <mat-label i18n="thirdObs">Observacion 3 :</mat-label>
             <h6>  {{turno.historiaClinica.terceraObservacion}} </h6>
           </div>
         </div>
@@ -54,6 +54,6 @@
     </mat-card>
   </div>
   <br>
-  <button  class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="limpiar()">Volver </button>
+  <button  class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="limpiar()" i18n="goBack" >Volver </button>
 
 

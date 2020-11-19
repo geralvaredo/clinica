@@ -18,6 +18,8 @@ export class VerificacionEspecialidadComponent implements OnInit {
   prof: Profesional;
   especialista: boolean;
   termino: boolean;
+  verificacion : string;
+  especialidaConfirmada : boolean;
   @ViewChild('pagina') paginator: MatPaginator;
   displayedColumns = ['accion' , 'profesional' , 'especialidad'  ,  'estado' ];
 
@@ -26,6 +28,7 @@ export class VerificacionEspecialidadComponent implements OnInit {
   ngOnInit(): void {
     this.termino = false;
     this.especialista = false;
+    this.especialidaConfirmada = false;
     this.listaPerfiles = [];
     this.traerPerfil();
   }
@@ -52,17 +55,17 @@ export class VerificacionEspecialidadComponent implements OnInit {
     for (let i = 0; i < this.perfil.length; i++) {
       this.prof = this.perfil[i];
     }
-    console.log(this.prof);
+    // console.log(this.prof);
   }
 
   validarEspecialista(): void  {
     this.prof.habilitado = true;
     this.vr.modificarEspecialista(this.prof);
-    console.log(this.listaPerfiles);
     this.data = new MatTableDataSource();
     this.listaPerfiles = this.listaPerfiles.filter(perfil => perfil.id != this.prof.id);
     this.cargarListadoEspecialistas();
-
+    this.verificacion = 'El profesional ha sido validado correctamente';
+    this.especialidaConfirmada = true;
   }
 
 

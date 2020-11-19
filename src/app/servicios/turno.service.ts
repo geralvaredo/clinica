@@ -22,7 +22,7 @@ export class TurnoService {
     for (let i = 0; i < listaTurno.length; i++) {
       this.turno = new Turno(listaTurno[i].id.toString(), listaTurno[i].fecha , listaTurno[i].estado ,
         listaTurno[i].horaInicio, listaTurno[i].minutoInicio, listaTurno[i].horaFin, listaTurno[i].minutoFin,
-        listaTurno[i].profesional, listaTurno[i].paciente , listaTurno[i].especialidad);
+        listaTurno[i].profesional, listaTurno[i].paciente , listaTurno[i].especialidad, listaTurno[i].historiaClinica);
       this.fs.agregarDocumento(JSON.parse( JSON.stringify(this.turno)), 'turnos');
     }
   }

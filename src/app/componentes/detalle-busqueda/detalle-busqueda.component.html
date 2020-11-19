@@ -1,0 +1,59 @@
+<div class="row cabecera">
+    <div class="col-md-1">
+      <mat-label i18n="date">Fecha</mat-label>
+    </div>
+    <div class="col-md-2">
+      <mat-label i18n="hour">Hora </mat-label>
+    </div>
+    <div class="col-md-1">
+      <mat-label i18n="professional">Profesional</mat-label>
+    </div>
+    <div class="col-md-2 spaceLeft">
+      <mat-label i18n="pacient">Paciente</mat-label>
+    </div>
+    <div class="col-md-1">
+      <mat-label i18n="speciality">Especialidad</mat-label>
+    </div>
+    <div class="col-md-3">
+      <mat-label i18n="status">Estado</mat-label>
+    </div>
+</div>
+<div class="row">
+  <mat-card class="tarjeta general" [appColorBusqueda]>
+    <div class="fila" *ngFor="let item of this.listaTurnos" >
+      <div class="turno">
+        <div class="row registro ">
+          <div class="col-md-2">
+            <h6>  {{item.fecha}} </h6>
+          </div>
+          <div class="col-md-1">
+            <h6>  {{item.horaInicio}} : {{item.minutoInicio}}{{ item.minutoInicio}} Hs </h6>
+          </div>
+          <div class="col-md-2">
+            <h6> {{item.profesional.apellido + ' ' + item.profesional.nombre }} </h6>
+          </div>
+          <div  class="col-md-2">
+            <h6> {{ item.paciente.apellido  + ' ' + item.paciente.nombre   }} </h6>
+          </div>
+          <div class="col-md-1">
+            <h6>  {{item.especialidad}} </h6>
+          </div>
+          <div class="col-md-3">
+            <h6> {{item.estado}} </h6>
+          </div>
+          <div class="col-md-1">
+            <app-btn-detalle (botonDetalle)="detalle($event,item)"></app-btn-detalle>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </mat-card>
+  <br>
+    <div *ngIf="this.detalleTurno" class="row" >
+      <app-detalle-busqueda-turno [turno] ="turno" ></app-detalle-busqueda-turno>
+    </div>
+
+</div>
+
+

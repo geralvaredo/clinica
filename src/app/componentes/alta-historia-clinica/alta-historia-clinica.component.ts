@@ -42,6 +42,7 @@ export class AltaHistoriaClinicaComponent implements OnInit {
 
    hcPacienteProfesional(): void {
      this.hc.id = this.turno.id ;
+     // console.log(this.turno.historiaClinica);
      if(this.perfil == 'Paciente'){  this.turno.historiaClinica.resenaPaciente = this.hc.resenaPaciente;  }
        else {    this.historiaClinicaProfesional();  }
    }

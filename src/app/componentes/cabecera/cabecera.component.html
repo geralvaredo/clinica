@@ -3,28 +3,28 @@
     <div class ='collapse navbar-collapse'  id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li *ngIf="perfil == 'Paciente'" class="nav-item ">
-          <a class="nav-link" routerLink="/solicitudTurno" >Solicitar Turnos</a>
+          <a class="nav-link" routerLink="/solicitudTurno" i18n="requestApointMent" >Solicitar Turnos</a>
         </li>
         <li *ngIf="perfil == 'Administrador'" class="nav-item ">
-          <a class="nav-link" routerLink="/validarEspecialidad" > Verificacion Especialidad </a>
+          <a class="nav-link" routerLink="/validarEspecialidad" i18n="specialtyVerification" > Verificacion Especialidad </a>
         </li>
         <li *ngIf="perfil == 'Administrador'" class="nav-item">
-          <a class="nav-link"  routerLink="/altaAdministrador"> Alta Administrador </a>
+          <a class="nav-link"  routerLink="/altaAdministrador" i18n="registerAdministrator" > Alta Administrador </a>
         </li>
         <li *ngIf="perfil == 'Administrador'" class="nav-item">
-          <a class="nav-link"  routerLink="/informes"> Informes </a>
+          <a class="nav-link"  routerLink="/informes" i18n="reports"> Informes </a>
         </li>
         <li *ngIf="perfil == 'Administrador'" class="nav-item">
-          <a class="nav-link"  routerLink="/busqueda"> Busqueda </a>
+          <a class="nav-link"  routerLink="/busqueda" i18n="search"> Busqueda </a>
         </li>
         <li *ngIf="perfil == 'Profesional' " class="nav-item">
-          <a class="nav-link" routerLink="/cargaHorarios"> Carga Horarios </a>
+          <a class="nav-link" routerLink="/cargaHorarios" i18n="chargeSchedule"> Carga Horarios </a>
         </li>
         <li *ngIf="perfil == 'Paciente' ||  perfil == 'Profesional' " class="nav-item">
-          <a class="nav-link" routerLink="/listaTurnos"> Mis Turnos Agendados </a>
+          <a class="nav-link" routerLink="/listaTurnos" i18n="shiftSchedule"> Mis Turnos Agendados </a>
         </li>
         <li *ngIf="perfil == 'Paciente' ||  perfil == 'Profesional' " class="nav-item">
-          <a class="nav-link" routerLink="/historialTurnos" > Historial de Turnos </a>
+          <a class="nav-link" routerLink="/historialTurnos" i18n="shiftHistory" > Historial de Turnos </a>
         </li>
         <!--li class="nav-item">
           <a class="nav-link" href="#"> Alta Historia Clinica </a>

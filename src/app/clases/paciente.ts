@@ -13,9 +13,12 @@ export class Paciente{
   sexo: string ;
   fechaAlta: string;
   fechaBaja: string;
+  ruta: string;
   img1: string;
   img2: string;
   listaTurnos: Array<Turno>;
-
+   constructor() {
+     this.ruta = null;
+   }
 
 }

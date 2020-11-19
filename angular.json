@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "appInputOutput": {
+    "clinica": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/appInputOutput",
+            "outputPath": "dist/clinica",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -36,6 +36,27 @@
             ]
           },
           "configurations": {
+            "en": {
+              "aot": true,
+              "outputPath": "dist/en/",
+              "i18nFile": "src/idiomas/traducciones.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en"
+            },
+            "es": {
+              "aot": true,
+              "outputPath": "dist/es/",
+              "i18nFile": "src/idiomas/traducciones.es.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "es"
+            },
+            "pt": {
+              "aot": true,
+              "outputPath": "dist/es/",
+              "i18nFile": "src/idiomas/traducciones.pt.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "es"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -69,18 +90,27 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "appInputOutput:build"
+            "browserTarget": "clinica:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "appInputOutput:build:production"
+              "browserTarget": "clinica:build:production"
+            },
+            "en": {
+              "browserTarget": "clinica:build:es"
+            },
+            "es": {
+              "browserTarget": "clinica:build:en"
+            },
+            "pt": {
+              "browserTarget": "clinica:build:pt"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "appInputOutput:build"
+            "browserTarget": "clinica:build"
           }
         },
         "test": {
@@ -117,18 +147,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "appInputOutput:serve"
+            "devServerTarget": "clinica:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "appInputOutput:serve:production"
+              "devServerTarget": "clinica:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "appInputOutput",
+  "defaultProject": "clinica",
   "cli": {
     "analytics": false
   }

@@ -1,0 +1,58 @@
+.button{
+  text-align: center;
+}
+
+.spaceLeft{
+  margin-left: 2vh;
+}
+
+
+.spaceUp{
+  margin-top: 3vh;
+}
+
+.tabla{
+  width: 100vh;
+  margin-left: 5vh;
+  margin-top: -8vh;
+}
+
+.tableHeaderCellDiv {
+  resize: horizontal;
+  overflow:hidden;
+}
+
+th.mat-header-cell {
+  text-align: center;
+  font-size: 16px;
+  color: #3f51b5;
+}
+
+td.mat-cell{
+  text-align: center;
+}
+
+table {
+  width: 75vh;
+  text-align: center;
+  align-items: center;
+}
+
+.opacity{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.etiqueta{
+  color : #4e73df;
+  font: oblique bold 120% cursive;
+  padding: 1vh;
+}
+
+.fecha{
+  margin-top: 2vh;
+}
+
+.button{
+  margin-top: 3vh;
+  text-align: center;
+}

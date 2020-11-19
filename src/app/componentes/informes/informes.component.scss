@@ -1,3 +1,15 @@
+.informe{
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: -6vh;
+  width: 300vh;
+
+}
+
+.opacity{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
 .button{
   text-align: center;
 }
@@ -44,5 +56,15 @@ table {
 }
 
 .fecha{
-  margin-top: -20vh;
+  margin-top: 2vh;
+}
+a{
+  color : black;
+  font: oblique bold 120% cursive;
+  padding: 4.3vh;
+}
+
+a:hover{
+  background-color: #059797;
+  border-radius: 5px;
 }

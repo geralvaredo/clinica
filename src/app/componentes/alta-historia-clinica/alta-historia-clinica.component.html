@@ -3,46 +3,46 @@
     <div class="col-md-12 mb-2 spaceLeft">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="etiqueta">Historia clinica:</h6>
+          <h6 class="etiqueta" i18n="clinicHistory">Historia clinica:</h6>
         </div>
         <div class="card-body">
           <mat-form-field *ngIf="perfil == 'Profesional'" class="example-full-width input" appearance="fill">
-             <mat-label>Reseña Profesional</mat-label>
+             <mat-label i18n="ProfesionalComment">Reseña Profesional</mat-label>
             <textarea matInput placeholder="Reseña profesional..." [(ngModel)]="this.hc.resenaProfesional" name="resenaProfesional"></textarea>
          </mat-form-field>
           <mat-form-field *ngIf="perfil == 'Paciente'" class="example-full-width input" appearance="fill">
-            <mat-label>Reseña Paciente</mat-label>
+            <mat-label i18n="PacientComment">Reseña Paciente</mat-label>
             <textarea matInput placeholder="Reseña paciente..." [(ngModel)]="this.hc.resenaPaciente" name="resenaPaciente"></textarea>
           </mat-form-field>
           <div *ngIf="perfil == 'Profesional'" >
             <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Edad</mat-label>
+              <mat-label i18n="age">Edad</mat-label>
               <input matInput  [(ngModel)]="hc.edad" name="edad">
             </mat-form-field>
             <mat-form-field class="example-full-width spaceLeft" appearance="fill">
-              <mat-label>Temperatura</mat-label>
+              <mat-label i18n="temperature"> Temperatura</mat-label>
               <input matInput  [(ngModel)]="hc.temperatura" name="temperatura">
             </mat-form-field>
             <mat-form-field class="example-full-width spaceLeft" appearance="fill">
-              <mat-label>Presion</mat-label>
+              <mat-label i18n="pression">Presion</mat-label>
               <input matInput  [(ngModel)]="hc.presion" name="presion">
             </mat-form-field>
           </div>
           <div *ngIf="perfil == 'Profesional'">
             <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Observacion 1</mat-label>
+              <mat-label i18n="observation 1">Observacion 1</mat-label>
               <input matInput  [(ngModel)]="hc.primeraObservacion" name="obs1">
             </mat-form-field>
             <mat-form-field class="example-full-width spaceLeft" appearance="fill">
-              <mat-label>Observacion 2</mat-label>
+              <mat-label i18n="observation 2">Observacion 2</mat-label>
               <input matInput  [(ngModel)]="hc.segundaObservacion" name="obs2">
             </mat-form-field>
             <mat-form-field class="example-full-width spaceLeft" appearance="fill">
-              <mat-label>Observacion 3</mat-label>
+              <mat-label i18n="observation 3">Observacion 3</mat-label>
               <input matInput  [(ngModel)]="hc.terceraObservacion" name="obs3">
             </mat-form-field>
           </div>
-          <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="agregarHistoriaClinica()">Agregar Historia</button>
+          <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="agregarHistoriaClinica()"  i18n="addHistory">Agregar Historia</button>
 
         </div>
       </div>

@@ -1,0 +1,1408 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="c40241190990119f096971459d924eeccdc81d62" datatype="html">
+        <source>Pagina de Error</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/error/error.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">errorPage</note>
+      </trans-unit>
+      <trans-unit id="9f2fa13d37e4d24b6f994a7dbde4a19a9b09c8f7" datatype="html">
+        <source>Usuario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/login/login.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">User</note>
+      </trans-unit>
+      <trans-unit id="e369e13629132e32dcd958b82261059243f21d58" datatype="html">
+        <source>Contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/login/login.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">con</note>
+      </trans-unit>
+      <trans-unit id="7d2e19d4c1bdca07330313aae2a7fcef225424b0" datatype="html">
+        <source> no tenes cuenta? registrate aca </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/login/login.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">descripcion</note>
+      </trans-unit>
+      <trans-unit id="aafa1bd359d9f6d62e5e7323fbdebcaa49680e33" datatype="html">
+        <source>Seleccione un Perfil</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">perfil</note>
+      </trans-unit>
+      <trans-unit id="79b10c542864ed3563a5637c8fa6dd69b31a7c90" datatype="html">
+        <source>Paciente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda/detalle-busqueda.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">paciente</note>
+      </trans-unit>
+      <trans-unit id="c48eea9419cccdfa96ddea57be20e956242a67bd" datatype="html">
+        <source>Profesional</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda/detalle-busqueda.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">profesional</note>
+      </trans-unit>
+      <trans-unit id="0e783bd224c7249dcc065b57ea1feba63453de2a" datatype="html">
+        <source>Administrador</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">administrador</note>
+      </trans-unit>
+      <trans-unit id="5a55bd2e8cb3a717da6e0f8a6a0251de735cd052" datatype="html">
+        <source>Falta ingresar el tipo de perfil</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">faltaPerfil</note>
+      </trans-unit>
+      <trans-unit id="18a0bf5daf9257a50328acfe6175f2dab6b1dd96" datatype="html">
+        <source><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Registro<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">registro</note>
+      </trans-unit>
+      <trans-unit id="d5f14a28459a9fb314ddd53b6f4f8e62e997225c" datatype="html">
+        <source>Confirme la contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">repass</note>
+      </trans-unit>
+      <trans-unit id="dd2a11ebc737589080ed400dacc33a8c8c84728b" datatype="html">
+        <source>Nombre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">name</note>
+      </trans-unit>
+      <trans-unit id="d15e649b8eb1ba82aa0e7ea082a12901224b1c87" datatype="html">
+        <source>Apellido</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <note priority="1" from="description">lastname</note>
+      </trans-unit>
+      <trans-unit id="600914392e5fc65fbf2abfec896a0a5143a16aff" datatype="html">
+        <source>Fecha de Nacimiento</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <note priority="1" from="description">born</note>
+      </trans-unit>
+      <trans-unit id="ade250ca889cb1c1e8d872b4ccf638f9d5ad6c88" datatype="html">
+        <source>Sexo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <note priority="1" from="description">gender</note>
+      </trans-unit>
+      <trans-unit id="8941c7017ba22d3bcc5e4ca11d48b615c286ab62" datatype="html">
+        <source>Masculino</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">male</note>
+      </trans-unit>
+      <trans-unit id="82d4abd70a8d000d62b91509c2e9bd4160ae0558" datatype="html">
+        <source>Femenino</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <note priority="1" from="description">female</note>
+      </trans-unit>
+      <trans-unit id="293fdbb615fb43e0ccd6a71f6539f5318b8c9c29" datatype="html">
+        <source> Foto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <note priority="1" from="description">picture</note>
+      </trans-unit>
+      <trans-unit id="9e4fef4a4ad5539c050c4a946ae94104e1cfd252" datatype="html">
+        <source>Especialidad</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda/detalle-busqueda.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">speciality</note>
+      </trans-unit>
+      <trans-unit id="5284cf32bbf917191c5dffb67a03973c55836906" datatype="html">
+        <source>Segunda Foto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <note priority="1" from="description">picture2</note>
+      </trans-unit>
+      <trans-unit id="3ffa8d9ae8b4690199a1b6eaaecc3a6175b08830" datatype="html">
+        <source> Registrarse </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+        <note priority="1" from="description">registerOn</note>
+      </trans-unit>
+      <trans-unit id="d7a5a61eb3e126dfcd3877436acfd7f173c25605" datatype="html">
+        <source> Limpiar </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <note priority="1" from="description">clean</note>
+      </trans-unit>
+      <trans-unit id="b30a587c40dc2d4ace6e8ce39c494c74841d75e7" datatype="html">
+        <source>Tienes una cuenta? ingrese aqui</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/registro/registro.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+        <note priority="1" from="description">descriptionLogin</note>
+      </trans-unit>
+      <trans-unit id="17c8fb3d929bcc444b49727b707d4cedd71224f3" datatype="html">
+        <source> Busqueda de Informacion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">lookingForInformation</note>
+      </trans-unit>
+      <trans-unit id="68dacc68f684fc79bf72447ae3329de045f8572d" datatype="html">
+        <source>Por Fecha</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">forDate</note>
+      </trans-unit>
+      <trans-unit id="46e562bf2197809756d4c8d33c3f4f1ca36dc908" datatype="html">
+        <source>Por Paciente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">forPacient</note>
+      </trans-unit>
+      <trans-unit id="61a34433105e67d11ffa9fb2c17ceae81e4e6d30" datatype="html">
+        <source>Por Profesional</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">forProfessional</note>
+      </trans-unit>
+      <trans-unit id="3a888fb3e6ec82d5b585b4fed6c8c5899a80e259" datatype="html">
+        <source>Por Especialidad</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">forSpeciality</note>
+      </trans-unit>
+      <trans-unit id="80ddac9ddca68da73b53f9423078cd60774cdbc2" datatype="html">
+        <source>Por Edad</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">forAge</note>
+      </trans-unit>
+      <trans-unit id="ce0b87705f5c0fb99ac0d7ce98bd36b3b94fc2b3" datatype="html">
+        <source>Por Temperatura</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">forTemperature</note>
+      </trans-unit>
+      <trans-unit id="eb57b2f820d377017bddab2f6d4a283a9a981dc0" datatype="html">
+        <source>Por Presion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">forPression</note>
+      </trans-unit>
+      <trans-unit id="e6a594793674cdad9ac9f2b30568c25ab97d53d5" datatype="html">
+        <source>Primera Observacion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">firstObversation</note>
+      </trans-unit>
+      <trans-unit id="ea02211a95b652c08ed3369a9f65b668411263a1" datatype="html">
+        <source>Segunda Observacion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">secondObservation</note>
+      </trans-unit>
+      <trans-unit id="a10b87e4e5552daa3a852719adb3e78ae07562d6" datatype="html">
+        <source>Tercera Observacion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">thirdObversation</note>
+      </trans-unit>
+      <trans-unit id="be7c7d3b2096ea82cfaae0c031917dae340891f3" datatype="html">
+        <source>Fecha de Turnos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <note priority="1" from="description">dateTurn</note>
+      </trans-unit>
+      <trans-unit id="05314fa22085cce2b9f7506f75f48ad7bd518eba" datatype="html">
+        <source>Ingrese apellido del paciente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <note priority="1" from="description">insertLastNamePacient</note>
+      </trans-unit>
+      <trans-unit id="0a505cb25f26e7456e0ac8fc2a1fc6235e10f468" datatype="html">
+        <source>Ingrese apellido del profesional</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">insertlastNamePro</note>
+      </trans-unit>
+      <trans-unit id="80a384d1437ba63126486314fb03f60843e06063" datatype="html">
+        <source>Ingrese edad del paciente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <note priority="1" from="description">insertAge</note>
+      </trans-unit>
+      <trans-unit id="96921861a5e4fa8cc59e6701e9c9079c15dea308" datatype="html">
+        <source>Ingrese presion del paciente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <note priority="1" from="description">insertPression</note>
+      </trans-unit>
+      <trans-unit id="3b747a102eca4d17d9f2255ed702fcedc55d8445" datatype="html">
+        <source>Ingrese temperatura del paciente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <note priority="1" from="description">insertTemp</note>
+      </trans-unit>
+      <trans-unit id="f2ee0c06867c76b3ad2375aeac2f7b8333ffa783" datatype="html">
+        <source>Ingrese primera observacion del paciente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <note priority="1" from="description">insertFirstObs</note>
+      </trans-unit>
+      <trans-unit id="fd81f871eb2c681d4534723a3a9e587cb2d31e3d" datatype="html">
+        <source>Ingrese segunda observacion del paciente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <note priority="1" from="description">insertSecondObs</note>
+      </trans-unit>
+      <trans-unit id="e9248d9eadcf4119f5979c628ab82005326cfc7e" datatype="html">
+        <source>Ingrese tercera observacion del paciente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <note priority="1" from="description">insertThirdObs</note>
+      </trans-unit>
+      <trans-unit id="733112e02e2ecc5289241943025a6e34f6b4feee" datatype="html">
+        <source>
+               <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Opcion: <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+               <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="START_TAG_MAT-RADIO-BUTTON" ctype="x-mat-radio-button" equiv-text="&lt;mat-radio-button&gt;"/><x id="CLOSE_TAG_MAT-RADIO-BUTTON" ctype="x-mat-radio-button" equiv-text="&lt;/mat-radio-button&gt;"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+             </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <note priority="1" from="description">option</note>
+      </trans-unit>
+      <trans-unit id="594b43871c1d1c838bda90de3d2ca623e5eb917e" datatype="html">
+        <source>
+               <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Especialidad <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+               <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.name }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+             </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <note priority="1" from="description">speciality</note>
+      </trans-unit>
+      <trans-unit id="56c584df2fb988da1e53cc07f6cc15d6ca06189e" datatype="html">
+        <source>Buscar Turnos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+        <note priority="1" from="description">searchTurn</note>
+      </trans-unit>
+      <trans-unit id="6b20088ec79a7671c5cd860782338b4310a2ee9b" datatype="html">
+        <source>Limpiar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/busqueda/busqueda.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+        <note priority="1" from="description">clean</note>
+      </trans-unit>
+      <trans-unit id="7c3be0055f20f5ccea9c273a65ce3119c3924797" datatype="html">
+        <source>Seleccionar rango de dias y horarios disponibles:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">rangeDays</note>
+      </trans-unit>
+      <trans-unit id="6ad3e1ed3a4c6ffd51d4f2128d69dae805869d7b" datatype="html">
+        <source>Fecha Inicio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">dateBegin</note>
+      </trans-unit>
+      <trans-unit id="13e7db9a4429daf3c889746c6b9c6ab600989c78" datatype="html">
+        <source>Fecha Fin</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <note priority="1" from="description">dateEnd</note>
+      </trans-unit>
+      <trans-unit id="3152d09b43c9b73af3f0a27e3dc83ff7c89eee4b" datatype="html">
+        <source>Horario de Inicio:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">hourBegin</note>
+      </trans-unit>
+      <trans-unit id="07bcdedf889269c44237bf3a65dbc0b589db0894" datatype="html">
+        <source>Horario de Fin:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">hourEnd</note>
+      </trans-unit>
+      <trans-unit id="d659e3a48633c0029673b00a6f4ce3c3f8ad5c97" datatype="html">
+        <source>Agregar Horario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">addSchedule</note>
+      </trans-unit>
+      <trans-unit id="2c64b839d7fe133ba8edb0734e08cc5d981a7ad9" datatype="html">
+        <source> Confirmar Horarios</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <note priority="1" from="description">confirmSchedule</note>
+      </trans-unit>
+      <trans-unit id="a34b07e08f08dbcbec683a635e8569445b23e51e" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Fecha <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.fecha}}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-login/informe-login.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">date</note>
+      </trans-unit>
+      <trans-unit id="4bfdcd1a2c29c7e850a2a1fbcf0787ff2b95ae43" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Estado <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.estado}}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+        <note priority="1" from="description">status</note>
+      </trans-unit>
+      <trans-unit id="79cfbef0dbc545b5d236833fa8522843af32df8d" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Inicio <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.horaInicio + &apos;:&apos; + row.minutoInicio + row.minutoInicio}}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <note priority="1" from="description">begin</note>
+      </trans-unit>
+      <trans-unit id="9b68764710c0d411e7c4080b91db869c0a61a1fa" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Fin <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.horaFin + &apos;:&apos; + row.minutoFin +  row.minutoFin}}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+        <note priority="1" from="description">end</note>
+      </trans-unit>
+      <trans-unit id="28fbb3503795bba136337a3fd62ebdebd573c16f" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Accion <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/&gt;"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+        <note priority="1" from="description">action</note>
+      </trans-unit>
+      <trans-unit id="29bd91dff054ef2ab3029782060fbd7a1d112178" datatype="html">
+        <source>Confirmar Horarios</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-horarios/alta-horarios.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+        <note priority="1" from="description">confirmSchedule</note>
+      </trans-unit>
+      <trans-unit id="4535c3ce862013aa38228b7a7d02dc52a61f088d" datatype="html">
+        <source>Historia clinica:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-historia-clinica/alta-historia-clinica.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">clinicHistory</note>
+      </trans-unit>
+      <trans-unit id="c37fce2b570032dd1db7ada271715e30c353d257" datatype="html">
+        <source>Reseña Profesional</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-historia-clinica/alta-historia-clinica.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">ProfesionalComment</note>
+      </trans-unit>
+      <trans-unit id="378f71a48f68c48c10175f58a27bd949d68580e5" datatype="html">
+        <source>Reseña Paciente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-historia-clinica/alta-historia-clinica.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">PacientComment</note>
+      </trans-unit>
+      <trans-unit id="fd77d996d69141be45a1855ed448adb56717e35d" datatype="html">
+        <source>Edad</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-historia-clinica/alta-historia-clinica.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">age</note>
+      </trans-unit>
+      <trans-unit id="6d8c3cfc8231c7d29169118107cf23aae19923b2" datatype="html">
+        <source> Temperatura</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-historia-clinica/alta-historia-clinica.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description">temperature</note>
+      </trans-unit>
+      <trans-unit id="3194f68ac1e55ab64ed9e757da16655360169044" datatype="html">
+        <source>Presion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-historia-clinica/alta-historia-clinica.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">pression</note>
+      </trans-unit>
+      <trans-unit id="0363c3e55707183651e6c2f45393807360fe07d0" datatype="html">
+        <source>Observacion 1</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-historia-clinica/alta-historia-clinica.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <note priority="1" from="description">observation 1</note>
+      </trans-unit>
+      <trans-unit id="259e86d7d614a82d4b7185e090c6cc29981d2396" datatype="html">
+        <source>Observacion 2</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-historia-clinica/alta-historia-clinica.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">observation 2</note>
+      </trans-unit>
+      <trans-unit id="51f2c01d102a7500b77d445120fe2d75adc10340" datatype="html">
+        <source>Observacion 3</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-historia-clinica/alta-historia-clinica.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">observation 3</note>
+      </trans-unit>
+      <trans-unit id="96112f17d536b3022ff2574108b1a3947e8c78a1" datatype="html">
+        <source>Agregar Historia</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-historia-clinica/alta-historia-clinica.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <note priority="1" from="description">addHistory</note>
+      </trans-unit>
+      <trans-unit id="97759022a34572ea07ea775d0285668bc8ab93a5" datatype="html">
+        <source> Reservar Turno</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">reservation</note>
+      </trans-unit>
+      <trans-unit id="0f34e98ba8c9c55a4cea7d1a8214c1808b4441cd" datatype="html">
+        <source>Por Apellido</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">forLastname</note>
+      </trans-unit>
+      <trans-unit id="ff58408421ec032ceb6f814a5f44acca3dd79004" datatype="html">
+        <source>
+            <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Opcion: <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+            <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="START_TAG_MAT-RADIO-BUTTON" ctype="x-mat-radio-button" equiv-text="&lt;mat-radio-button&gt;"/><x id="CLOSE_TAG_MAT-RADIO-BUTTON" ctype="x-mat-radio-button" equiv-text="&lt;/mat-radio-button&gt;"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">action</note>
+      </trans-unit>
+      <trans-unit id="317c892ebc610fdce32585507fda8c030746f559" datatype="html">
+        <source>
+            <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Especialidad <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+            <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.name }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">speciality</note>
+      </trans-unit>
+      <trans-unit id="1221d2f970d03514e4b93f650ccb4c01404e5cc7" datatype="html">
+        <source>
+          <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Opcion: <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+          <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="START_TAG_MAT-RADIO-BUTTON" ctype="x-mat-radio-button" equiv-text="&lt;mat-radio-button&gt;"/><x id="CLOSE_TAG_MAT-RADIO-BUTTON" ctype="x-mat-radio-button" equiv-text="&lt;/mat-radio-button&gt;"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">option</note>
+      </trans-unit>
+      <trans-unit id="46e49783f4f84207734e6a456a0a07af83a89e38" datatype="html">
+        <source>
+          <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Nombre <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+          <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.nombre }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description">name</note>
+      </trans-unit>
+      <trans-unit id="1abf3d62713b4f233701cc6bd9cb73623513f98c" datatype="html">
+        <source>
+          <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Apellido <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+          <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.apellido }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <note priority="1" from="description">lastname</note>
+      </trans-unit>
+      <trans-unit id="97a0f3a24ef916ef2579e41b58ecf8af5a0568ce" datatype="html">
+        <source>
+          <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Especialidad <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+          <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.especialidades[0].nombre }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <note priority="1" from="description">speciality</note>
+      </trans-unit>
+      <trans-unit id="0560073f28917fce79b01ca1a19d6f2759a99034" datatype="html">
+        <source> Seleccione un turno:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+        <note priority="1" from="description">chooseTurn</note>
+      </trans-unit>
+      <trans-unit id="95875ce1d8798cd71b791f507dd6f43418671030" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Opcion: <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="START_TAG_MAT-RADIO-BUTTON" ctype="x-mat-radio-button" equiv-text="&lt;mat-radio-button&gt;"/><x id="CLOSE_TAG_MAT-RADIO-BUTTON" ctype="x-mat-radio-button" equiv-text="&lt;/mat-radio-button&gt;"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+        <note priority="1" from="description">option</note>
+      </trans-unit>
+      <trans-unit id="c141f11d5d385865f82fe41581a6d2da887dc206" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Hora <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.horaInicio + &apos;:&apos; + row.minutoInicio + row.minutoInicio}}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+        <note priority="1" from="description">hour</note>
+      </trans-unit>
+      <trans-unit id="ec1500b29923bfba7d0598a1d7deb93bb90e92a6" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Profesional <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{ row.profesional.apellido + &apos; , &apos; + row.profesional.nombre }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+        <note priority="1" from="description">professional</note>
+      </trans-unit>
+      <trans-unit id="faf11f93d2977e6d29bcaced4453f276410e9d79" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Especialidad <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.especialidad }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/alta-turno/alta-turno.component.html</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+        <note priority="1" from="description">speciality</note>
+      </trans-unit>
+      <trans-unit id="8548fe54d943328fdd793bf98217bebc7e3741e0" datatype="html">
+        <source> Ver Detalle</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/btn-detalle/btn-detalle.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">detail</note>
+      </trans-unit>
+      <trans-unit id="396fde64e159e638137deb783764fe7e433e1c8b" datatype="html">
+        <source>Para poder atender deberá estar validada su especialidad, contáctese con el administrador.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-turno/detalle-turno.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">profesionalMessage</note>
+      </trans-unit>
+      <trans-unit id="e9272145c4bf360691b82de7bf31f44f500c17ca" datatype="html">
+        <source>Fecha :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-turno/detalle-turno.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/historial-turnos/historial-turnos.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">date</note>
+      </trans-unit>
+      <trans-unit id="911cb71da9934a4ba468cb8575e57fcb6d83047b" datatype="html">
+        <source>Hora : </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-turno/detalle-turno.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/historial-turnos/historial-turnos.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">hour</note>
+      </trans-unit>
+      <trans-unit id="2c192f8df689a194352ab732963c7842dd9d4018" datatype="html">
+        <source>Profesional :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-turno/detalle-turno.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-historia-clinica/detalle-historia-clinica.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/historial-turnos/historial-turnos.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">profesional</note>
+      </trans-unit>
+      <trans-unit id="1d0e4534dbaa89101378fca3a397c219f733458a" datatype="html">
+        <source>Paciente :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-turno/detalle-turno.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/historial-turnos/historial-turnos.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description">pacient</note>
+      </trans-unit>
+      <trans-unit id="32ef5748d780efcc435d5f2aea7f8e0d62e0fb4d" datatype="html">
+        <source>Especialidad:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-turno/detalle-turno.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/historial-turnos/historial-turnos.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">speciality</note>
+      </trans-unit>
+      <trans-unit id="6af459f444da8b576f25fc9727b913ed7e6aea51" datatype="html">
+        <source>Estado:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-turno/detalle-turno.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/historial-turnos/historial-turnos.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <note priority="1" from="description">status</note>
+      </trans-unit>
+      <trans-unit id="6465e65fbed702ad823fa190f26f1ed785e5802c" datatype="html">
+        <source>Iniciar Consulta</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-turno/detalle-turno.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">beginTurn</note>
+      </trans-unit>
+      <trans-unit id="c4dc22cf7b44c5f901c1e029bb5cc854642003c3" datatype="html">
+        <source>Cancelar Turno</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-turno/detalle-turno.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">cancelTurn</note>
+      </trans-unit>
+      <trans-unit id="eb217db373946013cfc25aaf88f09eef41b2e29a" datatype="html">
+        <source> Ver Reseñas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-turno/detalle-turno.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <note priority="1" from="description">seeComment</note>
+      </trans-unit>
+      <trans-unit id="cca6f5fee4813007cbda471944d7df9025dea32d" datatype="html">
+        <source> Finalizar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-turno/detalle-turno.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <note priority="1" from="description">finishTurn</note>
+      </trans-unit>
+      <trans-unit id="1a820462bb8c25a3ac3051f4f3668ae52a5b4d82" datatype="html">
+        <source>Reseña:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-historia-clinica/detalle-historia-clinica.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">comment</note>
+      </trans-unit>
+      <trans-unit id="a868c3f2a2e320f31645a1047464400dde4ed39d" datatype="html">
+        <source> Paciente: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-historia-clinica/detalle-historia-clinica.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">pacient</note>
+      </trans-unit>
+      <trans-unit id="ed75b3fc91fffce8b9a12de91f6795ace29be132" datatype="html">
+        <source>Datos Adicionales:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-historia-clinica/detalle-historia-clinica.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description">adittionalDate</note>
+      </trans-unit>
+      <trans-unit id="1bb2b28f0eb9d73ff1a3d6b53558a8a8859ee3f8" datatype="html">
+        <source>Edad :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-historia-clinica/detalle-historia-clinica.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">age</note>
+      </trans-unit>
+      <trans-unit id="5175fee9ece1c5a61fed4a9f3f2ace56f71dd359" datatype="html">
+        <source>Temperatura :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-historia-clinica/detalle-historia-clinica.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <note priority="1" from="description">temperature</note>
+      </trans-unit>
+      <trans-unit id="8f2b2eeb87bee0237ef39134781d8905d27a3036" datatype="html">
+        <source>Presion :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-historia-clinica/detalle-historia-clinica.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">pression</note>
+      </trans-unit>
+      <trans-unit id="8b25685b9a45aacb151f8860ec13395f2ce87c2e" datatype="html">
+        <source>Observacion 1 :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-historia-clinica/detalle-historia-clinica.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">firstObs</note>
+      </trans-unit>
+      <trans-unit id="a688e3d96f5322731e37515d234af25c5cd4a5eb" datatype="html">
+        <source>Observacion 2 :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-historia-clinica/detalle-historia-clinica.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <note priority="1" from="description">secondObs</note>
+      </trans-unit>
+      <trans-unit id="178803b260c1ccc404c4af1bdb62e778846bd71a" datatype="html">
+        <source>Observacion 3 :</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-historia-clinica/detalle-historia-clinica.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <note priority="1" from="description">thirdObs</note>
+      </trans-unit>
+      <trans-unit id="865b59823da4d0193e4a53be5f5fc3ef03de1a47" datatype="html">
+        <source>Volver </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-historia-clinica/detalle-historia-clinica.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">goBack</note>
+      </trans-unit>
+      <trans-unit id="df81b8319548a3337225250206381012b75f78fc" datatype="html">
+        <source>Registro Exitoso!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/verificacion-de-correo/verificacion-de-correo.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">registerSuccess</note>
+      </trans-unit>
+      <trans-unit id="93df6263251ca8d449df6636863e5d003c7e5d70" datatype="html">
+        <source> Te hemos enviado un correo para verificar tu cuenta! revisa tu casilla para poder loguearte!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/verificacion-de-correo/verificacion-de-correo.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">emailVerification</note>
+      </trans-unit>
+      <trans-unit id="6677b1464f60b0c468c303305324ba15c8efa7e1" datatype="html">
+        <source>Solicitar Turnos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/cabecera/cabecera.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">requestApointMent</note>
+      </trans-unit>
+      <trans-unit id="c03b7c957b5d0e39f30c6a9f7d1b03f178ec6e4e" datatype="html">
+        <source> Verificacion Especialidad </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/cabecera/cabecera.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">specialtyVerification</note>
+      </trans-unit>
+      <trans-unit id="cc8046365966f572bd06b718d70059a245efed7c" datatype="html">
+        <source> Alta Administrador </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/cabecera/cabecera.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">registerAdministrator</note>
+      </trans-unit>
+      <trans-unit id="bafbe25c118f61bc1df76fc7ea9c8eaa901f4de5" datatype="html">
+        <source> Informes </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/cabecera/cabecera.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">reports</note>
+      </trans-unit>
+      <trans-unit id="585f293f5454eed854907298b5e4df1f1d8b592e" datatype="html">
+        <source> Busqueda </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/cabecera/cabecera.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">search</note>
+      </trans-unit>
+      <trans-unit id="5d13c2b7636354c0f781317a4540a073acc3a846" datatype="html">
+        <source> Carga Horarios </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/cabecera/cabecera.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">chargeSchedule</note>
+      </trans-unit>
+      <trans-unit id="59228266bd97ec92a0f26386351d05b0d4d78be8" datatype="html">
+        <source> Mis Turnos Agendados </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/cabecera/cabecera.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">shiftSchedule</note>
+      </trans-unit>
+      <trans-unit id="a5b4ac15f08878a3bb30655ca1757f4b8fd5fa37" datatype="html">
+        <source> Historial de Turnos </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/cabecera/cabecera.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">shiftHistory</note>
+      </trans-unit>
+      <trans-unit id="5212c41471aa856042ba6dbadcf573392fc16235" datatype="html">
+        <source> Horarios Ingreso</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informes/informes.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">hourLogin</note>
+      </trans-unit>
+      <trans-unit id="7abb12628afbc771d7574c8f530ae1621b2c1cb1" datatype="html">
+        <source> Operaciones por Especialidad </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informes/informes.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">SpecialityOperations</note>
+      </trans-unit>
+      <trans-unit id="df53e9f58e92dc84e0a25325be7a9e235f48fae5" datatype="html">
+        <source> Turno por dia  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informes/informes.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">turnForDay</note>
+      </trans-unit>
+      <trans-unit id="7c290da7dce0e30205fbf3c6d27864f128054815" datatype="html">
+        <source> Medicos Por Cantidad de Turnos </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informes/informes.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">countTurnForMedic</note>
+      </trans-unit>
+      <trans-unit id="42910c470d5d0e3213c4825d5d75709b23a9c18e" datatype="html">
+        <source> Medicos Por Cantidad de dias trabajados </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informes/informes.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">worksdayMedic</note>
+      </trans-unit>
+      <trans-unit id="05611be5a5c8aa4178b8bd7576850997bcd7c2ea" datatype="html">
+        <source> Horarios De Ingreso</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-login/informe-login.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">scheduleBegin</note>
+      </trans-unit>
+      <trans-unit id="a03c05b2471b4d5b74e39a13ffc661245b342760" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Ingreso <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.id }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-login/informe-login.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">begin</note>
+      </trans-unit>
+      <trans-unit id="f9afbd472d878110dee534725eda5d55352a0472" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Nombre <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.nombre }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-login/informe-login.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">name</note>
+      </trans-unit>
+      <trans-unit id="00447f1bb1f6dd1beb238a00e45296a7db826da3" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Apellido <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.apellido }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-login/informe-login.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">lastname</note>
+      </trans-unit>
+      <trans-unit id="2b4abbe3d77c1a7616d82452ce1cf472c19b92aa" datatype="html">
+        <source> exportar A PDF</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-login/informe-login.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-especialidad/informe-especialidad.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-turnos-por-dia/informe-turnos-por-dia.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-turnos-por-medicos/informe-turnos-por-medicos.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <note priority="1" from="description">exportPDF</note>
+      </trans-unit>
+      <trans-unit id="6c2d2ea69b7238ab203ac0741cd7d5dd865ae9da" datatype="html">
+        <source> exportar A Excel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-login/informe-login.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-especialidad/informe-especialidad.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-turnos-por-dia/informe-turnos-por-dia.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-turnos-por-medicos/informe-turnos-por-medicos.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">exportExcel</note>
+      </trans-unit>
+      <trans-unit id="ea91ba15a9408b49a12823c768736d3540ce21a4" datatype="html">
+        <source> Grafico </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-login/informe-login.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <note priority="1" from="description">grafic</note>
+      </trans-unit>
+      <trans-unit id="7895e164440efeb1bfeeb19eee882c5c585e81f7" datatype="html">
+        <source> Turnos Por Especialidad</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-especialidad/informe-especialidad.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">specialityTurn</note>
+      </trans-unit>
+      <trans-unit id="ec7924d6cf2cb59e6c19fd01d9454b64e8fe2b7f" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Especialidad <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.nombre}}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-especialidad/informe-especialidad.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">speciality</note>
+      </trans-unit>
+      <trans-unit id="4d4e85121f23400b3bd40ea41563a221e18d7d91" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Cantidad de Turnos <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.cantidad }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-especialidad/informe-especialidad.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">countTurn</note>
+      </trans-unit>
+      <trans-unit id="5801aa196d7454bd0d9adcd2c693ba8fdf97354a" datatype="html">
+        <source> Turnos por Dia de Semana</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-turnos-por-dia/informe-turnos-por-dia.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">turnForDay</note>
+      </trans-unit>
+      <trans-unit id="20702d5a57fc431eeb1f36422d97731ec49d0a72" datatype="html">
+        <source>
+                  <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Fecha <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                  <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.fecha}}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-turnos-por-dia/informe-turnos-por-dia.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">date</note>
+      </trans-unit>
+      <trans-unit id="47e31e256b9b3d742e04b30af9e432edaa69c3f6" datatype="html">
+        <source>
+                  <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Cantidad de Turnos <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                  <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.cantidad }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-turnos-por-dia/informe-turnos-por-dia.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">countTurn</note>
+      </trans-unit>
+      <trans-unit id="a582b616d1b8b2184d770a4c6382f5b8a1f009b7" datatype="html">
+        <source> Grafico</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-turnos-por-dia/informe-turnos-por-dia.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-turnos-por-medicos/informe-turnos-por-medicos.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <note priority="1" from="description">grafic</note>
+      </trans-unit>
+      <trans-unit id="c268c2ad8cc245b9213758df6f63fec43aa42bec" datatype="html">
+        <source> Medicos Por Cantidad de Turnos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-turnos-por-medicos/informe-turnos-por-medicos.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">countTurnForMedic</note>
+      </trans-unit>
+      <trans-unit id="35f3963771054fa147a18135fc89bd751c072bb1" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Medico <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.clave}}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-turnos-por-medicos/informe-turnos-por-medicos.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-dias-trabajados-medicos/informe-dias-trabajados-medicos.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">countTurnForMedic</note>
+      </trans-unit>
+      <trans-unit id="5a591adf325e40500d26269ae63b278ad047bb94" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Cantidad de Turnos <x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.valor}}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-turnos-por-medicos/informe-turnos-por-medicos.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">countTurn</note>
+      </trans-unit>
+      <trans-unit id="ab36905b4179295524183b66aa43cb11394a0d15" datatype="html">
+        <source> Cantidad de dias Trabajados de los Medicos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-dias-trabajados-medicos/informe-dias-trabajados-medicos.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">workDayMedic</note>
+      </trans-unit>
+      <trans-unit id="47a5df6f6773f9698ae9d40b83225a7d69c8067d" datatype="html">
+        <source>
+                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/> Cantidad de dias Trabajados<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/> <x id="INTERPOLATION" equiv-text="{{row.valor }}"/> <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/informe-dias-trabajados-medicos/informe-dias-trabajados-medicos.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">workingDay</note>
+      </trans-unit>
+      <trans-unit id="b173ec5192470d6b2da768338bc24a965d7e001c" datatype="html">
+        <source>Fecha</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda/detalle-busqueda.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">date</note>
+      </trans-unit>
+      <trans-unit id="45181dbc76e0e019c6b87f51a9a4df41c0418b80" datatype="html">
+        <source>Hora </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda/detalle-busqueda.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">hour</note>
+      </trans-unit>
+      <trans-unit id="afff781d130cccc987ca9f34d68c639596da947e" datatype="html">
+        <source>Estado</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda/detalle-busqueda.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">status</note>
+      </trans-unit>
+      <trans-unit id="9336b7538b649939049bb56d6ae12bac27e02c06" datatype="html">
+        <source>Detalle del Turno</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda-turno/detalle-busqueda-turno.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">detailTurn</note>
+      </trans-unit>
+      <trans-unit id="26a75210255d40133b5f1e7ad116924f570049d5" datatype="html">
+        <source>Especialidad: <x id="INTERPOLATION" equiv-text="{{turno.especialidad}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda-turno/detalle-busqueda-turno.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">speciality</note>
+      </trans-unit>
+      <trans-unit id="0e9d13a4a18130ce4a5f36b45e2d3a24852a20a1" datatype="html">
+        <source>Estado del turno: <x id="INTERPOLATION" equiv-text="{{turno.estado}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda-turno/detalle-busqueda-turno.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">stateTurno</note>
+      </trans-unit>
+      <trans-unit id="c209064dec9e9995dae9e58b825ee611f5ead2cb" datatype="html">
+        <source> Calificacion del paciente: <x id="INTERPOLATION" equiv-text="{{turno.historiaClinica.resenaPaciente}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda-turno/detalle-busqueda-turno.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <note priority="1" from="description">calificationTurn</note>
+      </trans-unit>
+      <trans-unit id="08f5906917bf02bd7e62813fb5c101f3e57de747" datatype="html">
+        <source> Resena del profesional: <x id="INTERPOLATION" equiv-text="{{turno.historiaClinica.resenaProfesional}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda-turno/detalle-busqueda-turno.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">professionalComment</note>
+      </trans-unit>
+      <trans-unit id="95dc1f838054bee7cca78f70c7ce77d51c70aaf7" datatype="html">
+        <source>Historia Clinica</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda-turno/detalle-busqueda-turno.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">clinicHistory</note>
+      </trans-unit>
+      <trans-unit id="761191ad95b4a1899c0e5e5af94aad07320843a2" datatype="html">
+        <source> Presion: <x id="INTERPOLATION" equiv-text="{{turno.historiaClinica.presion}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda-turno/detalle-busqueda-turno.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">pression</note>
+      </trans-unit>
+      <trans-unit id="3933cdae32f549f2c65879defdf1045f4e3ae1cb" datatype="html">
+        <source> Temperatura: <x id="INTERPOLATION" equiv-text="{{turno.historiaClinica.temperatura}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda-turno/detalle-busqueda-turno.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">temperature</note>
+      </trans-unit>
+      <trans-unit id="3d912384317901296806d1bef395cd2d903ddeac" datatype="html">
+        <source> Primera Observacion: <x id="INTERPOLATION" equiv-text="{{turno.historiaClinica.primeraObservacion}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda-turno/detalle-busqueda-turno.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">firstObs</note>
+      </trans-unit>
+      <trans-unit id="cb20d484aed1d63cb48dedc55e497c3d245496c5" datatype="html">
+        <source> Segunda Observacion: <x id="INTERPOLATION" equiv-text="{{turno.historiaClinica.segundaObservacion}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda-turno/detalle-busqueda-turno.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">secondObs</note>
+      </trans-unit>
+      <trans-unit id="f7b80d1c457f8df597e6ce52d043b6471d60e641" datatype="html">
+        <source> Tercera Observacion: <x id="INTERPOLATION" equiv-text="{{turno.historiaClinica.terceraObservacion}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/componentes/detalle-busqueda-turno/detalle-busqueda-turno.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <note priority="1" from="description">thirdObs</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

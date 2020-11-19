@@ -96,22 +96,23 @@ export class DetalleTurnoComponent implements OnInit {
     for (let i = 0; i < this.listaTurnos.length; i++) {
       if(this.perfil == 'Paciente'){
         this.foto.getUpload('imagenes/' + this.listaTurnos[i].profesional.img1 ).then(
-          res => {      this.listaTurnos[i].profesional.img1 = res   });
+          res => {      this.listaTurnos[i].profesional.ruta = res   });
       }
       else{
         if(this.listaTurnos[i].paciente == null || this.listaTurnos[i].paciente == undefined){
           this.sinAsignacion(i);
         }else{
           this.foto.getUpload('imagenes/' + this.listaTurnos[i].paciente.img1 ).then(
-            res => {    this.listaTurnos[i].paciente.img1 = res ; });
+            res => {    this.listaTurnos[i].paciente.ruta = res ; });
         }
       }
     }
+    // console.log(this.listaTurnos);
   }
 
   sinAsignacion(i): void{
     let paciente = new Paciente();
-    paciente.img1 = 'https://firebasestorage.googleapis.com/v0/b/clinicaonline-b9e2c.appspot.com/o/imagenes%2Fperfil.png?alt=media&token=8d3dd391-f861-47cf-a120-8c1395082e17';
+    paciente.ruta = 'https://firebasestorage.googleapis.com/v0/b/clinicaonline-b9e2c.appspot.com/o/imagenes%2Fperfil.png?alt=media&token=8d3dd391-f861-47cf-a120-8c1395082e17';
     paciente.apellido = 'Sin';
     paciente.nombre = 'Asignacion';
     this.listaTurnos[i].paciente = paciente;
@@ -156,6 +157,7 @@ export class DetalleTurnoComponent implements OnInit {
 
   finalizarTurno(turno){
     turno.estado = 'FINALIZADO';
+    turno.historiaClinica.id = turno.id;
     this.turnos.modificarTurno(turno);
     this.listaTurnos = [];
     this.turnos.agregarHistoriaClinica(turno.historiaClinica);

@@ -74,7 +74,7 @@ export class RegistroComponent implements OnInit {
   }
 
   fileChange(event): void {
-     console.log(event.target);
+     // console.log(event.target);
      const extension = this.ValidarExtension(event.target.files.item(0).name);
      if (extension !== null){
       if (event.target.id === 'img1'){

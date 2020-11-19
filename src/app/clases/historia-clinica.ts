@@ -9,4 +9,9 @@ export class HistoriaClinica {
   primeraObservacion: string;
   segundaObservacion: string;
   terceraObservacion: string;
+
+  constructor() {
+    this.resenaPaciente = null;
+    this.resenaProfesional = null;
+  }
 }

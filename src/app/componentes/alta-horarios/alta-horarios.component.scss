@@ -6,11 +6,20 @@
 
 .formulario{
   width: 120vh;
+
+}
+
+.borde{
+  border: 4px solid;
+  border-color: #4e73df;
 }
 
 .tabla{
   width: 140vh;
+}
 
+.confirmarHorarios{
+  width: 140vh;
 }
 
 .spaceLeft{
@@ -73,4 +82,17 @@ th.mat-header-cell {
 
 .button{
   text-align: center;
+}
+
+h4{
+  color: green;
+  font: oblique bold 120% cursive;
+  margin-top: 2vh;
+}
+
+.accept{
+  width: 40px ;
+  height: 40px;
+  margin-left: 2vh;
+
 }

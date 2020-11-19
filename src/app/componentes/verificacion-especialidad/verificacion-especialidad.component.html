@@ -1,14 +1,14 @@
-<div  class="container">
+<div *ngIf="!especialidaConfirmada" class="container">
   <div  class="row tabla">
     <div class="col-md-12 mb-2 spaceLeft">
-      <div class="card shadow mb-4">
+      <div class="card shadow mb-4 borde opacity">
         <div class="card-header py-3">
           <h6 class="etiqueta"> Validar Especialistas:</h6>
         </div>
-        <div class="card-body">
+        <div class="card-body opacity">
           <div class="col-md-12">
             <div class="d-flex justify-content-around">
-              <div class="mat-elevation-z8">
+              <div class="mat-elevation-z8 opacity">
                 <table mat-table [dataSource]="data">
                   <ng-container matColumnDef="accion">
                     <th mat-header-cell *matHeaderCellDef>  </th>
@@ -49,4 +49,9 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <h4>{{verificacion}}</h4><img *ngIf="especialidaConfirmada" class="accept"  src="./assets/accept.png"   alt="accept">
+</div>
+
+
 
