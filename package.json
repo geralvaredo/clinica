@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "start:en": "ng serve --configuration=en",
     "start:es": "ng serve --configuration=es",
@@ -14,6 +14,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "postinstall": "ng build --output-path angularapp --aot --prod",
     "int:extract": "ng xi18n --output-path src/idiomas"
   },
   "private": true,
