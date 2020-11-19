@@ -1,54 +1,7 @@
 
 
-  Entidades:
-  -usuario (tiene perfil)
-  -perfil (profesional, paciente, Administrador)
-  -Profesional
-  - Especialidad
-  -Paciente (Historia Clinica)
-  -Administrador
-  -turnos (Encuesta)
-  -historiaClinica ( edad, temperaturaCorporal, presion, observacion1, observacion2: observacion3)
-  -encuesta
   
   
-  Pantalla:
-  - AltaPaciente
-  - AltaProfesional
-  - AltaAdministrador
-  - AltaEspecialidad
-  - AltaDeHorariosProfesional (el profesional carga sus horarios)
-  - ListarTurnos (listar para paciente como para profesional)
-  - CambioDeTurnos (cambio o rechaza turnos para profesional, cambios para paciente)
-  - AtencionAlPaciente (deja la historiaClinica)
-  - SolicitudDeTurno (lista general con opcion para filtrar por profesional y especialidad)
-  - VerificacionDeEspecialidad( lo va hacer el administrador)
-  - VerificacionDeEmail (se genera un token en coleccion de firebase y al mail se manda el codigo, cuando verifica se borra el token)
-  
-  
-   Componentes:
-   alta-paciente-profesional-admin
-   alta-horarios
-   alta-especialidad
-   alta-historia-clinica
-   alta-encuesta
-   alta-turno
-   btn-borrar
-   btn-modificar
-   btn-detalle
-   detalle-turnos
-   detalle-horarios
-   detalle-encuesta
-   detalle-historia-clinica
-   modificar-turno
-   modificar-horario
-   eliminar-turno
-   eliminar-horario
-   atencion-paciente
-   verificacion-especialidad
-   verificacion-email
-   
-   
   
   
   
@@ -71,16 +24,20 @@
     Captcha de google
     cantActivate
     
+        
+    
   A Desarrollar:  
   
   1- Registro (Con imagenes)
-     X Crear campos nombre , apellido , sexo , fecha de nacimiento , perfil     
-     X Crear servicio de perfil para guardar en la coleccion     X 
+     X Crear Registro como paciente
+     X Crear Registro como profesional      
+     X Crear Registro como administrador (solo lo hacen los administradores)
+     X Crear servicio de perfil para guardar en la coleccion      
      X Validar todos los campos
-     X setear un profesional
      X Guardar La Especialidades
      X subir 2 imagenes a storage (paciente)
      X captcha (solicitar otro captcha para produccion)
+
         
      
      2- Login 
@@ -96,35 +53,148 @@
  
         
      
-  -4 Readme en github con video y imagen (MARTES)
+  -4 Readme en github con video y imagen 
+   X Login Paciente
+   X Login Profesional
+   X Login Administrador
+   X Registro Administrador
+   X Registro Profesional
+   X Registro Paciente
+   X Validar Especialidad de los profesionales 
+   X Carga de horarios para los profesionales 
+   X Cancelar Turno de parte del paciente 
+   X Cancelar turno de parte del profesional
+   X Solicitar un turno con un paciente 
+   X Atender el paciente 
+   X Cargar reseña 
+   X Cargar encuesta 
+   X Exportar lista de medicos con especialidades
+   X Exportar lista de turnos
+   X Exportar historia clinica
+   
+    
+  
+  5- Solicitud de Turnos
+     X Carga de horarios con persistencia en un rango (para profesional) 
+     X el profesional carga las horas que atiende
+     - validar para que no se superponga los turnos confirmados anteriormente (profesional)
+     - validar que no se pueda cargar mas de 11 turnos de lunes a viernes (profesional)
+     - validar que no se pueda cargar si hay mas de 6 turnos los sabados (profesional)
+     - turnos que se vean hasta 15 dias de la fecha actual (paciente)
+     - turnos que se filtren por dia de semana (paciente)
+     X Solicitar turno (para paciente filtrado por profesional y por Apellido)
+     X Filtro para que no se vean los turnos asignados    
+     X dar detalle de turnos agendados para el paciente  
+     X dar detalle de turnos agendados para el profesional 
+    
   
     
-   5- Menu Principal
-    - Filtrar el menu dependiendo para perfil (MARTES) 
-    - verificacion de especialidad ( para administradores)  (MARTES)
-    - atencion al paciente (MARTES)
-    - Registro de administradores que hacen administradores  
-          
-   6- Solicitud de Turnos
-     - Solicitar turno (para paciente filtrado por profesional) (Martes)
-    - turnos que se vean hasta 15 dias de la fecha actual  miercoles
-    - Carga de horarios (para profesional) miercoles
-    - agregar la historia clinica  miercoles
-    - agregar encuesta miercoles
+   6- Menu Principal
+    X Filtrar el menu dependiendo para perfil 
+    X verificacion de especialidad ( para administradores) 
+    X Cancelar turno por parte del profesional
+    X Cancelar turno por parte del paciente
+    X Historial de todos los turnos tomados (finalizado y cancelados)
+    X atencion al paciente (jueves)
+    X iniciar consulta (jueves)
+    X Agregar la reseña / historia clinica (jueves) 
+    X Agregar encuesta  
+    X finalizar consulta con datos (edad , temperatura , presion, campo1,campo2,campo3)
+    X la visualizacion de ambas reseñas (profesional y paciente)
+    X funcionalizamiento de reseña y persistencia de historia clinica       
    
+   
+   7- Informes (generar en .xls y .pdf)
+     X  a- Los días y horarios que se Ingresaron al sistema en un lapso de tiempo ( cada vez que se ingresa al sistema por el login).
+     X  b- Cantidad de operaciones de todos por especialidad     
+     X  c- Cantidad de turnos por día de la semana.
+     X  d- Médicos por cantidad de turnos dados en un lapso de tiempo.
+     X  e- Médicos por cantidad de días que trabajaron en un lapso de tiempo.
+     X  f- graficos estadisticos
+      
+      
+    8- Busqueda de Informacion
+      X  (nombre paciente , nombre del médico, especialidad, temperatura corporal, fecha)
+      X al seleccionar el turno poder ver el detalle del paciente , medico e historia clinica
+      
+      9 - Pipe y Directiva 
+      - crearte un pipe para la reseña
+      X directiva con boton 
      
-  theme: 
-  http://fundacionio.org/viajar/img/escudos/argentina%20escudo%20gran.png
+     
+     10 - Traduccion (castellano , ingles , portugues)
+      -  traducir pagina de login , registro y principal
+      -  boton para desactivar todos los captcha en las altas de los profesionales y pacientes
+      
+      
+     
+       
+      
+      
+     
+https://angular.io/guide/pipes
+https://angular.io/api/common/DatePipe
+https://github.com/octaviovillegas/Flisol2018
+https://github.com/octaviovillegas/Angularidiomas
+
+@angular/localize
+
+
+https://10minutemail.com/
+https://temp-mail.org/es/
+
   
   clave-sitio-web : 6Lc7edsZAAAAAEG1Ftr7vyLOzOkCUwLYfmLZtGFO
   clave-secreta : 6Lc7edsZAAAAAAsJfNTwKUIw8LQqqs7vQO1iDXKO
   
   
+  Mostrar: 
+ - Crear Registro como administrador (solo lo hacen los administradores)
+ - Carga de horarios con persistencia en un rango (para profesional) 
+ - Validar Especialidad de los profesionales
+ - Solicitar turno (para paciente filtrado por especialidad y por Apellido con autocomplete)
+ - Cancelar turno por parte del profesional
+ - Cancelar turno por parte del paciente
+ - Reseña e historia clinica
+ - Finalizar un turno 
+ - Historico de turnos
+ 
+
+
+ ADMINISTRADOR
+ 
   admin: admin@llubed.com
-  pass: admin123
+  pass: admin123  
   
+ ---------------------
+  RADIOLOGIA 
+  -----------
   profe: profe@llubed.com
-  pass: profe123
+   pass: profe123
+  
+  profe: radio@tawtar.com
+  pass: radio123
+  
+  ----------------------------
+   NEUROLOGIA
+   ---------
+  profe: manes@tawtar.com
+  pass: manes123
+  
+  ------------------
+  
+  PACIENTE  
+  
+  paciente:paciente@llubed.com
+  pass: pac123
+  
+  
+  
+  
+  
+  BrowserAnimationsModule
+  data: {animations: }
+  
   
   
   
