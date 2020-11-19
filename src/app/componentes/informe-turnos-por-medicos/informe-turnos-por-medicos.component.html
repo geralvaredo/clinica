@@ -1,7 +1,7 @@
 <div class="row">
-  <div id="medicosTurnos" class="row tabla fecha">
+  <div id="medicosTurnos" class="row tabla">
     <div class="col-md-12 mb-2 spaceLeft">
-      <div class="card shadow mb-4">
+      <div class="card shadow mb-4 opacity">
         <div class="card-header py-3">
           <h6 class="etiqueta"> Medicos Por Cantidad de Turnos</h6>
         </div>
@@ -24,7 +24,7 @@
                   <tr mat-header-row *matHeaderRowDef="displayTurnos" class="tableHeaderCellDiv"></tr>
                   <tr mat-row *matRowDef="let row; columns: displayTurnos;"></tr>
                 </table>
-                <mat-paginator #pagina3 [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                <mat-paginator #pagina3 [pageSizeOptions]="[3,6,9]" showFirstLastButtons></mat-paginator>
               </div>
             </div>
             <div class="button">
@@ -40,7 +40,7 @@
   </div>
   <div  class="row tabla">
     <div class="col-md-12 mb-2 spaceLeft">
-      <div class="card shadow mb-4">
+      <div class="card shadow mb-4 opacity">
         <div class="card-header py-3">
           <h6 class="etiqueta"> Grafico</h6>
         </div>

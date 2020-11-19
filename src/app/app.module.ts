@@ -63,6 +63,8 @@ import { ChartsModule } from 'ng2-charts';
 import { DetalleBusquedaComponent } from './componentes/detalle-busqueda/detalle-busqueda.component';
 import { DetalleBusquedaTurnoComponent } from './componentes/detalle-busqueda-turno/detalle-busqueda-turno.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { ColorBusquedaDirective } from './directivas/color-busqueda.directive';
+import { ImagenDirective } from './directivas/imagen.directive';
 
 @NgModule({
   declarations: [
@@ -100,7 +102,9 @@ import {MatDividerModule} from '@angular/material/divider';
     InformeDiasTrabajadosMedicosComponent,
     KeyvaluePipe,
     DetalleBusquedaComponent,
-    DetalleBusquedaTurnoComponent
+    DetalleBusquedaTurnoComponent,
+    ColorBusquedaDirective,
+    ImagenDirective
   ],
   imports: [
     BrowserModule,

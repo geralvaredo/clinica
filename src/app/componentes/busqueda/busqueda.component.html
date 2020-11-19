@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <form class="formulario">
     <div class="col-md-12 mb-2 spaceLeft">
-      <div *ngIf="this.ocultarPanel" class="card shadow mb-4">
+      <div *ngIf="this.ocultarPanel" class="card shadow mb-4 borde opacity">
         <div class="card-header py-3">
           <h6 class="etiqueta"> Busqueda de Informacion</h6>
         </div>
@@ -46,7 +46,7 @@
           </div>
         </div>
         <div  *ngIf="tipo == 'fecha'" class="row fecha">
-            <label>Fecha de Turnos</label>
+            <h3>Fecha de Turnos</h3>
             <input class="form-control"  type="date" placeholder="Ingrese una fecha de Nacimiento.." [(ngModel)]="inicio" name="fechaDeNacimiento">
         </div>
       <div class="row ">

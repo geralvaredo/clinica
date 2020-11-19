@@ -1,8 +1,8 @@
 <div  class="container-fluid">
-  <form *ngIf="!vistaHorarios" class="formulario">
+  <form *ngIf="!vistaHorarios && horasConfirmadas == ''" class="formulario">
     <div class="row">
       <div class="col-md-12 mb-2 spaceLeft">
-         <div class="card shadow mb-4">
+         <div class="card shadow mb-4 borde">
            <div class="card-header py-3">
              <h6 class="etiqueta">Seleccionar rango de dias y horarios disponibles:</h6>
            </div>
@@ -45,9 +45,9 @@
       </div>
     </div>
   </form>
-  <div *ngIf="vistaHorarios"  class="row tabla">
+  <div *ngIf="vistaHorarios && horasConfirmadas == ''"  class="row confirmarHorarios">
     <div class="col-md-12 mb-2 spaceLeft">
-      <div class="card shadow mb-4">
+      <div class="card shadow mb-4  borde">
         <div class="card-header py-3">
           <h6 class="etiqueta"> Confirmar Horarios</h6>
         </div>
@@ -85,19 +85,20 @@
                   <tr mat-header-row *matHeaderRowDef="displayedColumns" class="tableHeaderCellDiv"></tr>
                   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
-                <mat-paginator #pagina [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                <mat-paginator #pagina [pageSizeOptions]="[3,6,9]" showFirstLastButtons></mat-paginator>
               </div>
             </div>
             <div class="button">
               <button class="spaceLeft spaceUp btnAgregar" mat-raised-button color="primary" (click)="confirmarHorarios()">Confirmar Horarios</button>
             </div>
             <br><br>
-            <label style="color: green">{{horasConfirmadas}}</label>
 
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  <div class="row">
+    <h4>{{horasConfirmadas}}</h4><img class="accept" *ngIf="horasConfirmadas != ''" src="./assets/accept.png"   alt="accept">
+  </div>
 </div>

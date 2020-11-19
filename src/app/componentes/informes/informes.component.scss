@@ -1,9 +1,14 @@
 .informe{
-  background-color: #4e73df;
+  background-color: rgba(255, 255, 255, 0.5);
   margin-top: -6vh;
   width: 300vh;
 
 }
+
+.opacity{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 
 .button{
   text-align: center;
@@ -54,10 +59,9 @@ table {
   margin-top: 2vh;
 }
 a{
-  color : white;
+  color : black;
   font: oblique bold 120% cursive;
   padding: 4.3vh;
-
 }
 
 a:hover{

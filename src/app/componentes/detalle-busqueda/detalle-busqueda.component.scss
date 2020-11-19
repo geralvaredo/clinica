@@ -4,7 +4,7 @@
 }
 
 .general{
-  background-color: #B7DDFF;
+ background-color: white;
 }
 
 .tarjeta{
@@ -27,9 +27,11 @@ h6{
 }
 
 .cabecera{
-  width: 200vh;
+  width: 220vh;
   margin-top: 5vh;
-  margin-left: -15vh ;
+  margin-left: -5vh ;
+  color: black;
+  background-color: rgba(236, 234, 222 ,0.5);
 }
 
 .registro{
@@ -38,4 +40,7 @@ h6{
   margin-left: -8vh;
 }
 
+.spaceLeft{
+  margin-left: 2vh;
+}
 
