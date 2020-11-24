@@ -15,13 +15,13 @@ export class BusquedaComponent implements OnInit {
   displayEspecialidad = ['accion' ,  'especialidad'];
   paciente: string;
   busqueda: string;
-  listaTurnos: Array<Turno>;
-  listaGenerica : Array<any>;
+  listaTurnos: Array<any>;
   tipo : string;
   ocultarPanel : boolean;
   verDetalle : boolean;
   inicio: Date;
   fecha : string;
+  turno: Turno;
   dataEspecialidad: MatTableDataSource<any>;
   especialidad = [
     {position: 1, name: 'Cardiologia'},
@@ -42,7 +42,7 @@ export class BusquedaComponent implements OnInit {
 
     this.listaTurnos = [];
     this.ocultarPanel = true;
-    this.verDetalle = false;
+    this.verDetalle = true;
     this.traerListaTurnos();
   }
 
@@ -68,25 +68,12 @@ export class BusquedaComponent implements OnInit {
    }
   }
 
-  buscarTurnos(especialidad?: string) {
+  buscarTurnos() {
     this.verDetalle = true;
      var ano = this.getYear();
      var mes = this.getMonth();
      var dia = this.getDay();
-    this.fecha = (new Date( Number(ano) , Number(mes) - 1, Number(dia) )).toLocaleDateString();
-    //console.log(this.fecha);
-   switch (this.tipo){
-      case 'fecha':  this.listaGenerica = this.listaTurnos.filter( turno => turno.fecha == this.fecha);  break;
-      case 'paciente': this.listaGenerica = this.listaTurnos.filter( turno => turno.paciente.apellido == this.busqueda); break;
-      case 'profesional': this.listaGenerica = this.listaTurnos = this.listaTurnos.filter( turno => turno.profesional.apellido == this.busqueda);  break;
-      case 'especialidad': this.listaGenerica = this.listaTurnos.filter( turno => turno.especialidad == especialidad); break;
-      case 'edad': this.listaGenerica = this.listaTurnos.filter( turno => (this.calculoFechaNacimientoPorEdad(turno.paciente.fechaNacimiento)) == parseInt(this.busqueda));  break;
-      case 'presion': this.listaGenerica = this.listaTurnos.filter( turno => turno.historiaClinica.presion == this.busqueda); break;
-      case 'temperatura': this.listaGenerica = this.listaTurnos.filter( turno => turno.historiaClinica.temperatura == this.busqueda); break;
-      case 'primera': this.listaGenerica = this.listaTurnos.filter( turno => turno.historiaClinica.primeraObservacion == this.busqueda); break;
-      case 'segunda': this.listaGenerica = this.listaTurnos.filter( turno => turno.historiaClinica.segundaObservacion == this.busqueda); break;
-      case 'tercera': this.listaGenerica = this.listaTurnos.filter( turno => turno.historiaClinica.terceraObservacion == this.busqueda);  break;
-    }
+
   }
 
   getYear(): string {
@@ -115,7 +102,12 @@ export class BusquedaComponent implements OnInit {
   }
 
   limpiar() {
-    this.listaGenerica = [];
     this.verDetalle = false;
   }
+
+  cambio(busqueda: string) {
+    this.paciente = busqueda;
+  }
+
+
 }

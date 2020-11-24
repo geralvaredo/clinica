@@ -58,13 +58,13 @@ import { InformeEspecialidadComponent } from './componentes/informe-especialidad
 import { InformeTurnosPorDiaComponent } from './componentes/informe-turnos-por-dia/informe-turnos-por-dia.component';
 import { InformeTurnosPorMedicosComponent } from './componentes/informe-turnos-por-medicos/informe-turnos-por-medicos.component';
 import { InformeDiasTrabajadosMedicosComponent } from './componentes/informe-dias-trabajados-medicos/informe-dias-trabajados-medicos.component';
-import { KeyvaluePipe } from './pipes/keyvalue.pipe';
 import { ChartsModule } from 'ng2-charts';
 import { DetalleBusquedaComponent } from './componentes/detalle-busqueda/detalle-busqueda.component';
 import { DetalleBusquedaTurnoComponent } from './componentes/detalle-busqueda-turno/detalle-busqueda-turno.component';
 import {MatDividerModule} from '@angular/material/divider';
 import { ColorBusquedaDirective } from './directivas/color-busqueda.directive';
 import { ImagenDirective } from './directivas/imagen.directive';
+import { BusquedaInformacionPipe } from './pipes/busqueda-informacion.pipe';
 
 @NgModule({
   declarations: [
@@ -100,11 +100,11 @@ import { ImagenDirective } from './directivas/imagen.directive';
     InformeTurnosPorDiaComponent,
     InformeTurnosPorMedicosComponent,
     InformeDiasTrabajadosMedicosComponent,
-    KeyvaluePipe,
     DetalleBusquedaComponent,
     DetalleBusquedaTurnoComponent,
     ColorBusquedaDirective,
-    ImagenDirective
+    ImagenDirective,
+    BusquedaInformacionPipe
   ],
   imports: [
     BrowserModule,

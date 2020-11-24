@@ -64,8 +64,9 @@ export class VerificacionEspecialidadComponent implements OnInit {
     this.data = new MatTableDataSource();
     this.listaPerfiles = this.listaPerfiles.filter(perfil => perfil.id != this.prof.id);
     this.cargarListadoEspecialistas();
-    this.verificacion = 'El profesional ha sido validado correctamente';
     this.especialidaConfirmada = true;
+    this.verificacion = 'El profesional ha sido validado correctamente';
+
   }
 
 
