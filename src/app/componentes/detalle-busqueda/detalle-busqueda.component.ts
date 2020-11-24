@@ -9,15 +9,26 @@ import {Turno} from '../../clases/turno';
 export class DetalleBusquedaComponent implements OnInit {
 
   @Input() listaTurnos : Array<any>;
-  detalleTurno : boolean;
+  @Input() paciente : string;
+  detalleTurno : boolean ;
+  detalleBusquedaTurno: boolean;
+  carga : boolean;
   turno: Turno;
   constructor() { }
 
   ngOnInit(): void {
+    this.carga = false;
+    this.detalleTurno = false;
   }
 
-  detalle(e: any, turno) {
-    this.detalleTurno = e;
-    this.turno = turno;
+  detail(turno) {
+    if (this.carga){
+      this.detalleTurno = true;
+      this.turno = turno;
+    }
+    this.carga =  true;
+
   }
+
+
 }

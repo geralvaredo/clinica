@@ -122,7 +122,7 @@
 
                   <tr mat-header-row *matHeaderRowDef="displayedColumns" class="tableHeaderCellDiv"></tr>
                   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                  <label style="color: green">{{this.reserva}}</label>;
+                  <label style="color: green">{{this.reserva}}</label><img  class="accept"  src="./assets/accept.png"   alt="accept">;
 
                 </table>
                 <mat-paginator #pagina [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

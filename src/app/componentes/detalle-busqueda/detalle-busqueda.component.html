@@ -20,7 +20,7 @@
 </div>
 <div class="row">
   <mat-card class="tarjeta general" [appColorBusqueda]>
-    <div class="fila" *ngFor="let item of this.listaTurnos" >
+    <div class="fila" *ngFor="let item of (this.listaTurnos | busquedaInformacion : paciente) " >
       <div class="turno">
         <div class="row registro ">
           <div class="col-md-2">
@@ -42,7 +42,7 @@
             <h6> {{item.estado}} </h6>
           </div>
           <div class="col-md-1">
-            <app-btn-detalle (botonDetalle)="detalle($event,item)"></app-btn-detalle>
+            <button  class="button" mat-raised-button color="info" (click)="detail(item)" i18n="detail"> Ver Detalle</button>
           </div>
         </div>
       </div>
@@ -50,8 +50,8 @@
     </div>
   </mat-card>
   <br>
-    <div *ngIf="this.detalleTurno" class="row" >
-      <app-detalle-busqueda-turno [turno] ="turno" ></app-detalle-busqueda-turno>
+    <div *ngIf="detalleTurno && (paciente != '' || paciente != undefined)" class="row" >
+      <app-detalle-busqueda-turno [turno] ="turno"  ></app-detalle-busqueda-turno>
     </div>
 
 </div>

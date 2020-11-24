@@ -7,7 +7,7 @@
         <h6 class="card-text mb-2 text-muted"> Edad: {{turno.historiaClinica.edad}}</h6>
         <h6 class="card-text mb-2 text-muted">Sexo: {{turno.paciente.sexo}}</h6>
         <h6 class="card-text mb-2 text-muted">Fecha de Alta: {{turno.paciente.fechaAlta}}</h6>
-        <img  [appImagen]="turno.paciente.ruta" [src]="" class="mx-auto d-block" width="200px" height="200px">
+        <img  [appImagen]="turno.paciente.ruta" [src]="img" class="mx-auto d-block" width="200px" height="200px">
       </div>
     </div>
     </div>
@@ -17,7 +17,7 @@
         <h5 class="card-title">{{turno.profesional.nombre}} {{turno.profesional.apellido}}</h5>
         <h6 class="card-text mb-2 text-muted">Fecha Nacimiento: {{turno.profesional.fechaNacimiento}}</h6>
         <h6 class="card-text mb-2 text-muted">Sexo: {{turno.profesional.sexo}}</h6>
-        <img [appImagen]="turno.profesional.ruta" [src]="" class="mx-auto d-block" width="200px" height="200px">
+        <img [appImagen]="turno.profesional.ruta" [src]="img" class="mx-auto d-block" width="200px" height="200px">
       </div>
     </div>
   </div>

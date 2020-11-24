@@ -6,93 +6,25 @@
           <h6 class="etiqueta" i18n="lookingForInformation"> Busqueda de Informacion</h6>
         </div>
         <div class="card-body">
-            <mat-radio-group class="alineacionRadio" aria-label="Select an option">
-               <div class="row">
-                 <div class="col-md-2">
-                   <mat-radio-button class="spaceLeft" (click)="opcionBusqueda('fecha')" value="fecha" i18n="forDate" name="option">Por Fecha</mat-radio-button>
-                 </div>
-                 <div class="col-md-2">
-                   <mat-radio-button  (click)="opcionBusqueda('paciente')"  value="paciente" name="option" i18n="forPacient" >Por Paciente</mat-radio-button>
-                 </div>
-                 <div class="col-md-3">
-                   <mat-radio-button class="" (click)="opcionBusqueda('profesional')"  value="profesional" i18n="forProfessional" name="option">Por Profesional</mat-radio-button>
-                 </div>
-                 <div class="col-md-2">
-                   <mat-radio-button class="" (click)="opcionBusqueda('especialidad')" value="especialidad" i18n="forSpeciality" name="option">Por Especialidad</mat-radio-button>
-                 </div>
-                 <div class="col-md-3">
-                   <mat-radio-button class="spaceEdad" (click)="opcionBusqueda('edad')" value="edad" i18n="forAge"  name="option">Por Edad</mat-radio-button>
-                 </div>
-               </div>
-              <div class="row">
-                <div class="col-md-2">
-                  <mat-radio-button  (click)="opcionBusqueda('temperatura')" value="temperatura" i18n="forTemperature"  name="option">Por Temperatura</mat-radio-button>
-                </div>
-                <div class="col-md-2">
-                  <mat-radio-button   (click)="opcionBusqueda('presion')" value="presion" name="option" i18n="forPression"  >Por Presion</mat-radio-button>
-                </div>
-                <div class="col-md-3">
-                  <mat-radio-button class="primera"  (click)="opcionBusqueda('primera')" value="obs1" name="option" i18n="firstObversation"  >Primera Observacion</mat-radio-button>
-                </div>
-                <div class="col-md-2">
-                  <mat-radio-button  (click)="opcionBusqueda('segunda')" value="obs2" name="option" i18n="secondObservation" >Segunda Observacion</mat-radio-button>
-                </div>
-                <div class="col-md-3">
-                  <mat-radio-button class="spaceObservacion"  (click)="opcionBusqueda('tercera')" value="obs3" name="option" i18n="thirdObversation" >Tercera Observacion</mat-radio-button>
-                </div>
-              </div>
-
-            </mat-radio-group>
+          <div class="row ">
+            <div>
+              <mat-form-field class="b">
+                <mat-label>Ingrese la informacion que desea buscar</mat-label>
+                <input  matInput placeholder="Busqueda..." [(ngModel)]="busqueda" (change)="cambio(busqueda)" name="busqueda"/>
+              </mat-form-field>
+            </div>
+          </div>
           </div>
         </div>
-        <div  *ngIf="tipo == 'fecha'" class="row fecha">
-            <h3 i18n="dateTurn">Fecha de Turnos</h3>
-            <input class="form-control"  type="date" placeholder="Ingrese una fecha de Nacimiento.." [(ngModel)]="inicio" name="fechaDeNacimiento">
-        </div>
-      <div class="row ">
-        <div  *ngIf="tipo == 'paciente' || tipo == 'profesional' || tipo == 'edad' || tipo =='presion'
-        || tipo == 'temperatura' || tipo == 'primera' || tipo == 'segunda' || tipo == 'tercera'">
-         <mat-form-field class="b">
-           <mat-label *ngIf="tipo == 'paciente'" i18n="insertLastNamePacient">Ingrese apellido del paciente</mat-label>
-           <mat-label *ngIf="tipo == 'profesional'" i18n="insertlastNamePro">Ingrese apellido del profesional</mat-label>
-           <mat-label *ngIf="tipo == 'edad'" i18n="insertAge">Ingrese edad del paciente</mat-label>
-           <mat-label *ngIf="tipo == 'presion'" i18n="insertPression">Ingrese presion del paciente</mat-label>
-           <mat-label *ngIf="tipo == 'temperatura'" i18n="insertTemp">Ingrese temperatura del paciente</mat-label>
-           <mat-label *ngIf="tipo == 'primera'" i18n="insertFirstObs" >Ingrese primera observacion del paciente</mat-label>
-           <mat-label *ngIf="tipo == 'segunda'" i18n="insertSecondObs" >Ingrese segunda observacion del paciente</mat-label>
-           <mat-label *ngIf="tipo == 'tercera'" i18n="insertThirdObs">Ingrese tercera observacion del paciente</mat-label>
-           <input  matInput placeholder="Busqueda..." [(ngModel)]="busqueda" name="busqueda"/>
-         </mat-form-field>
-        </div>
-      </div>
-       <div class="row">
-         <div class="alineacion" *ngIf="tipo == 'especialidad'">
-           <table  mat-table [dataSource]="dataEspecialidad" matSort >
-             <ng-container i18n="option" matColumnDef="accion">
-               <th mat-header-cell *matHeaderCellDef mat-sort-header> Opcion: </th>
-               <td mat-cell *matCellDef="let row"> <mat-radio-button value="si" name="accion" (click)="buscarTurnos(row.name)"  ></mat-radio-button> </td>
-             </ng-container>
-
-             <ng-container i18n="speciality" matColumnDef="especialidad">
-               <th mat-header-cell *matHeaderCellDef mat-sort-header> Especialidad </th>
-               <td mat-cell *matCellDef="let row"> {{row.name }} </td>
-             </ng-container>
-
-             <tr mat-header-row *matHeaderRowDef="displayEspecialidad" class="tableHeaderCellDiv"></tr>
-             <tr mat-row *matRowDef="let row; columns: displayEspecialidad;"></tr>
-           </table>
-           <!--mat-paginator #pagina [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator-->
-         </div>
-       </div>
       <div class="row">
         <div class="spaceBoton">
-          <button *ngIf="!this.ocultarPanel && tipo != 'especialidad'"  mat-raised-button color="primary" (click)="buscarTurnos()" i18n="searchTurn">Buscar Turnos</button>
-          <button class="spaceProfesional" *ngIf="!this.ocultarPanel && tipo != 'especialidad'"  mat-raised-button color="primary" i18n="clean" (click)="limpiar()">Limpiar</button>
+          <button class="spaceProfesional" *ngIf="!this.ocultarPanel"  mat-raised-button color="primary" i18n="clean" (click)="limpiar()">Limpiar</button>
         </div>
       </div>
     </div>
-    <div class="row" *ngIf="verDetalle">
-      <app-detalle-busqueda [listaTurnos]="this.listaGenerica"  ></app-detalle-busqueda>
-    </div>
+     <div *ngIf="paciente != undefined" class="row">
+        <app-detalle-busqueda [listaTurnos]="listaTurnos" [paciente]="paciente"></app-detalle-busqueda>
+     </div>
+
   </form>
 </div>
